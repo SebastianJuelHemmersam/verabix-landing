@@ -467,7 +467,10 @@ function Footer() {
       textAlign: 'center',
     }}>
       <p style={{ fontSize: '13px', color: '#3d4158', margin: 0 }}>
-        © 2026 Verabix · No spam, ever.
+        © 2026 Verabix · No spam, ever.{' '}
+        <a href="/privacy" style={{ color: '#3d4158', textDecoration: 'underline' }}>Privacy Policy</a>
+        {' · '}
+        <a href="/terms" style={{ color: '#3d4158', textDecoration: 'underline' }}>Terms of Service</a>
       </p>
     </footer>
   )
