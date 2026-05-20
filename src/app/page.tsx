@@ -470,13 +470,7 @@ const PLATFORM_CONFIG: Record<Platform, {
 }> = {
   google_ads: {
     name: 'Google Ads',
-    icon: (
-      <svg viewBox="0 0 24 24" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16.539 4.5L8.06 19.09a2.75 2.75 0 0 0 4.763 2.75L21.302 7.25A2.75 2.75 0 0 0 16.539 4.5z" fill="#4285F4" />
-        <path d="M7.461 4.5a2.75 2.75 0 0 0-2.382 4.125L10.62 18.5l2.75-4.763-3.125-5.412L7.461 4.5z" fill="#FBBC05" />
-        <circle cx="4.75" cy="19.25" r="2.75" fill="#34A853" />
-      </svg>
-    ),
+    icon: <img src="/adwords.png" alt="Google Ads" style={{ width: 26, height: 26, objectFit: 'contain' }} />,
     description: 'Verabix connects to Google Ads through the official Google Ads API using OAuth 2.0. We never store your Google credentials — only an encrypted refresh token used exclusively to read your campaign data on your behalf.',
     metrics: [
       { label: 'Campaign spend',   desc: 'Track daily and lifetime spend across all campaigns and ad groups.' },
