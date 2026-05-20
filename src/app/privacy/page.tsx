@@ -91,7 +91,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p style={{ fontSize: '14px', color: MUTED }}>
-            Effective date: April 2026 &nbsp;·&nbsp; WebSeb, CVR: 42616354
+            Effective date: April 2026 &nbsp;·&nbsp; Verabix ApS, CVR: 46483839
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export default function PrivacyPage() {
           padding: '20px 24px', marginBottom: '44px',
           fontSize: '14px', color: MUTED, lineHeight: '1.75',
         }}>
-          This Privacy Policy describes how <strong style={{ color: TEXT }}>WebSeb</strong> ("we", "us", or "our") collects, uses and protects your personal data when you use Verabix. By using our service, you agree to the practices described in this policy.
+          This Privacy Policy describes how <strong style={{ color: TEXT }}>Verabix ApS</strong> ("we", "us", or "our") collects, uses and protects your personal data when you use Verabix. By using our service, you agree to the practices described in this policy.
         </div>
 
         <Section title="1. Data We Collect">
@@ -188,8 +188,8 @@ export default function PrivacyPage() {
             background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: '10px',
             padding: '18px 22px', fontSize: '14px', color: MUTED, lineHeight: '1.9',
           }}>
-            <strong style={{ color: TEXT }}>WebSeb</strong><br />
-            CVR: 42616354<br />
+            <strong style={{ color: TEXT }}>Verabix ApS</strong><br />
+            CVR: 46483839<br />
             Klostervej 23, 1. th<br />
             5000 Odense C, Denmark<br />
             <a href="mailto:sebastianhemmersam@gmail.com" style={{ color: PURPLE }}>

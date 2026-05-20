@@ -91,7 +91,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p style={{ fontSize: '14px', color: MUTED }}>
-            Effective date: April 2026 &nbsp;·&nbsp; WebSeb, CVR: 42616354
+            Effective date: April 2026 &nbsp;·&nbsp; Verabix ApS, CVR: 46483839
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export default function TermsPage() {
           padding: '20px 24px', marginBottom: '44px',
           fontSize: '14px', color: MUTED, lineHeight: '1.75',
         }}>
-          These Terms of Service ("Terms") govern your use of Verabix, operated by <strong style={{ color: TEXT }}>WebSeb</strong> ("we", "us", or "our"). By accessing or using Verabix, you agree to be bound by these Terms. If you do not agree, do not use the service.
+          These Terms of Service ("Terms") govern your use of Verabix, operated by <strong style={{ color: TEXT }}>Verabix ApS</strong> ("we", "us", or "our"). By accessing or using Verabix, you agree to be bound by these Terms. If you do not agree, do not use the service.
         </div>
 
         <Section title="1. Acceptance of Terms">
@@ -134,12 +134,12 @@ export default function TermsPage() {
         </Section>
 
         <Section title="5. Intellectual Property">
-          <P>All intellectual property in the Verabix platform — including the software, design, brand, and AI models — is owned by WebSeb and protected by applicable intellectual property laws.</P>
+          <P>All intellectual property in the Verabix platform — including the software, design, brand, and AI models — is owned by Verabix ApS and protected by applicable intellectual property laws.</P>
           <P>You may not copy, reproduce, or create derivative works from any part of the service without our prior written permission.</P>
         </Section>
 
         <Section title="6. Limitation of Liability">
-          <P>To the maximum extent permitted by law, WebSeb shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, Verabix.</P>
+          <P>To the maximum extent permitted by law, Verabix ApS shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, Verabix.</P>
           <P>Our total liability to you for any claim arising from these Terms or use of the service shall not exceed the amount you paid us in the 12 months preceding the claim, or €100, whichever is greater.</P>
           <P>The service is provided "as is" and "as available" without warranties of any kind, express or implied.</P>
         </Section>
@@ -164,8 +164,8 @@ export default function TermsPage() {
             background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: '10px',
             padding: '18px 22px', fontSize: '14px', color: MUTED, lineHeight: '1.9',
           }}>
-            <strong style={{ color: TEXT }}>WebSeb</strong><br />
-            CVR: 42616354<br />
+            <strong style={{ color: TEXT }}>Verabix ApS</strong><br />
+            CVR: 46483839<br />
             Klostervej 23, 1. th<br />
             5000 Odense C, Denmark<br />
             <a href="mailto:sebastianhemmersam@gmail.com" style={{ color: PURPLE }}>
