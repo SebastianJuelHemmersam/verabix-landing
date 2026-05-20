@@ -1,23 +1,20 @@
 import Link from 'next/link'
 
-const BG      = '#0d0f1a'
-const SURFACE = '#151829'
-const BORDER  = '#1e2235'
-const PURPLE  = '#6C5CE7'
-const TEXT    = '#f0f2ff'
-const MUTED   = '#8b90a8'
+const BG     = '#FFFFFF'
+const TINT   = '#F6F9FC'
+const BORDER = '#E3E8EF'
+const PURPLE = '#534AB7'
+const TEXT   = '#1A1F36'
+const MUTED  = '#697386'
+const FONT   = 'var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)'
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section style={{ marginBottom: '44px' }}>
-      <h2 style={{
-        fontSize: '18px', fontWeight: '700', color: TEXT,
-        marginBottom: '14px', letterSpacing: '-0.3px',
-        paddingBottom: '10px', borderBottom: `1px solid ${BORDER}`,
-      }}>
+    <section style={{ marginBottom: 40 }}>
+      <h2 style={{ fontSize: 17, fontWeight: 700, color: TEXT, marginBottom: 12, letterSpacing: '-0.2px', paddingBottom: 10, borderBottom: `0.5px solid ${BORDER}`, fontFamily: FONT }}>
         {title}
       </h2>
-      <div style={{ fontSize: '15px', color: MUTED, lineHeight: '1.8' }}>
+      <div style={{ fontSize: 14, color: MUTED, lineHeight: 1.75, fontFamily: FONT }}>
         {children}
       </div>
     </section>
@@ -25,83 +22,42 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 function P({ children }: { children: React.ReactNode }) {
-  return <p style={{ marginBottom: '12px' }}>{children}</p>
+  return <p style={{ marginBottom: 10 }}>{children}</p>
 }
 
 function Ul({ items }: { items: string[] }) {
   return (
-    <ul style={{ paddingLeft: '20px', marginBottom: '12px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-      {items.map((item, i) => (
-        <li key={i} style={{ listStyle: 'disc' }}>{item}</li>
-      ))}
+    <ul style={{ paddingLeft: 20, marginBottom: 10, display: 'flex', flexDirection: 'column', gap: 6 }}>
+      {items.map((item, i) => <li key={i} style={{ listStyle: 'disc' }}>{item}</li>)}
     </ul>
   )
 }
 
 export default function TermsPage() {
   return (
-    <div style={{ background: BG, minHeight: '100vh', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
-
+    <div style={{ background: BG, minHeight: '100vh', fontFamily: FONT }}>
       {/* Nav */}
-      <nav style={{
-        borderBottom: `1px solid ${BORDER}`,
-        padding: '0 24px',
-        background: `${BG}e6`, backdropFilter: 'blur(14px)',
-        position: 'sticky', top: 0, zIndex: 10,
-      }}>
-        <div style={{
-          maxWidth: '800px', margin: '0 auto',
-          height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        }}>
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '9px', textDecoration: 'none' }}>
-            <div style={{
-              width: '28px', height: '28px', borderRadius: '7px', background: PURPLE,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-            }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 7 13.5 15.5l-5-5L2 17M22 7h-6M22 7v6" />
-              </svg>
-            </div>
-            <span style={{ fontSize: '15px', fontWeight: '700', color: TEXT }}>Verabix</span>
+      <nav style={{ borderBottom: `0.5px solid ${BORDER}`, padding: '0 40px', position: 'sticky', top: 0, background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(12px)', zIndex: 10 }}>
+        <div style={{ maxWidth: 800, margin: '0 auto', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Link href="/" style={{ fontSize: 18, fontWeight: 700, letterSpacing: '-0.3px', color: TEXT, textDecoration: 'none' }}>
+            Vera<span style={{ color: PURPLE }}>bix</span>
           </Link>
-          <Link href="/" style={{ fontSize: '13px', color: MUTED, textDecoration: 'none' }}>
-            ← Back to home
-          </Link>
+          <Link href="/" style={{ fontSize: 13, color: MUTED, textDecoration: 'none' }}>← Back to home</Link>
         </div>
       </nav>
 
       {/* Content */}
-      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '60px 24px 80px' }}>
-
-        {/* Header */}
-        <div style={{ marginBottom: '52px' }}>
-          <div style={{
-            display: 'inline-block',
-            background: `${PURPLE}1a`, border: `1px solid ${PURPLE}40`,
-            borderRadius: '20px', padding: '4px 14px',
-            fontSize: '12px', fontWeight: '600', color: '#a29bfe',
-            marginBottom: '16px',
-          }}>
+      <div style={{ maxWidth: 800, margin: '0 auto', padding: '60px 40px 80px' }}>
+        <div style={{ marginBottom: 48 }}>
+          <div style={{ display: 'inline-block', fontSize: 12, fontWeight: 500, color: PURPLE, background: '#EEEDFE', borderRadius: 20, padding: '4px 14px', marginBottom: 16, letterSpacing: '0.2px' }}>
             Legal
           </div>
-          <h1 style={{
-            fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '800',
-            color: TEXT, letterSpacing: '-1px', margin: '0 0 14px',
-          }}>
-            Terms of Service
-          </h1>
-          <p style={{ fontSize: '14px', color: MUTED }}>
-            Effective date: April 2026 &nbsp;·&nbsp; Verabix ApS, CVR: 46483839
-          </p>
+          <h1 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.8px', margin: '0 0 10px', color: TEXT }}>Terms of Service</h1>
+          <p style={{ fontSize: 13, color: MUTED }}>Effective date: April 2026 · Verabix ApS, CVR: 46483839</p>
         </div>
 
-        {/* Intro */}
-        <div style={{
-          background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: '12px',
-          padding: '20px 24px', marginBottom: '44px',
-          fontSize: '14px', color: MUTED, lineHeight: '1.75',
-        }}>
-          These Terms of Service ("Terms") govern your use of Verabix, operated by <strong style={{ color: TEXT }}>Verabix ApS</strong> ("we", "us", or "our"). By accessing or using Verabix, you agree to be bound by these Terms. If you do not agree, do not use the service.
+        <div style={{ background: TINT, border: `0.5px solid ${BORDER}`, borderRadius: 12, padding: '18px 22px', marginBottom: 40, fontSize: 14, color: MUTED, lineHeight: 1.75 }}>
+          These Terms of Service (&ldquo;Terms&rdquo;) govern your use of Verabix, operated by <strong style={{ color: TEXT }}>Verabix ApS</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;). By accessing or using Verabix, you agree to be bound by these Terms.
         </div>
 
         <Section title="1. Acceptance of Terms">
@@ -123,13 +79,13 @@ export default function TermsPage() {
 
         <Section title="3. User Accounts">
           <P>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account.</P>
-          <P>You must notify us immediately at <strong style={{ color: TEXT }}>sebastianhemmersam@gmail.com</strong> if you suspect any unauthorised access to your account.</P>
+          <P>You must notify us immediately at <strong style={{ color: TEXT }}>admin@verabix.com</strong> if you suspect any unauthorised access to your account.</P>
           <P>We reserve the right to suspend or terminate accounts that violate these Terms or that are used for fraudulent or abusive purposes.</P>
         </Section>
 
         <Section title="4. Data and Privacy">
           <P>Your use of Verabix is also governed by our <Link href="/privacy" style={{ color: PURPLE }}>Privacy Policy</Link>, which is incorporated into these Terms by reference.</P>
-          <P>You retain ownership of all data you connect to Verabix, including data from Meta Ads, Google Ads, and Google Analytics. By connecting these sources, you grant us a limited licence to access and process that data solely to provide the service to you.</P>
+          <P>You retain ownership of all data you connect to Verabix. By connecting your ad accounts, you grant us a limited licence to access and process that data solely to provide the service to you.</P>
           <P>We do not sell your data to third parties.</P>
         </Section>
 
@@ -141,7 +97,7 @@ export default function TermsPage() {
         <Section title="6. Limitation of Liability">
           <P>To the maximum extent permitted by law, Verabix ApS shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, Verabix.</P>
           <P>Our total liability to you for any claim arising from these Terms or use of the service shall not exceed the amount you paid us in the 12 months preceding the claim, or €100, whichever is greater.</P>
-          <P>The service is provided "as is" and "as available" without warranties of any kind, express or implied.</P>
+          <P>The service is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind.</P>
         </Section>
 
         <Section title="7. Termination">
@@ -151,7 +107,6 @@ export default function TermsPage() {
 
         <Section title="8. Changes to Terms">
           <P>We may update these Terms from time to time. We will notify you of material changes by email or by displaying a prominent notice in the app. Continued use of the service after changes take effect constitutes acceptance of the updated Terms.</P>
-          <P>The current effective date is always shown at the top of this page.</P>
         </Section>
 
         <Section title="9. Governing Law">
@@ -160,27 +115,22 @@ export default function TermsPage() {
 
         <Section title="10. Contact">
           <P>For any questions about these Terms, please contact:</P>
-          <div style={{
-            background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: '10px',
-            padding: '18px 22px', fontSize: '14px', color: MUTED, lineHeight: '1.9',
-          }}>
+          <div style={{ background: TINT, border: `0.5px solid ${BORDER}`, borderRadius: 10, padding: '18px 22px', fontSize: 14, color: MUTED, lineHeight: 1.9 }}>
             <strong style={{ color: TEXT }}>Verabix ApS</strong><br />
             CVR: 46483839<br />
             Klostervej 23, 1. th<br />
             5000 Odense C, Denmark<br />
-            <a href="mailto:sebastianhemmersam@gmail.com" style={{ color: PURPLE }}>
-              sebastianhemmersam@gmail.com
-            </a>
+            <a href="mailto:admin@verabix.com" style={{ color: PURPLE }}>admin@verabix.com</a>
           </div>
         </Section>
-
       </div>
 
-      {/* Footer */}
-      <footer style={{ borderTop: `1px solid ${BORDER}`, padding: '24px', textAlign: 'center' }}>
-        <p style={{ fontSize: '13px', color: '#3d4158', margin: 0 }}>
-          © 2026 Verabix · <Link href="/privacy" style={{ color: '#3d4158' }}>Privacy</Link> · <Link href="/terms" style={{ color: '#3d4158' }}>Terms</Link>
-        </p>
+      <footer style={{ borderTop: `0.5px solid ${BORDER}`, padding: '24px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12, color: MUTED, maxWidth: 1240, margin: '0 auto' }}>
+        <span>© 2026 Verabix ApS · CVR: 46483839 · Odense, Denmark</span>
+        <div style={{ display: 'flex', gap: 20 }}>
+          <Link href="/privacy" style={{ color: MUTED }}>Privacy Policy</Link>
+          <Link href="/" style={{ color: MUTED }}>Home</Link>
+        </div>
       </footer>
     </div>
   )

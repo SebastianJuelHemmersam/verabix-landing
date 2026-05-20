@@ -1,23 +1,20 @@
 import Link from 'next/link'
 
-const BG      = '#0d0f1a'
-const SURFACE = '#151829'
-const BORDER  = '#1e2235'
-const PURPLE  = '#6C5CE7'
-const TEXT    = '#f0f2ff'
-const MUTED   = '#8b90a8'
+const BG     = '#FFFFFF'
+const TINT   = '#F6F9FC'
+const BORDER = '#E3E8EF'
+const PURPLE = '#534AB7'
+const TEXT   = '#1A1F36'
+const MUTED  = '#697386'
+const FONT   = 'var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)'
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section style={{ marginBottom: '44px' }}>
-      <h2 style={{
-        fontSize: '18px', fontWeight: '700', color: TEXT,
-        marginBottom: '14px', letterSpacing: '-0.3px',
-        paddingBottom: '10px', borderBottom: `1px solid ${BORDER}`,
-      }}>
+    <section style={{ marginBottom: 40 }}>
+      <h2 style={{ fontSize: 17, fontWeight: 700, color: TEXT, marginBottom: 12, letterSpacing: '-0.2px', paddingBottom: 10, borderBottom: `0.5px solid ${BORDER}`, fontFamily: FONT }}>
         {title}
       </h2>
-      <div style={{ fontSize: '15px', color: MUTED, lineHeight: '1.8' }}>
+      <div style={{ fontSize: 14, color: MUTED, lineHeight: 1.75, fontFamily: FONT }}>
         {children}
       </div>
     </section>
@@ -25,83 +22,42 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 function P({ children }: { children: React.ReactNode }) {
-  return <p style={{ marginBottom: '12px' }}>{children}</p>
+  return <p style={{ marginBottom: 10 }}>{children}</p>
 }
 
-function Ul({ items }: { items: string[] }) {
+function Ul({ items }: { items: React.ReactNode[] }) {
   return (
-    <ul style={{ paddingLeft: '20px', marginBottom: '12px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-      {items.map((item, i) => (
-        <li key={i} style={{ listStyle: 'disc' }}>{item}</li>
-      ))}
+    <ul style={{ paddingLeft: 20, marginBottom: 10, display: 'flex', flexDirection: 'column', gap: 6 }}>
+      {items.map((item, i) => <li key={i} style={{ listStyle: 'disc' }}>{item}</li>)}
     </ul>
   )
 }
 
 export default function PrivacyPage() {
   return (
-    <div style={{ background: BG, minHeight: '100vh', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
-
+    <div style={{ background: BG, minHeight: '100vh', fontFamily: FONT }}>
       {/* Nav */}
-      <nav style={{
-        borderBottom: `1px solid ${BORDER}`,
-        padding: '0 24px',
-        background: `${BG}e6`, backdropFilter: 'blur(14px)',
-        position: 'sticky', top: 0, zIndex: 10,
-      }}>
-        <div style={{
-          maxWidth: '800px', margin: '0 auto',
-          height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        }}>
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '9px', textDecoration: 'none' }}>
-            <div style={{
-              width: '28px', height: '28px', borderRadius: '7px', background: PURPLE,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-            }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 7 13.5 15.5l-5-5L2 17M22 7h-6M22 7v6" />
-              </svg>
-            </div>
-            <span style={{ fontSize: '15px', fontWeight: '700', color: TEXT }}>Verabix</span>
+      <nav style={{ borderBottom: `0.5px solid ${BORDER}`, padding: '0 40px', position: 'sticky', top: 0, background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(12px)', zIndex: 10 }}>
+        <div style={{ maxWidth: 800, margin: '0 auto', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Link href="/" style={{ fontSize: 18, fontWeight: 700, letterSpacing: '-0.3px', color: TEXT, textDecoration: 'none' }}>
+            Vera<span style={{ color: PURPLE }}>bix</span>
           </Link>
-          <Link href="/" style={{ fontSize: '13px', color: MUTED, textDecoration: 'none' }}>
-            ← Back to home
-          </Link>
+          <Link href="/" style={{ fontSize: 13, color: MUTED, textDecoration: 'none' }}>← Back to home</Link>
         </div>
       </nav>
 
       {/* Content */}
-      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '60px 24px 80px' }}>
-
-        {/* Header */}
-        <div style={{ marginBottom: '52px' }}>
-          <div style={{
-            display: 'inline-block',
-            background: `${PURPLE}1a`, border: `1px solid ${PURPLE}40`,
-            borderRadius: '20px', padding: '4px 14px',
-            fontSize: '12px', fontWeight: '600', color: '#a29bfe',
-            marginBottom: '16px',
-          }}>
+      <div style={{ maxWidth: 800, margin: '0 auto', padding: '60px 40px 80px' }}>
+        <div style={{ marginBottom: 48 }}>
+          <div style={{ display: 'inline-block', fontSize: 12, fontWeight: 500, color: PURPLE, background: '#EEEDFE', borderRadius: 20, padding: '4px 14px', marginBottom: 16, letterSpacing: '0.2px' }}>
             Legal
           </div>
-          <h1 style={{
-            fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '800',
-            color: TEXT, letterSpacing: '-1px', margin: '0 0 14px',
-          }}>
-            Privacy Policy
-          </h1>
-          <p style={{ fontSize: '14px', color: MUTED }}>
-            Effective date: April 2026 &nbsp;·&nbsp; Verabix ApS, CVR: 46483839
-          </p>
+          <h1 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.8px', margin: '0 0 10px', color: TEXT }}>Privacy Policy</h1>
+          <p style={{ fontSize: 13, color: MUTED }}>Effective date: April 2026 · Verabix ApS, CVR: 46483839</p>
         </div>
 
-        {/* Intro */}
-        <div style={{
-          background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: '12px',
-          padding: '20px 24px', marginBottom: '44px',
-          fontSize: '14px', color: MUTED, lineHeight: '1.75',
-        }}>
-          This Privacy Policy describes how <strong style={{ color: TEXT }}>Verabix ApS</strong> ("we", "us", or "our") collects, uses and protects your personal data when you use Verabix. By using our service, you agree to the practices described in this policy.
+        <div style={{ background: TINT, border: `0.5px solid ${BORDER}`, borderRadius: 12, padding: '18px 22px', marginBottom: 40, fontSize: 14, color: MUTED, lineHeight: 1.75 }}>
+          This Privacy Policy describes how <strong style={{ color: TEXT }}>Verabix ApS</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) collects, uses and protects your personal data when you use Verabix. By using our service, you agree to the practices described in this policy.
         </div>
 
         <Section title="1. Data We Collect">
@@ -128,14 +84,14 @@ export default function PrivacyPage() {
         </Section>
 
         <Section title="3. Third-Party Services">
-          <P>Verabix integrates with the following third-party platforms to retrieve your advertising data. Each platform is governed by its own privacy policy:</P>
+          <P>Verabix integrates with the following third-party platforms to retrieve your advertising data:</P>
           <Ul items={[
-            'Meta Ads (Facebook) — facebook.com/privacy',
-            'Google Ads — policies.google.com/privacy',
-            'Google Analytics — policies.google.com/privacy',
+            <span key="meta">Meta Ads (Facebook) — <a href="https://www.facebook.com/privacy/policy/" style={{ color: PURPLE }}>facebook.com/privacy</a></span>,
+            <span key="google">Google Ads — <a href="https://policies.google.com/privacy" style={{ color: PURPLE }}>policies.google.com/privacy</a></span>,
+            <span key="ga">Google Analytics — <a href="https://policies.google.com/privacy" style={{ color: PURPLE }}>policies.google.com/privacy</a></span>,
           ]} />
-          <P>We access these platforms only with your explicit authorisation via OAuth. You can revoke access at any time from within Verabix or directly from each platform's settings.</P>
-          <P>We also use <strong style={{ color: TEXT }}>Supabase</strong> for database hosting and authentication, and <strong style={{ color: TEXT }}>Anthropic</strong> for AI features. Data sent to these services is subject to their respective privacy policies.</P>
+          <P>We access these platforms only with your explicit authorisation via OAuth. You can revoke access at any time from within Verabix or directly from each platform&apos;s settings.</P>
+          <P>We also use <strong style={{ color: TEXT }}>Supabase</strong> for database hosting and authentication, and <strong style={{ color: TEXT }}>Anthropic</strong> for AI features.</P>
         </Section>
 
         <Section title="4. Data Retention">
@@ -144,7 +100,7 @@ export default function PrivacyPage() {
         </Section>
 
         <Section title="5. Your Rights (GDPR)">
-          <P>If you are located in the European Union, you have the following rights under the General Data Protection Regulation (GDPR):</P>
+          <P>If you are located in the European Union, you have the following rights under the GDPR:</P>
           <Ul items={[
             'Right of access — request a copy of the personal data we hold about you',
             'Right to rectification — request correction of inaccurate data',
@@ -153,11 +109,11 @@ export default function PrivacyPage() {
             'Right to portability — receive your data in a machine-readable format',
             'Right to object — object to processing based on legitimate interests',
           ]} />
-          <P>To exercise any of these rights, please contact us at <strong style={{ color: TEXT }}>sebastianhemmersam@gmail.com</strong>. We will respond within 30 days.</P>
+          <P>To exercise any of these rights, please contact us at <strong style={{ color: TEXT }}>admin@verabix.com</strong>. We will respond within 30 days.</P>
         </Section>
 
         <Section title="6. Security">
-          <P>We use AES-256 encryption for all stored credentials, HTTPS for all data in transit, and follow industry-standard security practices. Access to production systems is restricted to authorised personnel only.</P>
+          <P>We use AES-256 encryption for all stored credentials, HTTPS for all data in transit, and follow industry-standard security practices.</P>
         </Section>
 
         <Section title="7. Google API Services">
@@ -170,41 +126,35 @@ export default function PrivacyPage() {
             , including the Limited Use requirements.
           </P>
           <P>Specifically:</P>
-          <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-            <li style={{ listStyle: 'disc' }}>We only request access to Google Ads data that is necessary to provide the Verabix dashboard service.</li>
-            <li style={{ listStyle: 'disc' }}>We do not use Google Ads data for any purpose other than displaying it to the authenticated account owner.</li>
-            <li style={{ listStyle: 'disc' }}>We do not share, sell, or transfer Google Ads data to third parties.</li>
-            <li style={{ listStyle: 'disc' }}>We do not use Google Ads data for advertising or remarketing purposes.</li>
-            <li style={{ listStyle: 'disc' }}>
-              Users can revoke Google Ads access at any time from within Verabix or from their Google Account settings at{' '}
+          <Ul items={[
+            'We only request access to Google Ads data that is necessary to provide the Verabix dashboard service.',
+            'We do not use Google Ads data for any purpose other than displaying it to the authenticated account owner.',
+            'We do not share, sell, or transfer Google Ads data to third parties.',
+            'We do not use Google Ads data for advertising or remarketing purposes.',
+            <span key="revoke">Users can revoke Google Ads access at any time from within Verabix or from their Google Account settings at{' '}
               <a href="https://myaccount.google.com" target="_blank" rel="noopener noreferrer" style={{ color: PURPLE }}>myaccount.google.com</a>.
-            </li>
-          </ul>
+            </span>,
+          ]} />
         </Section>
 
         <Section title="8. Contact">
           <P>For any questions about this Privacy Policy or your personal data, please contact:</P>
-          <div style={{
-            background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: '10px',
-            padding: '18px 22px', fontSize: '14px', color: MUTED, lineHeight: '1.9',
-          }}>
+          <div style={{ background: TINT, border: `0.5px solid ${BORDER}`, borderRadius: 10, padding: '18px 22px', fontSize: 14, color: MUTED, lineHeight: 1.9 }}>
             <strong style={{ color: TEXT }}>Verabix ApS</strong><br />
             CVR: 46483839<br />
             Klostervej 23, 1. th<br />
             5000 Odense C, Denmark<br />
-            <a href="mailto:sebastianhemmersam@gmail.com" style={{ color: PURPLE }}>
-              sebastianhemmersam@gmail.com
-            </a>
+            <a href="mailto:admin@verabix.com" style={{ color: PURPLE }}>admin@verabix.com</a>
           </div>
         </Section>
-
       </div>
 
-      {/* Footer */}
-      <footer style={{ borderTop: `1px solid ${BORDER}`, padding: '24px', textAlign: 'center' }}>
-        <p style={{ fontSize: '13px', color: '#3d4158', margin: 0 }}>
-          © 2026 Verabix · <Link href="/privacy" style={{ color: '#3d4158' }}>Privacy</Link> · <Link href="/terms" style={{ color: '#3d4158' }}>Terms</Link>
-        </p>
+      <footer style={{ borderTop: `0.5px solid ${BORDER}`, padding: '24px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12, color: MUTED, maxWidth: 1240, margin: '0 auto' }}>
+        <span>© 2026 Verabix ApS · CVR: 46483839 · Odense, Denmark</span>
+        <div style={{ display: 'flex', gap: 20 }}>
+          <Link href="/terms" style={{ color: MUTED }}>Terms of Service</Link>
+          <Link href="/" style={{ color: MUTED }}>Home</Link>
+        </div>
       </footer>
     </div>
   )
