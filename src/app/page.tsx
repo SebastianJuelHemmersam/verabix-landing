@@ -304,6 +304,71 @@ function Features() {
   )
 }
 
+// ─── Google Ads section ───────────────────────────────────────────────────────
+const GOOGLE_ADS_METRICS = [
+  { label: 'Spend',       desc: 'Track daily and lifetime spend across all campaigns.' },
+  { label: 'Impressions', desc: 'See how many times your ads were shown.' },
+  { label: 'Clicks & CTR', desc: 'Monitor click-through rates across campaigns.' },
+  { label: 'Conversions', desc: 'Track purchases, leads, and sign-ups.' },
+  { label: 'ROAS',        desc: 'Measure return on ad spend in your dashboard.' },
+  { label: 'Status',      desc: 'See active, paused, and ended campaigns together.' },
+]
+
+function GoogleAdsSection() {
+  return (
+    <section style={{ padding: '100px 24px', background: SURFACE, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
+      <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+          <div style={{
+            display: 'inline-block',
+            background: `${PURPLE}1a`, border: `1px solid ${PURPLE}40`,
+            borderRadius: '20px', padding: '5px 14px',
+            fontSize: '12px', fontWeight: '600', color: '#a29bfe',
+            marginBottom: '18px',
+          }}>
+            Google Ads integration
+          </div>
+          <h2 style={{
+            fontSize: 'clamp(26px, 4vw, 40px)',
+            fontWeight: '800', letterSpacing: '-1.5px',
+            color: TEXT, margin: '0 0 14px',
+          }}>
+            Your Google Ads data, unified
+          </h2>
+          <p style={{ fontSize: '16px', color: MUTED, maxWidth: '500px', margin: '0 auto', lineHeight: '1.65' }}>
+            Verabix connects to Google Ads through the official Google Ads API using OAuth 2.0.
+            We read your campaign performance data and display it in your dashboard — nothing more.
+          </p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px', marginBottom: '40px' }}>
+          {GOOGLE_ADS_METRICS.map(m => (
+            <div key={m.label} style={{
+              background: BG, border: `1px solid ${BORDER}`,
+              borderRadius: '12px', padding: '18px 20px',
+            }}>
+              <div style={{ fontSize: '13px', fontWeight: '700', color: TEXT, marginBottom: '6px' }}>{m.label}</div>
+              <div style={{ fontSize: '12px', color: MUTED, lineHeight: '1.6' }}>{m.desc}</div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{
+          background: `${PURPLE}12`, border: `1px solid ${PURPLE}35`,
+          borderRadius: '12px', padding: '20px 24px',
+          fontSize: '13px', color: MUTED, lineHeight: '1.75',
+        }}>
+          <strong style={{ color: TEXT }}>Data use policy:</strong> Verabix uses Google Ads data solely to display campaign performance to the authenticated account owner. We do not share, sell, or use this data for advertising or any purpose beyond operating the Verabix dashboard. Our use of Google API data complies with the{' '}
+          <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style={{ color: '#a29bfe' }}>
+            Google API Services User Data Policy
+          </a>
+          , including the Limited Use requirements.
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ─── Waitlist ────────────────────────────────────────────────────────────────
 function Waitlist() {
   const [email, setEmail] = useState('')
@@ -484,6 +549,7 @@ export default function LandingPage() {
       <main>
         <Hero />
         <Features />
+        <GoogleAdsSection />
         <Waitlist />
       </main>
       <Footer />

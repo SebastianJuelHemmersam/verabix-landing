@@ -160,7 +160,29 @@ export default function PrivacyPage() {
           <P>We use AES-256 encryption for all stored credentials, HTTPS for all data in transit, and follow industry-standard security practices. Access to production systems is restricted to authorised personnel only.</P>
         </Section>
 
-        <Section title="7. Contact">
+        <Section title="7. Google API Services">
+          <P>
+            Verabix uses the Google Ads API to retrieve campaign performance data on behalf of authenticated users.
+            Our use and transfer of information received from Google APIs adheres to the{' '}
+            <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style={{ color: PURPLE }}>
+              Google API Services User Data Policy
+            </a>
+            , including the Limited Use requirements.
+          </P>
+          <P>Specifically:</P>
+          <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <li style={{ listStyle: 'disc' }}>We only request access to Google Ads data that is necessary to provide the Verabix dashboard service.</li>
+            <li style={{ listStyle: 'disc' }}>We do not use Google Ads data for any purpose other than displaying it to the authenticated account owner.</li>
+            <li style={{ listStyle: 'disc' }}>We do not share, sell, or transfer Google Ads data to third parties.</li>
+            <li style={{ listStyle: 'disc' }}>We do not use Google Ads data for advertising or remarketing purposes.</li>
+            <li style={{ listStyle: 'disc' }}>
+              Users can revoke Google Ads access at any time from within Verabix or from their Google Account settings at{' '}
+              <a href="https://myaccount.google.com" target="_blank" rel="noopener noreferrer" style={{ color: PURPLE }}>myaccount.google.com</a>.
+            </li>
+          </ul>
+        </Section>
+
+        <Section title="8. Contact">
           <P>For any questions about this Privacy Policy or your personal data, please contact:</P>
           <div style={{
             background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: '10px',
