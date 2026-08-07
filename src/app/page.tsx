@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 const BG     = '#FFFFFF'
@@ -13,35 +15,6 @@ const MUTED  = '#697386'
 const FONT   = 'var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)'
 const MONO   = 'var(--font-mono, "JetBrains Mono", monospace)'
 
-// ─── Nav ──────────────────────────────────────────────────────────────────────
-function Nav() {
-  return (
-    <nav style={{
-      position: 'sticky', top: 0, zIndex: 100,
-      background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(12px)',
-      borderBottom: `0.5px solid ${BORDER}`,
-    }}>
-      <div style={{
-        maxWidth: 1240, margin: '0 auto', padding: '0 40px',
-        height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        fontFamily: FONT,
-      }}>
-        <div style={{ fontSize: 18, fontWeight: 700, letterSpacing: '-0.3px', color: TEXT }}>
-          Vera<span style={{ color: PURPLE }}>bix</span>
-        </div>
-        <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
-          {[['#features', 'Features'], ['#integrations', 'Integrations'], ['/privacy', 'Privacy']].map(([href, label]) => (
-            <a key={href} href={href} style={{ fontSize: 13, color: MUTED, textDecoration: 'none' }}>{label}</a>
-          ))}
-          <a href="#waitlist" style={{
-            fontSize: 13, fontWeight: 500, padding: '7px 18px',
-            borderRadius: 8, background: PURPLE, color: '#fff', textDecoration: 'none',
-          }}>Join waitlist</a>
-        </div>
-      </div>
-    </nav>
-  )
-}
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 function Hero() {
@@ -624,25 +597,12 @@ function Waitlist() {
   )
 }
 
-// ─── Footer ───────────────────────────────────────────────────────────────────
-function Footer() {
-  return (
-    <footer style={{ borderTop: `0.5px solid ${BORDER}`, padding: '24px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12, color: MUTED, maxWidth: 1240, margin: '0 auto', fontFamily: FONT }}>
-      <span>© 2026 Verabix ApS · CVR: 46483839 · Odense, Denmark</span>
-      <div style={{ display: 'flex', gap: 20 }}>
-        <a href="/privacy" style={{ color: MUTED }}>Privacy Policy</a>
-        <a href="/terms"   style={{ color: MUTED }}>Terms of Service</a>
-        <a href="mailto:admin@verabix.com" style={{ color: MUTED }}>Contact</a>
-      </div>
-    </footer>
-  )
-}
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function LandingPage() {
   return (
     <div style={{ background: BG, fontFamily: FONT }}>
-      <Nav />
+      <Header />
       <main>
         <Hero />
 

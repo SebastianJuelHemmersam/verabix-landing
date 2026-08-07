@@ -13,3 +13,20 @@ body {
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
 img { max-width: 100%; display: block; }
+
+/* Header responsive */
+.vbx-desktop-nav { display: flex; }
+.vbx-hamburger   { display: none !important; }
+.vbx-mobile-menu { display: none; flex-direction: column; }
+.vbx-mobile-menu.open { display: flex; }
+
+@media (max-width: 860px) {
+  .vbx-desktop-nav { display: none !important; }
+  .vbx-hamburger   { display: flex !important; }
+}
+
+/* Sub-page hero responsive */
+@media (max-width: 640px) {
+  .vbx-subhero-grid { grid-template-columns: 1fr !important; }
+  .vbx-feature-grid { grid-template-columns: 1fr !important; }
+}
