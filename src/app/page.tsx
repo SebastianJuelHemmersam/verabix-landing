@@ -1,676 +1,313 @@
-'use client'
-
-import { useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-// ─── Design tokens ────────────────────────────────────────────────────────────
-const BG     = '#FFFFFF'
-const TINT   = '#F6F9FC'
-const SURF   = '#F0F2F7'
-const BORDER = '#E3E8EF'
-const PURPLE = '#534AB7'
-const TEXT   = '#1A1F36'
-const MUTED  = '#697386'
-const FONT   = 'var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)'
-const MONO   = 'var(--font-mono, "JetBrains Mono", monospace)'
-
-
-// ─── Hero ─────────────────────────────────────────────────────────────────────
-function Hero() {
+function CheckIcon() {
   return (
-    <section style={{ maxWidth: 720, margin: '0 auto', padding: '80px 40px 64px', textAlign: 'center', fontFamily: FONT }}>
-      <div style={{
-        display: 'inline-block', fontSize: 12, fontWeight: 500, color: PURPLE,
-        background: '#EEEDFE', borderRadius: 20, padding: '4px 14px',
-        marginBottom: 24, letterSpacing: '0.2px',
-      }}>
-        Google Ads · Meta Ads · Analytics
-      </div>
-      <h1 style={{ fontSize: 46, fontWeight: 700, letterSpacing: '-1px', lineHeight: 1.15, margin: '0 0 20px', color: TEXT }}>
-        One dashboard for all<br />your ad performance
-      </h1>
-      <p style={{ fontSize: 17, color: MUTED, lineHeight: 1.7, margin: '0 auto 36px', maxWidth: 540 }}>
-        Verabix connects to Google Ads, Meta Ads, and Google Analytics via their official APIs to give you unified campaign insights, AI-powered recommendations, and automated alerts — all in one place.
-      </p>
-      <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-        <a href="#waitlist" style={{
-          display: 'inline-block', fontSize: 15, fontWeight: 600,
-          padding: '13px 32px', borderRadius: 10, background: PURPLE,
-          color: '#fff', textDecoration: 'none', letterSpacing: '-0.2px',
-        }}>Join the waitlist</a>
-        <a href="#features" style={{
-          display: 'inline-block', fontSize: 15, fontWeight: 500,
-          padding: '13px 24px', borderRadius: 10,
-          border: `1.5px solid ${BORDER}`, color: MUTED, textDecoration: 'none',
-        }}>See how it works →</a>
-      </div>
-      <div style={{ marginTop: 18, fontSize: 12, color: '#9CA3AF' }}>
-        Free to join · no credit card required
-      </div>
-    </section>
-  )
-}
-
-// ─── Shared preview chrome ────────────────────────────────────────────────────
-function PreviewCard({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
-  return (
-    <div style={{
-      background: BG, borderRadius: 14, padding: 18,
-      boxShadow: '0 10px 32px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.06)',
-      fontFamily: FONT, ...style,
-    }}>{children}</div>
-  )
-}
-function MiniEyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <div style={{ fontSize: 10, fontWeight: 600, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: 10 }}>
-      {children}
-    </div>
-  )
-}
-
-// ─── Feature preview mockups ──────────────────────────────────────────────────
-function OverviewPreview() {
-  const kpis = [
-    { l: 'Spend', v: '$48.2k', d: '+12%', up: true },
-    { l: 'ROAS',  v: '3.42×',  d: '+0.18', up: true },
-    { l: 'Conv.', v: '1,247',  d: '+9%', up: true },
-    { l: 'CPA',   v: '$38.65', d: '-3%', up: false },
-  ]
-  const sources = [
-    { l: 'google / cpc', pct: 100 },
-    { l: 'meta / paid',  pct: 66 },
-    { l: 'organic',      pct: 44 },
-    { l: '(direct)',     pct: 34 },
-  ]
-  return (
-    <PreviewCard>
-      <MiniEyebrow>Performance · last 30d</MiniEyebrow>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 6, marginBottom: 14 }}>
-        {kpis.map(k => (
-          <div key={k.l} style={{ background: SURF, borderRadius: 8, padding: '8px 10px' }}>
-            <div style={{ fontSize: 9, color: MUTED }}>{k.l}</div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: TEXT, letterSpacing: '-0.4px', marginTop: 2 }}>{k.v}</div>
-            <div style={{ fontSize: 9, color: k.up ? '#0E7C54' : '#C0123C', marginTop: 1 }}>{k.d}</div>
-          </div>
-        ))}
-      </div>
-      <MiniEyebrow>Source breakdown</MiniEyebrow>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-        {sources.map(s => (
-          <div key={s.l} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <div style={{ fontSize: 10, color: TEXT, width: 70 }}>{s.l}</div>
-            <div style={{ flex: 1, height: 4, background: SURF, borderRadius: 2 }}>
-              <div style={{ width: `${s.pct}%`, height: '100%', background: PURPLE, borderRadius: 2 }} />
-            </div>
-          </div>
-        ))}
-      </div>
-    </PreviewCard>
-  )
-}
-
-function DashboardPreview() {
-  return (
-    <PreviewCard>
-      <MiniEyebrow>Ask Vera to build it</MiniEyebrow>
-      <div style={{ background: SURF, borderRadius: 8, padding: '8px 10px', fontSize: 11, color: TEXT, marginBottom: 12, display: 'flex', alignItems: 'center', gap: 8 }}>
-        <VeraAvatar size={18} />
-        <span>&ldquo;Show me Meta ROAS by creative this month&rdquo;</span>
-      </div>
-      <div style={{ background: TINT, borderRadius: 8, padding: 12 }}>
-        <div style={{ fontSize: 10, color: MUTED, marginBottom: 8 }}>Meta · ROAS by creative</div>
-        <div style={{ display: 'flex', alignItems: 'flex-end', gap: 4, height: 70 }}>
-          {[64, 42, 88, 30, 58, 26, 72].map((h, i) => (
-            <div key={i} style={{ flex: 1, height: `${h}%`, background: i === 2 ? PURPLE : '#AFA9EC', borderRadius: 2 }} />
-          ))}
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8, fontSize: 9, color: MUTED }}>
-          {['HR-01','HR-02','HR-03','HR-04','HR-05','HR-06','HR-07'].map(l => <span key={l}>{l}</span>)}
-        </div>
-      </div>
-      <div style={{ marginTop: 12, fontSize: 11, color: MUTED }}>✨ Saved to your dashboards · pinned to top</div>
-    </PreviewCard>
-  )
-}
-
-function VeraAvatar({ size = 26 }: { size?: number }) {
-  return (
-    <div style={{
-      width: size, height: size, borderRadius: '50%', flexShrink: 0,
-      background: 'linear-gradient(135deg,#534AB7,#7C3AED)',
-      color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
-      fontSize: size * 0.42, fontWeight: 700,
-    }}>V</div>
-  )
-}
-
-function VeraChatPreview() {
-  const Bubble = ({ vera, children }: { vera?: boolean; children: React.ReactNode }) => (
-    <div style={{ display: 'flex', flexDirection: vera ? 'row' : 'row-reverse', gap: 6, alignItems: 'flex-start' }}>
-      {vera
-        ? <VeraAvatar size={22} />
-        : <div style={{ width: 22, height: 22, borderRadius: '50%', background: '#e8e8e8', color: '#555', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 9, fontWeight: 700, flexShrink: 0 }}>AM</div>
-      }
-      <div style={{
-        fontSize: 11, lineHeight: 1.55, padding: '7px 10px', borderRadius: 10, maxWidth: 240,
-        background: vera ? SURF : PURPLE, color: vera ? TEXT : '#fff',
-        borderBottomLeftRadius: vera ? 3 : 10, borderBottomRightRadius: vera ? 10 : 3,
-      }}>{children}</div>
-    </div>
-  )
-  return (
-    <PreviewCard>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
-        <VeraAvatar size={26} />
-        <div>
-          <div style={{ fontSize: 12, fontWeight: 600, color: TEXT, lineHeight: 1 }}>Vera</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginTop: 3 }}>
-            <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#22C55E' }} />
-            <span style={{ fontSize: 9, color: '#3B6D11' }}>Live · Meta · Google · GA4</span>
-          </div>
-        </div>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-        <Bubble>Why is Meta CPA up this week?</Bubble>
-        <Bubble vera>Meta CPA is up <b>+22% WoW</b>, driven by Holiday Retarget. Want me to break it down by creative?</Bubble>
-        <Bubble>Yes please.</Bubble>
-        <Bubble vera>
-          <span style={{ display: 'flex', gap: 3 }}>
-            {[0,1,2].map(i => <span key={i} style={{ width: 5, height: 5, borderRadius: '50%', background: '#aaa' }} />)}
-          </span>
-        </Bubble>
-      </div>
-    </PreviewCard>
-  )
-}
-
-function AutomatePreview() {
-  const Row = ({ k, v, accent }: { k: string; v: string; accent?: boolean }) => (
-    <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, fontSize: 12, color: TEXT }}>
-      <span style={{ fontFamily: MONO, color: MUTED, fontSize: 11, minWidth: 38 }}>{k}</span>
-      <span style={{ background: accent ? '#EEEDFE' : SURF, color: accent ? PURPLE : TEXT, padding: '2px 7px', borderRadius: 5, fontWeight: 500 }}>{v}</span>
-    </div>
-  )
-  return (
-    <PreviewCard>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
-        <div style={{ width: 28, height: 28, borderRadius: 7, background: '#534AB714', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14 }}>⚡</div>
-        <div>
-          <div style={{ fontSize: 13, fontWeight: 600, color: TEXT }}>Pause low-ROAS campaigns</div>
-          <div style={{ fontSize: 11, color: MUTED }}>Runs every 6h · across Meta + Google Ads</div>
-        </div>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-          <Row k="IF" v="ROAS" /><Row k="" v="< 1.0" accent /><Row k="FOR" v="2+ days" />
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <Row k="THEN" v="pause campaign" accent />
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <Row k="AND" v="notify #marketing-ops in Slack" />
-        </div>
-      </div>
-      <div style={{ marginTop: 14, paddingTop: 12, borderTop: `1px solid ${BORDER}`, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={{ fontSize: 11, padding: '2px 7px', borderRadius: 999, background: '#EAF3DE', color: '#3B6D11', fontWeight: 500 }}>Active</span>
-        <span style={{ fontSize: 11, color: MUTED }}>Last run: 2h ago — paused 1 campaign</span>
-      </div>
-    </PreviewCard>
-  )
-}
-
-function CampaignsPreview() {
-  const rows = [
-    { n: 'Holiday Retarget — Q4',  ch: 'M', chBg: '#EEEDFE', chFg: PURPLE, st: 'Active', spend: '$8.4k', roas: '4.1×' },
-    { n: 'Brand Search · Generic', ch: 'G', chBg: '#EFF6FF', chFg: '#2563EB', st: 'Active', spend: '$7.1k', roas: '6.8×' },
-    { n: 'Lookalike 1%',           ch: 'M', chBg: '#EEEDFE', chFg: PURPLE, st: 'Active', spend: '$4.9k', roas: '2.7×' },
-    { n: 'Performance Max',        ch: 'G', chBg: '#EFF6FF', chFg: '#2563EB', st: 'Active', spend: '$4.3k', roas: '3.2×' },
-    { n: 'Cart Abandoners',        ch: 'M', chBg: '#EEEDFE', chFg: PURPLE, st: 'Paused', spend: '$1.2k', roas: '1.4×' },
-  ]
-  return (
-    <PreviewCard style={{ padding: 0 }}>
-      <div style={{ padding: '14px 18px', borderBottom: `1px solid ${BORDER}`, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div>
-          <div style={{ fontSize: 13, fontWeight: 600, color: TEXT }}>All campaigns</div>
-          <div style={{ fontSize: 11, color: MUTED }}>Meta + Google · 14 active</div>
-        </div>
-        <button style={{ fontSize: 11, fontWeight: 500, background: PURPLE, color: '#fff', border: 'none', padding: '6px 12px', borderRadius: 8 }}>+ New campaign</button>
-      </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '24px 1fr 60px 50px 50px', padding: '8px 18px', background: TINT, fontSize: 10, color: MUTED, textTransform: 'uppercase', letterSpacing: '.4px', fontWeight: 600 }}>
-        <div /><div>Campaign</div><div>Status</div><div style={{ textAlign: 'right' }}>Spend</div><div style={{ textAlign: 'right' }}>ROAS</div>
-      </div>
-      {rows.map((r, i) => (
-        <div key={i} style={{ display: 'grid', gridTemplateColumns: '24px 1fr 60px 50px 50px', padding: '10px 18px', alignItems: 'center', borderTop: i > 0 ? `1px solid ${SURF}` : 'none' }}>
-          <div style={{ width: 18, height: 18, borderRadius: 4, background: r.chBg, color: r.chFg, fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{r.ch}</div>
-          <div style={{ fontSize: 11, color: TEXT, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{r.n}</div>
-          <div><span style={{ fontSize: 9, padding: '2px 6px', borderRadius: 4, background: r.st === 'Active' ? '#EAF3DE' : SURF, color: r.st === 'Active' ? '#3B6D11' : MUTED, fontWeight: 500 }}>{r.st}</span></div>
-          <div style={{ fontSize: 11, fontWeight: 600, color: TEXT, textAlign: 'right' }}>{r.spend}</div>
-          <div style={{ fontSize: 11, fontWeight: 600, color: TEXT, textAlign: 'right' }}>{r.roas}</div>
-        </div>
-      ))}
-    </PreviewCard>
-  )
-}
-
-function AttributionPreview() {
-  const rows = [
-    { name: 'Meta Ads',         platform: 1180, ga4: 720 },
-    { name: 'Google Ads',       platform: 940,  ga4: 1080 },
-    { name: 'Organic / Direct', platform: 0,    ga4: 540 },
-  ]
-  const max = 1180
-  return (
-    <PreviewCard>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-        <VeraAvatar size={22} />
-        <span style={{ fontSize: 12, fontWeight: 600, color: TEXT }}>Attribution discrepancy</span>
-      </div>
-      <p style={{ fontSize: 11, color: MUTED, lineHeight: 1.55, margin: '0 0 14px' }}>
-        Meta reports <b style={{ color: TEXT }}>+39%</b> more conversions than GA4 sees. Most likely cause: view-through windows.
-      </p>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        {rows.map(r => (
-          <div key={r.name}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10, marginBottom: 4 }}>
-              <span style={{ color: TEXT, fontWeight: 500 }}>{r.name}</span>
-              <span style={{ color: MUTED, fontFamily: MONO }}>{r.platform} / {r.ga4}</span>
-            </div>
-            <div style={{ display: 'flex', gap: 3, height: 16 }}>
-              <div style={{ flex: 1, background: SURF, borderRadius: 3, overflow: 'hidden' }}>
-                <div style={{ width: `${(r.platform / max) * 100}%`, height: '100%', background: PURPLE }} />
-              </div>
-              <div style={{ flex: 1, background: SURF, borderRadius: 3, overflow: 'hidden' }}>
-                <div style={{ width: `${(r.ga4 / max) * 100}%`, height: '100%', background: '#F9AB00' }} />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style={{ display: 'flex', gap: 12, marginTop: 12, fontSize: 10, color: MUTED }}>
-        <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}><span style={{ width: 8, height: 8, background: PURPLE, borderRadius: 2 }} />Platform-reported</span>
-        <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}><span style={{ width: 8, height: 8, background: '#F9AB00', borderRadius: 2 }} />GA4 observed</span>
-      </div>
-    </PreviewCard>
-  )
-}
-
-// ─── Bullet tick ──────────────────────────────────────────────────────────────
-function Tick() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 12 12" fill="none" style={{ flexShrink: 0, marginTop: 4 }}>
-      <circle cx="6" cy="6" r="6" fill="#EEEDFE"/>
-      <path d="M3.5 6L5 7.5L8.5 4" stroke={PURPLE} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <circle cx="8" cy="8" r="8" fill="#EEEDFE"/>
+      <path d="M4.5 8L7 10.5L11.5 5.5" stroke="#534AB7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   )
 }
 
-// ─── Feature row ─────────────────────────────────────────────────────────────
-interface FeatureRowProps {
-  eyebrow: string
-  title: string
-  body: string
-  bullets: string[]
-  preview: React.ReactNode
-  side?: 'left' | 'right'
-  tint?: boolean
-}
-
-function FeatureRow({ eyebrow, title, body, bullets, preview, side = 'left', tint }: FeatureRowProps) {
-  const copy = (
-    <div>
-      <div style={{
-        display: 'inline-flex', alignItems: 'center', gap: 8,
-        fontSize: 11, fontWeight: 600, color: PURPLE,
-        background: '#EEEDFE', borderRadius: 999, padding: '4px 12px',
-        letterSpacing: '0.4px', textTransform: 'uppercase', marginBottom: 16,
-      }}>
-        {eyebrow}
-      </div>
-      <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.6px', lineHeight: 1.2, margin: '0 0 16px', color: TEXT }}>{title}</h2>
-      <p style={{ fontSize: 16, color: MUTED, lineHeight: 1.7, margin: '0 0 22px' }}>{body}</p>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        {bullets.map(line => (
-          <div key={line} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 13, color: TEXT }}>
-            <Tick /><span>{line}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-  return (
-    <section style={{ background: tint ? TINT : BG, borderTop: tint ? `0.5px solid ${BORDER}` : undefined, borderBottom: tint ? `0.5px solid ${BORDER}` : undefined, padding: '80px 40px', fontFamily: FONT }}>
-      <div style={{ maxWidth: 1040, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
-        {side === 'left' ? <>{copy}<div>{preview}</div></> : <><div>{preview}</div>{copy}</>}
-      </div>
-    </section>
-  )
-}
-
-// ─── Vera in Slack ────────────────────────────────────────────────────────────
-function SlackChip({ label, value, change, up }: { label: string; value: string; change: string; up?: boolean }) {
-  return (
-    <div style={{ background: TINT, borderRadius: 8, padding: '6px 10px', border: `0.5px solid ${BORDER}`, fontSize: 11, display: 'flex', alignItems: 'baseline', gap: 8 }}>
-      <span style={{ color: MUTED }}>{label}</span>
-      <span style={{ fontWeight: 600, color: TEXT }}>{value}</span>
-      <span style={{ color: up ? '#C0123C' : '#0E7C54', fontWeight: 500 }}>{change}</span>
-    </div>
-  )
-}
-
-function SlackMessage({ avatar, avatarBg, avatarColor = '#1D1C1D', name, badge, time, body }: {
-  avatar: string; avatarBg: string; avatarColor?: string
-  name: string; badge?: string; time: string; body: React.ReactNode
-}) {
-  return (
-    <div style={{ display: 'flex', gap: 10, padding: '12px 16px', alignItems: 'flex-start' }}>
-      <div style={{ width: 32, height: 32, borderRadius: 6, flexShrink: 0, background: avatarBg, color: avatarColor, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 12 }}>{avatar}</div>
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
-          <span style={{ fontWeight: 700, fontSize: 13, color: '#1D1C1D' }}>{name}</span>
-          {badge && <span style={{ fontSize: 9, fontWeight: 700, background: '#E8E8E8', color: '#616061', padding: '1px 4px', borderRadius: 3, letterSpacing: '0.3px' }}>{badge}</span>}
-          <span style={{ fontSize: 11, color: '#9CA3AF' }}>{time}</span>
-        </div>
-        <div style={{ fontSize: 13, color: '#1D1C1D', lineHeight: 1.5 }}>{body}</div>
-      </div>
-    </div>
-  )
-}
-
-function VeraSlackRow() {
-  return (
-    <section style={{ padding: '80px 40px', background: BG, fontFamily: FONT }}>
-      <div style={{ maxWidth: 1040, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
-        {/* Copy */}
-        <div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 11, fontWeight: 600, color: PURPLE, background: '#EEEDFE', borderRadius: 999, padding: '4px 12px', letterSpacing: '0.4px', textTransform: 'uppercase', marginBottom: 16 }}>
-            Vera in Slack
-          </div>
-          <h2 style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.7px', lineHeight: 1.2, margin: '0 0 18px', color: TEXT }}>
-            Tag Vera in Slack like you would a colleague.
-          </h2>
-          <p style={{ fontSize: 16, color: MUTED, lineHeight: 1.7, margin: '0 0 24px' }}>
-            Ask &quot;@Vera why is Meta CPA up this week?&quot; — Vera reads across Meta, Google Ads and GA4, finds the drift, and replies in-thread with the receipts. No tab-switching, no dashboards to share.
-          </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {[
-              'Ask in plain English — Vera writes the SQL',
-              'Alerts when spend spikes or ROAS slips',
-              'Daily 9am brief, configurable by channel',
-            ].map(line => (
-              <div key={line} style={{ display: 'flex', gap: 10, alignItems: 'center', fontSize: 13, color: TEXT }}>
-                <Tick />{line}
-              </div>
-            ))}
-          </div>
-        </div>
-        {/* Slack thread mock */}
-        <div style={{ background: BG, borderRadius: 14, overflow: 'hidden', boxShadow: '0 10px 32px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.06)' }}>
-          <div style={{ background: '#F8F8F8', padding: '10px 16px', borderBottom: `1px solid ${BORDER}`, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#1D1C1D', fontWeight: 500 }}>
-            <span style={{ color: '#616061' }}>#</span> marketing-ops
-            <span style={{ marginLeft: 'auto', fontSize: 11, color: '#9CA3AF' }}>Slack · today</span>
-          </div>
-          <SlackMessage avatar="AM" avatarBg="#FFC107" name="Anna Møller" time="9:42 AM"
-            body={<span><span style={{ background: '#EEEDFE', color: PURPLE, padding: '0 4px', borderRadius: 4, fontWeight: 500 }}>@Vera</span> why is Meta CPA up this week?</span>} />
-          <SlackMessage avatar="V" avatarBg="linear-gradient(135deg,#534AB7,#7C3AED)" avatarColor="#fff" name="Vera" badge="APP" time="9:42 AM"
-            body={
-              <div>
-                <div>Meta CPA is up <b style={{ color: '#C0123C' }}>+22%</b> WoW, driven mostly by the <b>Holiday Retarget</b> set.</div>
-                <div style={{ marginTop: 8, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                  <SlackChip label="Holiday Retarget" value="$2,140" change="+38%" up />
-                  <SlackChip label="Always-On Prospect" value="$1,820" change="+6%" up />
-                  <SlackChip label="Lookalike 1%" value="$960" change="-4%" />
-                </div>
-                <div style={{ marginTop: 8, fontSize: 12, color: '#616061' }}>
-                  Open in Verabix → <a href="#" style={{ color: '#1264A3' }}>verabix.com/c/holiday-retarget</a>
-                </div>
-              </div>
-            } />
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── Integration section ──────────────────────────────────────────────────────
-type Platform = 'google_ads' | 'meta_ads' | 'google_analytics'
-
-const PLATFORM_CONFIG: Record<Platform, {
-  name: string; icon: React.ReactNode; description: string
-  metrics: { label: string; desc: string }[]
-  policy: React.ReactNode
-}> = {
-  google_ads: {
-    name: 'Google Ads',
-    icon: <img src="/adwords.png" alt="Google Ads" style={{ width: 26, height: 26, objectFit: 'contain' }} />,
-    description: 'Verabix connects to Google Ads through the official Google Ads API using OAuth 2.0. We never store your Google credentials — only an encrypted refresh token used exclusively to read your campaign data on your behalf.',
-    metrics: [
-      { label: 'Campaign spend',   desc: 'Track daily and lifetime spend across all campaigns and ad groups.' },
-      { label: 'Impressions',      desc: 'See how many times your ads were shown across the Google network.' },
-      { label: 'Clicks & CTR',     desc: 'Monitor click-through rates to understand ad relevance.' },
-      { label: 'Conversions',      desc: 'Track actions that matter — purchases, leads, sign-ups.' },
-      { label: 'ROAS',             desc: 'Measure return on ad spend directly in your dashboard.' },
-      { label: 'Campaign status',  desc: 'See active, paused, and ended campaigns in a unified view.' },
-    ],
-    policy: (
-      <>Verabix uses Google Ads data solely to display performance information to the authenticated account owner. We do not share, sell, or use this data for advertising, profiling, or any purpose beyond operating the Verabix dashboard. Our use of Google API data complies with the{' '}
-      <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style={{ color: PURPLE }}>Google API Services User Data Policy</a>, including the Limited Use requirements.</>
-    ),
-  },
-  meta_ads: {
-    name: 'Meta Ads',
-    icon: (
-      <svg role="img" viewBox="0 0 24 24" width="26" height="26" fill="#0467DF">
-        <path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z" />
-      </svg>
-    ),
-    description: 'Verabix connects to Meta Ads through the official Marketing API using OAuth 2.0. Your credentials never leave Meta — Verabix only receives a scoped access token used to read your ad accounts on your behalf.',
-    metrics: [
-      { label: 'Ad spend',           desc: 'Track daily and lifetime spend across all ad accounts, campaigns and ad sets.' },
-      { label: 'Reach & frequency',  desc: 'See how many unique people saw your ads and how often.' },
-      { label: 'Creative breakdown', desc: 'Compare every ad creative side by side with previews and metrics.' },
-      { label: 'Conversions',        desc: 'Pulled from your Meta Pixel and Conversions API setup.' },
-      { label: 'Audience health',    desc: 'Lookalike and retargeting audience size, freshness and overlap.' },
-      { label: 'Pause / resume',     desc: 'Toggle campaigns and ad sets without leaving Verabix.' },
-    ],
-    policy: (
-      <>Verabix uses Meta Marketing API data solely to display ad performance to the authenticated account owner. We comply with{' '}
-      <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener noreferrer" style={{ color: PURPLE }}>Meta Platform Terms</a> — your data is never shared with third parties, used for advertising, or used to train models.</>
-    ),
-  },
-  google_analytics: {
-    name: 'Google Analytics 4',
-    icon: (
-      <svg role="img" viewBox="0 0 24 24" width="26" height="26" fill="#E37400">
-        <path d="M22.84 2.9982v17.9987c.0086 1.6473-1.3197 2.9897-2.967 2.9984a2.9808 2.9808 0 01-.3677-.0208c-1.528-.226-2.6477-1.5558-2.6105-3.1V3.1204c-.0369-1.5458 1.0856-2.8762 2.6157-3.1 1.6361-.1915 3.1178.9796 3.3093 2.6158.014.1201.0208.241.0202.3619zM4.1326 18.0548c-1.6417 0-2.9726 1.331-2.9726 2.9726C1.16 22.6691 2.4909 24 4.1326 24s2.9726-1.3309 2.9726-2.9726-1.331-2.9726-2.9726-2.9726zm7.8728-9.0098c-.0171 0-.0342 0-.0513.0003-1.6495.0904-2.9293 1.474-2.891 3.1256v7.9846c0 2.167.9535 3.4825 2.3505 3.763 1.6118.3266 3.1832-.7152 3.5098-2.327.04-.1974.06-.3983.0593-.5998v-8.9585c.003-1.6474-1.33-2.9852-2.9773-2.9882z" />
-      </svg>
-    ),
-    description: 'Verabix connects to Google Analytics 4 through the official Data API. We read your event and session data on your behalf so Vera can attribute conversions across platforms — and we only request the scopes we actually use.',
-    metrics: [
-      { label: 'Sessions & users',  desc: 'Daily and lifetime sessions, new and returning users, by source.' },
-      { label: 'Source / medium',   desc: 'See exactly which channels drive traffic and conversions.' },
-      { label: 'Event tracking',    desc: 'Map any GA4 event as a conversion in Verabix dashboards.' },
-      { label: 'Funnel views',      desc: 'Step-by-step drop-off from landing to purchase.' },
-      { label: 'Attribution',       desc: 'Compare GA4-observed conversions to platform-reported ones.' },
-      { label: 'Revenue',           desc: 'Pull ecommerce revenue events into cross-channel ROAS.' },
-    ],
-    policy: (
-      <>Verabix uses Google Analytics data solely to display analytics to the authenticated property owner. Our use complies with the{' '}
-      <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style={{ color: PURPLE }}>Google API Services User Data Policy</a> and Limited Use requirements. We never sell, share or use this data for advertising.</>
-    ),
-  },
-}
-
-function IntegrationSection({ platform, tint }: { platform: Platform; tint?: boolean }) {
-  const p = PLATFORM_CONFIG[platform]
-  return (
-    <section style={{ background: tint ? TINT : BG, borderTop: `0.5px solid ${BORDER}`, borderBottom: `0.5px solid ${BORDER}`, padding: '64px 40px', fontFamily: FONT }}>
-      <div style={{ maxWidth: 720, margin: '0 auto' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
-          <div style={{ width: 44, height: 44, borderRadius: 10, background: tint ? BG : TINT, boxShadow: `0 1px 3px rgba(0,0,0,.06), 0 0 0 1px rgba(0,0,0,.06)`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            {p.icon}
-          </div>
-          <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: '-0.4px', margin: 0, color: TEXT }}>{p.name} integration</h2>
-        </div>
-        <p style={{ fontSize: 14, color: MUTED, lineHeight: 1.7, margin: '0 0 32px' }}>{p.description}</p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
-          {p.metrics.map(f => (
-            <div key={f.label} style={{ background: tint ? BG : TINT, borderRadius: 10, padding: 18, border: `0.5px solid ${BORDER}` }}>
-              <div style={{ fontSize: 13, fontWeight: 600, color: TEXT, marginBottom: 6 }}>{f.label}</div>
-              <div style={{ fontSize: 12, color: MUTED, lineHeight: 1.6 }}>{f.desc}</div>
-            </div>
-          ))}
-        </div>
-        <div style={{ marginTop: 28, padding: '16px 20px', background: '#EEEDFE', borderRadius: 10, fontSize: 13, color: '#3D369E', lineHeight: 1.6 }}>
-          <strong>Data use policy:</strong> {p.policy}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── Waitlist ─────────────────────────────────────────────────────────────────
-function Waitlist() {
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'duplicate' | 'error'>('idle')
-  const [errMsg, setErrMsg] = useState('')
-
-  async function submit(e: React.FormEvent) {
-    e.preventDefault()
-    if (!email.trim() || status === 'loading') return
-    setStatus('loading')
-    try {
-      const res = await fetch('/api/waitlist', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim() }),
-      })
-      if (res.ok)              setStatus('success')
-      else if (res.status === 409) setStatus('duplicate')
-      else { const j = await res.json(); setErrMsg(j.error || 'Something went wrong'); setStatus('error') }
-    } catch {
-      setErrMsg('Network error — please try again')
-      setStatus('error')
-    }
-  }
-
-  return (
-    <section id="waitlist" style={{ background: TINT, borderTop: `0.5px solid ${BORDER}`, padding: '100px 40px', fontFamily: FONT }}>
-      <div style={{ maxWidth: 520, margin: '0 auto', textAlign: 'center' }}>
-        <div style={{ display: 'inline-block', fontSize: 12, fontWeight: 500, color: PURPLE, background: '#EEEDFE', borderRadius: 20, padding: '4px 14px', marginBottom: 20, letterSpacing: '0.2px' }}>
-          Early access
-        </div>
-        <h2 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.8px', margin: '0 0 14px', color: TEXT }}>Get early access</h2>
-        <p style={{ fontSize: 16, color: MUTED, margin: '0 0 40px', lineHeight: 1.7 }}>
-          We&apos;re onboarding users gradually. Sign up and we&apos;ll reach out when your spot is ready.
-        </p>
-
-        {status === 'success' ? (
-          <div style={{ background: '#EAF3DE', border: '0.5px solid #C0DD97', borderRadius: 14, padding: 32 }}>
-            <div style={{ fontSize: 16, fontWeight: 700, color: '#1A3D0A', marginBottom: 8 }}>You&apos;re on the list!</div>
-            <div style={{ fontSize: 14, color: '#3B6D11' }}>We&apos;ll reach out when your spot is ready.</div>
-          </div>
-        ) : (
-          <form onSubmit={submit}>
-            <div style={{ display: 'flex', gap: 8, background: BG, border: `0.5px solid ${BORDER}`, borderRadius: 12, padding: 6, boxShadow: '0 1px 3px rgba(0,0,0,.06)' }}>
-              <input
-                type="email" value={email} required
-                onChange={e => { setEmail(e.target.value); if (status !== 'idle') setStatus('idle') }}
-                placeholder="your@email.com"
-                disabled={status === 'loading'}
-                style={{ flex: 1, border: 'none', background: 'transparent', padding: '10px 12px', fontSize: 14, color: TEXT, outline: 'none', fontFamily: FONT }}
-              />
-              <button type="submit" disabled={status === 'loading' || !email.trim()} style={{
-                padding: '10px 24px', background: status === 'loading' ? '#9490cc' : PURPLE, border: 'none', borderRadius: 8, color: '#fff',
-                fontSize: 14, fontWeight: 600, cursor: status === 'loading' ? 'not-allowed' : 'pointer', whiteSpace: 'nowrap',
-              }}>
-                {status === 'loading' ? 'Joining…' : 'Join waitlist'}
-              </button>
-            </div>
-            {status === 'duplicate' && <p style={{ marginTop: 10, fontSize: 13, color: MUTED }}>This email is already on the waitlist.</p>}
-            {status === 'error'     && <p style={{ marginTop: 10, fontSize: 13, color: '#C0123C' }}>{errMsg}</p>}
-            <p style={{ marginTop: 12, fontSize: 12, color: '#9CA3AF' }}>No credit card required. No spam.</p>
-          </form>
-        )}
-      </div>
-    </section>
-  )
-}
-
-
-// ─── Page ─────────────────────────────────────────────────────────────────────
 export default function LandingPage() {
   return (
-    <div style={{ background: BG, fontFamily: FONT }}>
+    <>
       <Header />
       <main>
-        <Hero />
 
-        {/* The product */}
-        <section id="features" style={{ background: BG, padding: '40px 40px 0', fontFamily: FONT }}>
-          <div style={{ maxWidth: 1040, margin: '0 auto', textAlign: 'center' }}>
-            <div style={{ fontSize: 12, fontWeight: 500, color: MUTED, textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: 10 }}>The product</div>
-            <h2 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.8px', lineHeight: 1.2, margin: '0 0 14px', color: TEXT }}>
-              Everything a marketing team needs, in one place.
-            </h2>
-            <p style={{ fontSize: 16, color: MUTED, lineHeight: 1.7, margin: '0 auto', maxWidth: 540 }}>
-              Seven surfaces. One source of truth. Pick what you need from the sidebar — Vera is always one tab away.
-            </p>
+        {/* ── Hero ── */}
+        <section className="hero">
+          <div className="blob"></div>
+          <div className="wrap">
+            <div className="herotop">
+              <span className="eyebrow">Marketing analytics, unified</span>
+              <h1>See what&apos;s actually driving results.</h1>
+              <p className="lead">Verabix connects Meta Ads, Google Ads and Google Analytics into one dashboard — and Vera, your AI analyst, explains the numbers so you don&apos;t have to.</p>
+              <div className="chantabs">
+                <span className="chantab active"><span className="sw" style={{background:'#0866FF'}}></span>Meta Ads</span>
+                <span className="chantab"><img className="pico" src="/icons/adwords.png" alt=""/>Google Ads</span>
+                <span className="chantab"><span className="sw" style={{background:'#F9AB00'}}></span>Google Analytics</span>
+              </div>
+              <div className="ctarow">
+                <a className="btn btn-primary" href="https://app.verabix.com">Start free →</a>
+                <a className="btn btn-ghost" href="/book-demo">Book a demo</a>
+              </div>
+              <div className="trustline">
+                <div className="stack">
+                  <div className="av">A</div>
+                  <div className="av">B</div>
+                  <div className="av">C</div>
+                </div>
+                Marketing teams and agencies across the Nordics run on Verabix
+              </div>
+            </div>
+            <div className="shot shotwide">
+              <div className="chromebar">
+                <div className="dots"><span></span><span></span><span></span></div>
+                <div className="url">app.verabix.com/campaigns</div>
+                <div style={{width:36}}></div>
+              </div>
+              <img src="/shots/campaigns.png" alt="Verabix campaigns view — every Meta Ads and Google Ads campaign in one table with spend, CTR, CPC and impressions"/>
+            </div>
           </div>
         </section>
 
-        <FeatureRow tint={false} eyebrow="Overview" title="One view for spend, ROAS and what Vera is watching."
-          body="Every connected channel — Meta, Google Ads, GA4 — feeds into one dashboard. KPIs, source breakdown, top campaigns, active automations and Vera's open recommendations, all on one page."
-          bullets={['KPI chips across paid + organic — 30, 7 or custom range', 'Top campaigns ranked by spend across every channel', 'Active automations and their latest runs']}
-          preview={<OverviewPreview />} side="left" />
-
-        <FeatureRow tint eyebrow="Dashboard" title="Build dashboards from prompts. No drag-drop, no PowerBI."
-          body="Tell Vera what you want to see. She writes the query, picks the chart, pins it to your dashboard. The first useful dashboard takes 90 seconds — not a week of consulting."
-          bullets={['"Show me Meta ROAS by creative this month" — done', 'Mix metrics from Meta, Google Ads and GA4 in one chart', 'Pin to your home dashboard or share via Slack']}
-          preview={<DashboardPreview />} side="right" />
-
-        <FeatureRow tint={false} eyebrow="Vera" title="Your new colleague who already read all your data."
-          body="Vera is the chat surface inside Verabix — she sees every connected source, knows your campaigns by name, and answers in plain English. Ask anything, no SQL required."
-          bullets={['Cross-channel reasoning — not just one platform at a time', 'Cites the numbers so you can double-check her work', 'Remembers your campaigns, brand names and goals']}
-          preview={<VeraChatPreview />} side="left" />
-
-        <VeraSlackRow />
-
-        <FeatureRow tint eyebrow="Automate" title="Set the rules once. Vera enforces them everywhere."
-          body="Global rules across every ad account. ROAS dips below 1.0 for two days? Pause the campaign, ping Slack, log the action. No more babysitting dashboards on weekends."
-          bullets={['IF / THEN editor — readable, no code', 'Runs across Meta + Google Ads simultaneously', 'Audit log of every action Vera takes on your behalf']}
-          preview={<AutomatePreview />} side="right" />
-
-        <FeatureRow tint={false} eyebrow="Campaigns" title="See — and launch — every campaign without leaving."
-          body="A unified table of every Meta and Google campaign with the same columns and the same controls. Create new campaigns here too, no jumping to Ads Manager."
-          bullets={['One table for Meta + Google · sortable, searchable', 'Pause, resume and edit budgets in-app', 'Launch new campaigns with Vera\'s suggested targeting']}
-          preview={<CampaignsPreview />} side="left" />
-
-        <FeatureRow tint eyebrow="Attribution" title="Where the money actually came from."
-          body="Meta says it drove 1,180 conversions. GA4 says 720. Vera shows the gap, explains why (view-through? cookie loss? dedupe?), and tells you which platform to trust for budget decisions."
-          bullets={['Side-by-side: platform-reported vs GA4-observed', 'Vera explains the discrepancy in plain English', 'Reallocation suggestions backed by the data']}
-          preview={<AttributionPreview />} side="right" />
-
-        {/* The integrations */}
-        <section id="integrations" style={{ background: BG, padding: '64px 40px 0', fontFamily: FONT }}>
-          <div style={{ maxWidth: 1040, margin: '0 auto', textAlign: 'center' }}>
-            <div style={{ fontSize: 12, fontWeight: 500, color: MUTED, textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: 10 }}>The integrations</div>
-            <h2 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.8px', lineHeight: 1.2, margin: '0 0 14px', color: TEXT }}>
-              Built on the official APIs.
-            </h2>
-            <p style={{ fontSize: 16, color: MUTED, lineHeight: 1.7, margin: '0 auto', maxWidth: 560 }}>
-              OAuth 2.0 only. Encrypted refresh tokens. No data shared with third parties. The platforms call us a partner — your CISO can call us compliant.
-            </p>
+        {/* ── Stat band ── */}
+        <section className="statband">
+          <div className="wrap statgrid">
+            <div><div className="num">3 → 1</div><div className="lbl">platforms in one dashboard</div></div>
+            <div><div className="num">6+ hrs</div><div className="lbl">saved per client, per month</div></div>
+            <div><div className="num">&lt;30s</div><div className="lbl">from raw ad data to a decision</div></div>
+            <div><div className="num">24/7</div><div className="lbl">automation rules running</div></div>
           </div>
         </section>
 
-        <IntegrationSection platform="google_ads"       tint />
-        <IntegrationSection platform="meta_ads"         tint={false} />
-        <IntegrationSection platform="google_analytics" tint />
+        {/* ── Logo bar ── */}
+        <section className="logobar">
+          <div className="wrap">
+            <div className="lbl">Trusted by agencies and in-house teams</div>
+            <div className="logogrid">
+              <span className="lg">NORDLY</span>
+              <span className="lg">Fjord &amp; Co</span>
+              <span className="lg">Lumen Retail</span>
+              <span className="lg">Kaskade</span>
+              <span className="lg">Practera</span>
+              <span className="lg">Vantage Goods</span>
+            </div>
+          </div>
+        </section>
 
-        <Waitlist />
+        {/* ── Product grid ── */}
+        <section className="sec">
+          <div className="wrap">
+            <div className="sechead">
+              <span className="tag">The platform</span>
+              <h2>Everything a performance team needs, in one product</h2>
+              <p>Data, analysis and execution — no tab-switching, no exports, no arguing about which number is right.</p>
+            </div>
+            <div className="cardgrid c3">
+              <a className="card" href="/product/cross-channel-dashboard">
+                <div className="ic">◫</div>
+                <h3>Cross-channel Dashboard</h3>
+                <p>Meta Ads, Google Ads and GA4 in one view — same date ranges, same metrics, one source of truth.</p>
+                <span className="more">Explore →</span>
+              </a>
+              <a className="card" href="/product/vera-ai">
+                <div className="ic">V</div>
+                <h3>Vera AI</h3>
+                <p>Ask questions in plain English. Vera reasons across every channel and cites the exact numbers.</p>
+                <span className="more">Explore →</span>
+              </a>
+              <a className="card" href="/product/instant-campaigns">
+                <div className="ic">⚡</div>
+                <h3>Instant Campaign Creation</h3>
+                <p>Paste a landing page URL. Vera writes the copy, sets targeting and builds a launch-ready campaign.</p>
+                <span className="more">Explore →</span>
+              </a>
+              <a className="card" href="/product/advanced-wizard">
+                <div className="ic">⚙</div>
+                <h3>Advanced Campaign Wizard</h3>
+                <p>Six guided steps with full manual control over audience, budget, creative and platform.</p>
+                <span className="more">Explore →</span>
+              </a>
+              <a className="card" href="/product/automations">
+                <div className="ic">↻</div>
+                <h3>Automations</h3>
+                <p>Rules that pause campaigns, scale budgets and ping Slack — across Meta and Google at once.</p>
+                <span className="more">Explore →</span>
+              </a>
+              <a className="card" href="/product/multi-workspace">
+                <div className="ic">⊞</div>
+                <h3>Multi-workspace &amp; Slack</h3>
+                <p>Isolated workspace per client or market, and Vera answering questions right inside Slack.</p>
+                <span className="more">Explore →</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Feature: Dashboard ── */}
+        <section className="sec">
+          <div className="wrap split">
+            <div className="scopy">
+              <span className="tag">Unified data</span>
+              <h2>One view for spend, ROAS and what actually matters.</h2>
+              <p className="body">Stop toggling between Ads Manager, Google Ads and GA4. Verabix pulls all three into a single dashboard your whole team reads the same way.</p>
+              <div className="checks">
+                <div><CheckIcon /><span>KPI chips for spend, ROAS, CPA and conversions across Meta and Google simultaneously.</span></div>
+                <div><CheckIcon /><span>Source breakdown showing which channel really drives traffic and revenue.</span></div>
+                <div><CheckIcon /><span>Build any custom view in 90 seconds by asking Vera — no drag-and-drop required.</span></div>
+              </div>
+              <a className="btn btn-outline" href="/product/cross-channel-dashboard">See the dashboard →</a>
+            </div>
+            <div className="smock">
+              <div className="shotpan" style={{'--w':'121.8%','--x':'-16.9%','--ar':'1.75'} as React.CSSProperties}>
+                <img src="/shots/overview-performance.jpg" alt="Verabix overview — connected data sources and paid-channel performance KPIs across Meta Ads, Google Ads and GA4"/>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Feature: Vera AI ── */}
+        <section className="sec">
+          <div className="wrap split rev">
+            <div className="scopy">
+              <span className="tag">Vera AI</span>
+              <h2>The marketing analyst who already read all your data.</h2>
+              <p className="body">Vera connects to every source you&apos;ve linked and answers in plain English — citing exact numbers so you can double-check every claim. In the app, and in Slack.</p>
+              <div className="checks">
+                <div><CheckIcon /><span>Cross-channel reasoning — Meta, Google Ads and GA4 seen simultaneously.</span></div>
+                <div><CheckIcon /><span>Proactive alerts when spend spikes or ROAS drops unexpectedly.</span></div>
+                <div><CheckIcon /><span>Tag @Vera from any Slack channel and get an answer without opening a tab.</span></div>
+              </div>
+              <a className="btn btn-outline" href="/product/vera-ai">Meet Vera →</a>
+            </div>
+            <div className="smock">
+              <div className="shotpan" style={{'--w':'120.3%','--x':'-15.9%','--ar':'1.77'} as React.CSSProperties}>
+                <img src="/shots/vera-chat.jpg" alt="Vera answering which campaign to scale, citing spend, conversions and ROAS from the connected accounts"/>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Feature: Campaigns ── */}
+        <section className="sec">
+          <div className="wrap split">
+            <div className="scopy">
+              <span className="tag">Campaign creation</span>
+              <h2>From landing page URL to live campaign in minutes.</h2>
+              <p className="body">Paste your URL, pick a goal, and Vera builds a complete campaign — AI-generated headlines, ad copy and targeting — ready to push to Meta Ads and Google Ads without leaving Verabix.</p>
+              <div className="checks">
+                <div><CheckIcon /><span>Meta (image + video) and Google Ads (Search + PMax) launched simultaneously.</span></div>
+                <div><CheckIcon /><span>Need full control? The Advanced Wizard exposes every audience and budget setting.</span></div>
+                <div><CheckIcon /><span>Review every line of copy before launch — you stay in control.</span></div>
+              </div>
+              <a className="btn btn-outline" href="/product/instant-campaigns">See campaign creation →</a>
+            </div>
+            <div className="smock">
+              <div className="mock">
+                <div className="mocklabel">New campaign · step 4 of 4</div>
+                <div style={{display:'flex',flexDirection:'column',gap:10}}>
+                  <div className="step-item">
+                    <span className="step-num" style={{background:'var(--purple-bg)',color:'var(--purple)'}}>1</span>
+                    <div className="step-body"><div className="st">Paste your URL</div><div className="sd">Vera reads your page and understands the offer.</div></div>
+                  </div>
+                  <div className="step-item">
+                    <span className="step-num" style={{background:'var(--purple-bg)',color:'var(--purple)'}}>2</span>
+                    <div className="step-body"><div className="st">Pick a goal</div><div className="sd">Sales, traffic, leads or awareness.</div></div>
+                  </div>
+                  <div className="step-item">
+                    <span className="step-num" style={{background:'var(--purple-bg)',color:'var(--purple)'}}>3</span>
+                    <div className="step-body"><div className="st">Add creatives</div><div className="sd">Upload images or video, or let Vera suggest visuals.</div></div>
+                  </div>
+                  <div className="step-item">
+                    <span className="step-num" style={{background:'var(--purple)',color:'#fff'}}>4</span>
+                    <div className="step-body active"><div className="st">Review &amp; launch</div><div className="sd">See the complete brief. Launch to Meta, Google, or both.</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── How it works ── */}
+        <section className="sec sec-tint">
+          <div className="wrap">
+            <div className="sechead">
+              <span className="tag">How it works</span>
+              <h2>Connected in five minutes. Answers on day one.</h2>
+            </div>
+            <div className="steprow">
+              <div className="step">
+                <div className="n">STEP 01</div>
+                <h4>Connect your accounts</h4>
+                <p>Link Meta Ads, Google Ads and Google Analytics with OAuth. Pick which accounts and properties belong to each workspace.</p>
+              </div>
+              <div className="step">
+                <div className="n">STEP 02</div>
+                <h4>Vera reads everything</h4>
+                <p>Campaigns, ad sets, creatives, sessions and conversions are unified under one set of metrics and date ranges.</p>
+              </div>
+              <div className="step">
+                <div className="n">STEP 03</div>
+                <h4>Ask, act, automate</h4>
+                <p>Ask Vera what changed, launch the next campaign, and set rules that act on your behalf while you sleep.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Solutions ── */}
+        <section className="sec">
+          <div className="wrap">
+            <div className="sechead">
+              <span className="tag">Solutions</span>
+              <h2>Built for the way your team works</h2>
+            </div>
+            <div className="cardgrid c3">
+              <a className="card" href="/solutions/agencies">
+                <div className="ic">◇</div>
+                <h3>Ad Agencies</h3>
+                <p>One isolated workspace per client, unified Meta + Google reporting, and @Vera in Slack for instant client answers.</p>
+                <span className="more">For agencies →</span>
+              </a>
+              <a className="card" href="/solutions/marketing-teams">
+                <div className="ic">△</div>
+                <h3>In-house Marketing</h3>
+                <p>Own your data without hiring an analyst. Daily Slack briefs and honest attribution before your Monday meeting.</p>
+                <span className="more">For in-house teams →</span>
+              </a>
+              <a className="card" href="/solutions/ecommerce">
+                <div className="ic">○</div>
+                <h3>E-commerce Brands</h3>
+                <p>Per-market ROAS, creative fatigue detection and platform-vs-GA4 attribution across every country you sell in.</p>
+                <span className="more">For e-commerce →</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Testimonials ── */}
+        <section className="sec">
+          <div className="wrap">
+            <div className="sechead">
+              <h2>Teams that stopped exporting spreadsheets</h2>
+            </div>
+            <div className="tgrid">
+              <div className="tcard">
+                <div className="tavatar">MH</div>
+                <blockquote>&ldquo;Verabix cut our weekly client reporting from half a day to fifteen minutes. Vera writes the brief, not us.&rdquo;</blockquote>
+                <div className="who"><b>Mette Holm</b>Head of Growth, Fjord &amp; Co</div>
+              </div>
+              <div className="tcard">
+                <div className="tavatar">JB</div>
+                <blockquote>&ldquo;Vera caught a €4,000/month budget leak in a retargeting set our old dashboard never flagged.&rdquo;</blockquote>
+                <div className="who"><b>Jonas Berg</b>CMO, Lumen Retail</div>
+              </div>
+              <div className="tcard">
+                <div className="tavatar">AL</div>
+                <blockquote>&ldquo;The attribution comparison ended a six-month argument about whether Meta was lying to us. It was.&rdquo;</blockquote>
+                <div className="who"><b>Anna Lindqvist</b>Performance Lead, Kaskade</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── CTA band ── */}
+        <section className="ctaband">
+          <div className="wrap">
+            <h2>See the truth about your marketing.</h2>
+            <p>Connect your ad accounts and get your first answer in minutes. Free to start, no credit card required.</p>
+            <div className="ctarow">
+              <a className="btn btn-white" href="https://app.verabix.com">Sign up free →</a>
+              <a className="btn btn-onnavy" href="/book-demo">Book a demo</a>
+            </div>
+          </div>
+        </section>
+
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
