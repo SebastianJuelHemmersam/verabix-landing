@@ -84,10 +84,6 @@ export default function LandingPage() {
         <section className="hero-v2">
           <div className="hero-v2-inner">
             <div className="hero-v2-copy">
-              <div className="hero-eyebrow">
-                <span className="hero-dot"></span>
-                <span className="hero-eyebrow-text">All-in-one marketing platform</span>
-              </div>
               <h1 className="hero-h1">All your marketing tools. One intelligent core.</h1>
               <p className="hero-body">Ads, email, SMS and analytics in one place — with Vera, the AI that finds the next optimization and asks before anything goes live.</p>
               <div className="hero-ctas">
