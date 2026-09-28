@@ -4,8 +4,72 @@ import Footer from '@/components/Footer'
 function CheckIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <circle cx="8" cy="8" r="8" fill="#EEEDFE"/>
-      <path d="M4.5 8L7 10.5L11.5 5.5" stroke="#534AB7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="8" cy="8" r="8" fill="#EEF1FA"/>
+      <path d="M4.5 8L7 10.5L11.5 5.5" stroke="#1B3A8C" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+
+function HeroVisual() {
+  return (
+    <svg viewBox="0 0 580 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vera connecting Meta Ads, Google Ads, GA4 and Slack">
+      {/* Connection paths */}
+      <path id="vp0" d="M151 72C310 72 310 220 404 220" fill="none" stroke="#EBEBEB" strokeWidth="1.5"/>
+      <path id="vp1" d="M151 171C310 171 310 220 404 220" fill="none" stroke="#EBEBEB" strokeWidth="1.5"/>
+      <path id="vp2" d="M151 270C310 270 310 220 404 220" fill="none" stroke="#EBEBEB" strokeWidth="1.5"/>
+      <path id="vp3" d="M151 368C310 368 310 220 404 220" fill="none" stroke="#EBEBEB" strokeWidth="1.5"/>
+
+      {/* Traveling dots — data flowing toward Vera */}
+      <circle r="3.5" fill="#000">
+        <animateMotion dur="3s" begin="0s" repeatCount="indefinite">
+          <mpath href="#vp0"/>
+        </animateMotion>
+      </circle>
+      <circle r="3.5" fill="#000">
+        <animateMotion dur="3.35s" begin="-0.6s" repeatCount="indefinite">
+          <mpath href="#vp1"/>
+        </animateMotion>
+      </circle>
+      <circle r="3.5" fill="#1B3A8C">
+        <animateMotion dur="3.7s" begin="-1.2s" repeatCount="indefinite">
+          <mpath href="#vp2"/>
+        </animateMotion>
+      </circle>
+      <circle r="3.5" fill="#000">
+        <animateMotion dur="4.05s" begin="-1.8s" repeatCount="indefinite">
+          <mpath href="#vp3"/>
+        </animateMotion>
+      </circle>
+
+      {/* Channel pills */}
+      <rect x="1" y="52" width="150" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
+      <circle cx="21" cy="72" r="5" fill="#D6D6D6"/>
+      <text x="34" y="72" fontFamily="'Mona Sans Variable','Mona Sans',system-ui,sans-serif" fontSize="14" fontWeight="500" fill="#000" dominantBaseline="central">Meta Ads</text>
+
+      <rect x="1" y="151" width="150" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
+      <circle cx="21" cy="171" r="5" fill="#D6D6D6"/>
+      <text x="34" y="171" fontFamily="'Mona Sans Variable','Mona Sans',system-ui,sans-serif" fontSize="14" fontWeight="500" fill="#000" dominantBaseline="central">Google Ads</text>
+
+      <rect x="1" y="250" width="150" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
+      <circle cx="21" cy="270" r="5" fill="#D6D6D6"/>
+      <text x="34" y="270" fontFamily="'Mona Sans Variable','Mona Sans',system-ui,sans-serif" fontSize="14" fontWeight="500" fill="#000" dominantBaseline="central">GA4</text>
+
+      <rect x="1" y="348" width="150" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
+      <circle cx="21" cy="368" r="5" fill="#D6D6D6"/>
+      <text x="34" y="368" fontFamily="'Mona Sans Variable','Mona Sans',system-ui,sans-serif" fontSize="14" fontWeight="500" fill="#000" dominantBaseline="central">Slack</text>
+
+      {/* Vera node — two concentric circles */}
+      <circle cx="480" cy="220" r="94" fill="none" stroke="#F0F0F0" strokeWidth="1"/>
+      <circle cx="480" cy="220" r="78" fill="#FAFAFA" stroke="#EBEBEB" strokeWidth="1"/>
+
+      {/* Logo mark centered at (480, 220) — 44px rendered size */}
+      <g transform="translate(458,198) scale(0.6875)">
+        <rect x="3" y="3" width="58" height="58" rx="16" fill="#000"/>
+        <path d="M19 23L32 45L45 23" fill="none" stroke="#fff" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="49" cy="15" r="4.5" fill="#1B3A8C"/>
+      </g>
+
+      <text x="480" y="258" textAnchor="middle" dominantBaseline="central" fontFamily="'JetBrains Mono',ui-monospace,monospace" fontSize="11" letterSpacing="1" fill="#666666">VERA</text>
     </svg>
   )
 }
@@ -16,39 +80,37 @@ export default function LandingPage() {
       <Header />
       <main>
 
-        {/* ── Hero ── */}
-        <section className="hero">
-          <div className="blob"></div>
-          <div className="wrap">
-            <div className="herotop">
-              <span className="eyebrow">Marketing analytics, unified</span>
-              <h1>See what&apos;s actually driving results.</h1>
-              <p className="lead">Verabix connects Meta Ads, Google Ads and Google Analytics into one dashboard — and Vera, your AI analyst, explains the numbers so you don&apos;t have to.</p>
-              <div className="chantabs">
-                <span className="chantab active"><span className="sw" style={{background:'#0866FF'}}></span>Meta Ads</span>
-                <span className="chantab"><img className="pico" src="/icons/adwords.png" alt=""/>Google Ads</span>
-                <span className="chantab"><span className="sw" style={{background:'#F9AB00'}}></span>Google Analytics</span>
+        {/* ── Hero v2 ── */}
+        <section className="hero-v2">
+          <div className="hero-v2-inner">
+            <div className="hero-v2-copy">
+              <div className="hero-eyebrow">
+                <span className="hero-dot"></span>
+                <span className="hero-eyebrow-text">All-in-one marketing platform</span>
               </div>
-              <div className="ctarow">
-                <a className="btn btn-primary" href="https://app.verabix.com">Start free →</a>
-                <a className="btn btn-ghost" href="/book-demo">Book a demo</a>
+              <h1 className="hero-h1">All your marketing tools. One intelligent core.</h1>
+              <p className="hero-body">Ads, email, SMS and analytics in one place — with Vera, the AI that finds the next optimization and asks before anything goes live.</p>
+              <div className="hero-ctas">
+                <a className="btn btn-primary" href="mailto:admin@verabix.com?subject=Book%20a%20demo">Book a demo ↗</a>
+                <a className="btn btn-ghost" href="#how-it-works">See how it works</a>
               </div>
-              <div className="trustline">
-                <div className="stack">
-                  <div className="av">A</div>
-                  <div className="av">B</div>
-                  <div className="av">C</div>
+              <div className="hero-stats">
+                <div className="hero-stat">
+                  <div className="hero-stat-num">4+</div>
+                  <div className="hero-stat-lbl">channels in one login</div>
                 </div>
-                Marketing teams and agencies across the Nordics run on Verabix
+                <div className="hero-stat">
+                  <div className="hero-stat-num">24/7</div>
+                  <div className="hero-stat-lbl">optimization by Vera</div>
+                </div>
+                <div className="hero-stat">
+                  <div className="hero-stat-num">100%</div>
+                  <div className="hero-stat-lbl">approved by you</div>
+                </div>
               </div>
             </div>
-            <div className="shot shotwide">
-              <div className="chromebar">
-                <div className="dots"><span></span><span></span><span></span></div>
-                <div className="url">app.verabix.com/campaigns</div>
-                <div style={{width:36}}></div>
-              </div>
-              <img src="/shots/campaigns.png" alt="Verabix campaigns view — every Meta Ads and Google Ads campaign in one table with spend, CTR, CPC and impressions"/>
+            <div className="hero-visual">
+              <HeroVisual />
             </div>
           </div>
         </section>
@@ -190,19 +252,19 @@ export default function LandingPage() {
                 <div className="mocklabel">New campaign · step 4 of 4</div>
                 <div style={{display:'flex',flexDirection:'column',gap:10}}>
                   <div className="step-item">
-                    <span className="step-num" style={{background:'var(--purple-bg)',color:'var(--purple)'}}>1</span>
+                    <span className="step-num" style={{background:'var(--blue-50)',color:'var(--ink)'}}>1</span>
                     <div className="step-body"><div className="st">Paste your URL</div><div className="sd">Vera reads your page and understands the offer.</div></div>
                   </div>
                   <div className="step-item">
-                    <span className="step-num" style={{background:'var(--purple-bg)',color:'var(--purple)'}}>2</span>
+                    <span className="step-num" style={{background:'var(--blue-50)',color:'var(--ink)'}}>2</span>
                     <div className="step-body"><div className="st">Pick a goal</div><div className="sd">Sales, traffic, leads or awareness.</div></div>
                   </div>
                   <div className="step-item">
-                    <span className="step-num" style={{background:'var(--purple-bg)',color:'var(--purple)'}}>3</span>
+                    <span className="step-num" style={{background:'var(--blue-50)',color:'var(--ink)'}}>3</span>
                     <div className="step-body"><div className="st">Add creatives</div><div className="sd">Upload images or video, or let Vera suggest visuals.</div></div>
                   </div>
                   <div className="step-item">
-                    <span className="step-num" style={{background:'var(--purple)',color:'#fff'}}>4</span>
+                    <span className="step-num" style={{background:'#000',color:'#fff'}}>4</span>
                     <div className="step-body active"><div className="st">Review &amp; launch</div><div className="sd">See the complete brief. Launch to Meta, Google, or both.</div></div>
                   </div>
                 </div>
@@ -212,7 +274,7 @@ export default function LandingPage() {
         </section>
 
         {/* ── How it works ── */}
-        <section className="sec sec-tint">
+        <section id="how-it-works" className="sec sec-tint">
           <div className="wrap">
             <div className="sechead">
               <span className="tag">How it works</span>
@@ -299,9 +361,9 @@ export default function LandingPage() {
           <div className="wrap">
             <h2>See the truth about your marketing.</h2>
             <p>Connect your ad accounts and get your first answer in minutes. Free to start, no credit card required.</p>
-            <div className="ctarow">
+            <div className="ctarow" style={{display:'flex',gap:12,justifyContent:'center'}}>
               <a className="btn btn-white" href="https://app.verabix.com">Sign up free →</a>
-              <a className="btn btn-onnavy" href="/book-demo">Book a demo</a>
+              <a className="btn btn-onnavy" href="mailto:admin@verabix.com?subject=Book%20a%20demo">Book a demo ↗</a>
             </div>
           </div>
         </section>
