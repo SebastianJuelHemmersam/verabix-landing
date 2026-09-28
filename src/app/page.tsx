@@ -1,15 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-function CheckIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <circle cx="8" cy="8" r="8" fill="#EEF1FA"/>
-      <path d="M4.5 8L7 10.5L11.5 5.5" stroke="#1B3A8C" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  )
-}
-
 function HeroVisual() {
   const FS = "'Mona Sans Variable','Mona Sans',system-ui,sans-serif"
   const FM = "'JetBrains Mono',ui-monospace,monospace"
@@ -161,157 +152,122 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* ── Stat band ── */}
-        <section className="statband">
-          <div className="wrap statgrid">
-            <div><div className="num">3 → 1</div><div className="lbl">platforms in one dashboard</div></div>
-            <div><div className="num">6+ hrs</div><div className="lbl">saved per client, per month</div></div>
-            <div><div className="num">&lt;30s</div><div className="lbl">from raw ad data to a decision</div></div>
-            <div><div className="num">24/7</div><div className="lbl">automation rules running</div></div>
+        {/* ── 02 Works with ── */}
+        <section className="works">
+          <div className="wrap wrow">
+            <span className="mono">Works with</span>
+            <div className="wl">
+              <span>Meta Ads</span>
+              <span>Google Ads</span>
+              <span>Google Analytics 4</span>
+              <span>Slack</span>
+            </div>
           </div>
         </section>
 
-        {/* ── Logo bar ── */}
-        <section className="logobar">
+        {/* ── 03 Problem ── */}
+        <section className="sec" id="loop">
           <div className="wrap">
-            <div className="lbl">Trusted by agencies and in-house teams</div>
-            <div className="logogrid">
-              <span className="lg">NORDLY</span>
-              <span className="lg">Fjord &amp; Co</span>
-              <span className="lg">Lumen Retail</span>
-              <span className="lg">Kaskade</span>
-              <span className="lg">Practera</span>
-              <span className="lg">Vantage Goods</span>
+            <div className="shead">
+              <span className="mono ink">The problem</span>
+              <h2>Three platforms.<br/>Three answers.<br/>Zero decisions.</h2>
             </div>
+            <div className="truth">
+              <div className="tc">
+                <span className="mono">Meta Ads says</span>
+                <b>1,284</b>
+                <small>purchases</small>
+              </div>
+              <div className="tc">
+                <span className="mono">Google Ads says</span>
+                <b>912</b>
+                <small>purchases</small>
+              </div>
+              <div className="tc">
+                <span className="mono">GA4 says</span>
+                <b>1,041</b>
+                <small>purchases</small>
+              </div>
+              <div className="tc v">
+                <span className="mono">Verabix shows</span>
+                <b>Why.</b>
+                <small>Same date range, same definitions, side by side — so you can see where they disagree and decide what to trust.</small>
+              </div>
+            </div>
+            <p className="note">Each platform grades its own homework. Verabix puts them on the same page.</p>
           </div>
         </section>
 
-        {/* ── Product grid ── */}
-        <section className="sec">
-          <div className="wrap">
-            <div className="sechead">
-              <span className="tag">The platform</span>
-              <h2>Everything a performance team needs, in one product</h2>
-              <p>Data, analysis and execution — no tab-switching, no exports, no arguing about which number is right.</p>
-            </div>
-            <div className="cardgrid c3">
-              <a className="card" href="/product/cross-channel-dashboard">
-                <div className="ic">◫</div>
-                <h3>Cross-channel Dashboard</h3>
-                <p>Meta Ads, Google Ads and GA4 in one view — same date ranges, same metrics, one source of truth.</p>
-                <span className="more">Explore →</span>
-              </a>
-              <a className="card" href="/product/vera-ai">
-                <div className="ic">V</div>
-                <h3>Vera AI</h3>
-                <p>Ask questions in plain English. Vera reasons across every channel and cites the exact numbers.</p>
-                <span className="more">Explore →</span>
-              </a>
-              <a className="card" href="/product/instant-campaigns">
-                <div className="ic">⚡</div>
-                <h3>Instant Campaign Creation</h3>
-                <p>Paste a landing page URL. Vera writes the copy, sets targeting and builds a launch-ready campaign.</p>
-                <span className="more">Explore →</span>
-              </a>
-              <a className="card" href="/product/advanced-wizard">
-                <div className="ic">⚙</div>
-                <h3>Advanced Campaign Wizard</h3>
-                <p>Six guided steps with full manual control over audience, budget, creative and platform.</p>
-                <span className="more">Explore →</span>
-              </a>
-              <a className="card" href="/product/automations">
-                <div className="ic">↻</div>
-                <h3>Automations</h3>
-                <p>Rules that pause campaigns, scale budgets and ping Slack — across Meta and Google at once.</p>
-                <span className="more">Explore →</span>
-              </a>
-              <a className="card" href="/product/multi-workspace">
-                <div className="ic">⊞</div>
-                <h3>Multi-workspace &amp; Slack</h3>
-                <p>Isolated workspace per client or market, and Vera answering questions right inside Slack.</p>
-                <span className="more">Explore →</span>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Feature: Dashboard ── */}
-        <section className="sec">
+        {/* ── 04 Dashboard ── */}
+        <section className="sec alt">
           <div className="wrap split">
-            <div className="scopy">
-              <span className="tag">Unified data</span>
-              <h2>One view for spend, ROAS and what actually matters.</h2>
-              <p className="body">Stop toggling between Ads Manager, Google Ads and GA4. Verabix pulls all three into a single dashboard your whole team reads the same way.</p>
-              <div className="checks">
-                <div><CheckIcon /><span>KPI chips for spend, ROAS, CPA and conversions across Meta and Google simultaneously.</span></div>
-                <div><CheckIcon /><span>Source breakdown showing which channel really drives traffic and revenue.</span></div>
-                <div><CheckIcon /><span>Build any custom view in 90 seconds by asking Vera — no drag-and-drop required.</span></div>
-              </div>
-              <a className="btn btn-outline" href="/product/cross-channel-dashboard">See the dashboard →</a>
+            <div className="copy">
+              <span className="mono ink">Cross-channel dashboard</span>
+              <h2>One set of numbers.<br/>Nothing to argue about.</h2>
+              <p>Stop switching between Ads Manager, Google Ads and GA4. Verabix pulls all three into one dashboard your whole team reads the same way.</p>
+              <ul className="chk">
+                <li>Spend, ROAS, CPA and revenue across every channel</li>
+                <li>Platform numbers next to GA4, on the same date range</li>
+                <li>Top campaigns ranked by what they actually return</li>
+              </ul>
+              <a className="lnk" href="/product/cross-channel-dashboard">Explore the dashboard →</a>
             </div>
-            <div className="smock">
-              <div className="shotpan" style={{'--w':'121.8%','--x':'-16.9%','--ar':'1.75'} as React.CSSProperties}>
-                <img src="/shots/overview-performance.jpg" alt="Verabix overview — connected data sources and paid-channel performance KPIs across Meta Ads, Google Ads and GA4"/>
-              </div>
-            </div>
+            <figure className="shot">
+              <div className="bar"><i/><i/><i/><span>app.verabix.com</span></div>
+              <img src="/shots/overview-performance.jpg" alt="Verabix cross-channel performance overview"/>
+            </figure>
           </div>
         </section>
 
-        {/* ── Feature: Vera AI ── */}
-        <section className="sec">
+        {/* ── 05 Vera ── */}
+        <section className="sec dark">
           <div className="wrap split rev">
-            <div className="scopy">
-              <span className="tag">Vera AI</span>
-              <h2>The marketing analyst who already read all your data.</h2>
-              <p className="body">Vera connects to every source you&apos;ve linked and answers in plain English — citing exact numbers so you can double-check every claim. In the app, and in Slack.</p>
-              <div className="checks">
-                <div><CheckIcon /><span>Cross-channel reasoning — Meta, Google Ads and GA4 seen simultaneously.</span></div>
-                <div><CheckIcon /><span>Proactive alerts when spend spikes or ROAS drops unexpectedly.</span></div>
-                <div><CheckIcon /><span>Tag @Vera from any Slack channel and get an answer without opening a tab.</span></div>
-              </div>
-              <a className="btn btn-outline" href="/product/vera-ai">Meet Vera →</a>
+            <div className="copy">
+              <span className="mono glow">Vera AI</span>
+              <h2>Meet Vera.<br/>She already read your data.</h2>
+              <p>Vera is your AI marketing analyst. Ask her anything in plain English — she reasons across every channel and answers with the exact numbers, so you can check every claim.</p>
+              <ul className="chk">
+                <li>Answers with numbers and sources — never vibes</li>
+                <li>Spots what changed and tells you why</li>
+                <li>Does the work: reports, campaigns, budget changes</li>
+              </ul>
+              <a className="lnk" href="/product/vera-ai">Meet Vera →</a>
             </div>
-            <div className="smock">
-              <div className="shotpan" style={{'--w':'120.3%','--x':'-15.9%','--ar':'1.77'} as React.CSSProperties}>
-                <img src="/shots/vera-chat.jpg" alt="Vera answering which campaign to scale, citing spend, conversions and ROAS from the connected accounts"/>
-              </div>
-            </div>
+            <figure className="shot">
+              <div className="bar"><i/><i/><i/><span>app.verabix.com</span></div>
+              <img src="/shots/vera-chat-demo.gif" alt="Vera answering a question in Verabix"/>
+            </figure>
           </div>
-        </section>
-
-        {/* ── Feature: Campaigns ── */}
-        <section className="sec">
-          <div className="wrap split">
+          <div className="wrap slack">
             <div className="scopy">
-              <span className="tag">Campaign creation</span>
-              <h2>From landing page URL to live campaign in minutes.</h2>
-              <p className="body">Paste your URL, pick a goal, and Vera builds a complete campaign — AI-generated headlines, ad copy and targeting — ready to push to Meta Ads and Google Ads without leaving Verabix.</p>
-              <div className="checks">
-                <div><CheckIcon /><span>Meta (image + video) and Google Ads (Search + PMax) launched simultaneously.</span></div>
-                <div><CheckIcon /><span>Need full control? The Advanced Wizard exposes every audience and budget setting.</span></div>
-                <div><CheckIcon /><span>Review every line of copy before launch — you stay in control.</span></div>
-              </div>
-              <a className="btn btn-outline" href="/product/instant-campaigns">See campaign creation →</a>
+              <span className="mono glow">Vera in Slack</span>
+              <h3>Ask her in Slack.<br/>She gets it done in Verabix.</h3>
+              <p>No new tab. Mention @Vera in any channel and she pulls the numbers, builds the report or drafts the campaign — inside Verabix.</p>
             </div>
-            <div className="smock">
-              <div className="mock">
-                <div className="mocklabel">New campaign · step 4 of 4</div>
-                <div style={{display:'flex',flexDirection:'column',gap:10}}>
-                  <div className="step-item">
-                    <span className="step-num" style={{background:'var(--blue-50)',color:'var(--ink)'}}>1</span>
-                    <div className="step-body"><div className="st">Paste your URL</div><div className="sd">Vera reads your page and understands the offer.</div></div>
-                  </div>
-                  <div className="step-item">
-                    <span className="step-num" style={{background:'var(--blue-50)',color:'var(--ink)'}}>2</span>
-                    <div className="step-body"><div className="st">Pick a goal</div><div className="sd">Sales, traffic, leads or awareness.</div></div>
-                  </div>
-                  <div className="step-item">
-                    <span className="step-num" style={{background:'var(--blue-50)',color:'var(--ink)'}}>3</span>
-                    <div className="step-body"><div className="st">Add creatives</div><div className="sd">Upload images or video, or let Vera suggest visuals.</div></div>
-                  </div>
-                  <div className="step-item">
-                    <span className="step-num" style={{background:'#000',color:'#fff'}}>4</span>
-                    <div className="step-body active"><div className="st">Review &amp; launch</div><div className="sd">See the complete brief. Launch to Meta, Google, or both.</div></div>
+            <div className="sm">
+              <div className="smh"><span># marketing</span></div>
+              <div className="msg">
+                <span className="av u">S</span>
+                <div>
+                  <b>Sara</b> <em>09:12</em>
+                  <p><span className="at">@Vera</span> how did Meta do last week vs. Google? Make a quick report for the team.</p>
+                </div>
+              </div>
+              <div className="msg">
+                <span className="av">
+                  <svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+                    <rect x="3" y="3" width="58" height="58" rx="16" fill="#000"/>
+                    <path d="M19 23L32 45L45 23" fill="none" stroke="#fff" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="49" cy="15" r="4.5" fill="#1B3A8C"/>
+                  </svg>
+                </span>
+                <div>
+                  <b>Vera</b> <span className="app">APP</span> <em>09:12</em>
+                  <p>Google won the week: <strong>4.1× ROAS</strong> vs. Meta&apos;s <strong>2.8×</strong>. Meta&apos;s CPA rose 22% after Tuesday&apos;s creative change.</p>
+                  <div className="att">
+                    <span className="mono">Report · Week 38</span>
+                    <b>Meta vs. Google — weekly performance</b>
+                    <span>Created in Verabix · 3 charts · shared with #marketing</span>
                   </div>
                 </div>
               </div>
@@ -319,97 +275,125 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* ── How it works ── */}
-        <section id="how-it-works" className="sec sec-tint">
-          <div className="wrap">
-            <div className="sechead">
-              <span className="tag">How it works</span>
-              <h2>Connected in five minutes. Answers on day one.</h2>
-            </div>
-            <div className="steprow">
-              <div className="step">
-                <div className="n">STEP 01</div>
-                <h4>Connect your accounts</h4>
-                <p>Link Meta Ads, Google Ads and Google Analytics with OAuth. Pick which accounts and properties belong to each workspace.</p>
-              </div>
-              <div className="step">
-                <div className="n">STEP 02</div>
-                <h4>Vera reads everything</h4>
-                <p>Campaigns, ad sets, creatives, sessions and conversions are unified under one set of metrics and date ranges.</p>
-              </div>
-              <div className="step">
-                <div className="n">STEP 03</div>
-                <h4>Ask, act, automate</h4>
-                <p>Ask Vera what changed, launch the next campaign, and set rules that act on your behalf while you sleep.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Solutions ── */}
+        {/* ── 06 Actions ── */}
         <section className="sec">
           <div className="wrap">
-            <div className="sechead">
-              <span className="tag">Solutions</span>
-              <h2>Built for the way your team works</h2>
+            <div className="shead">
+              <span className="mono ink">From insight to action</span>
+              <h2>Found it. Fixed it.<br/>Without the busywork.</h2>
             </div>
-            <div className="cardgrid c3">
-              <a className="card" href="/solutions/agencies">
-                <div className="ic">◇</div>
-                <h3>Ad Agencies</h3>
-                <p>One isolated workspace per client, unified Meta + Google reporting, and @Vera in Slack for instant client answers.</p>
-                <span className="more">For agencies →</span>
-              </a>
-              <a className="card" href="/solutions/marketing-teams">
-                <div className="ic">△</div>
-                <h3>In-house Marketing</h3>
-                <p>Own your data without hiring an analyst. Daily Slack briefs and honest attribution before your Monday meeting.</p>
-                <span className="more">For in-house teams →</span>
-              </a>
-              <a className="card" href="/solutions/ecommerce">
-                <div className="ic">○</div>
-                <h3>E-commerce Brands</h3>
-                <p>Per-market ROAS, creative fatigue detection and platform-vs-GA4 attribution across every country you sell in.</p>
-                <span className="more">For e-commerce →</span>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Testimonials ── */}
-        <section className="sec">
-          <div className="wrap">
-            <div className="sechead">
-              <h2>Teams that stopped exporting spreadsheets</h2>
-            </div>
-            <div className="tgrid">
-              <div className="tcard">
-                <div className="tavatar">MH</div>
-                <blockquote>&ldquo;Verabix cut our weekly client reporting from half a day to fifteen minutes. Vera writes the brief, not us.&rdquo;</blockquote>
-                <div className="who"><b>Mette Holm</b>Head of Growth, Fjord &amp; Co</div>
+            <div className="duo">
+              <div className="dcard">
+                <div>
+                  <span className="mono">Instant campaigns</span>
+                  <h3>Paste a URL. Get a campaign.</h3>
+                  <p>Pick a goal and Vera writes the headlines, ad copy and targeting — ready to push to Meta and Google without leaving Verabix.</p>
+                  <a className="lnk" href="/product/instant-campaigns">See how →</a>
+                </div>
+                <figure className="shot">
+                  <img src="/shots/campaigns.png" alt="Campaign list in Verabix"/>
+                </figure>
               </div>
-              <div className="tcard">
-                <div className="tavatar">JB</div>
-                <blockquote>&ldquo;Vera caught a €4,000/month budget leak in a retargeting set our old dashboard never flagged.&rdquo;</blockquote>
-                <div className="who"><b>Jonas Berg</b>CMO, Lumen Retail</div>
-              </div>
-              <div className="tcard">
-                <div className="tavatar">AL</div>
-                <blockquote>&ldquo;The attribution comparison ended a six-month argument about whether Meta was lying to us. It was.&rdquo;</blockquote>
-                <div className="who"><b>Anna Lindqvist</b>Performance Lead, Kaskade</div>
+              <div className="dcard">
+                <div>
+                  <span className="mono">Automations</span>
+                  <h3>Rules that never sleep.</h3>
+                  <p>Pause what&apos;s bleeding, scale what&apos;s working and get an alert in Slack — across Meta and Google at once.</p>
+                  <a className="lnk" href="/product/automations">See automations →</a>
+                </div>
+                <figure className="shot">
+                  <img src="/shots/automations-active.jpg" alt="Active automations in Verabix"/>
+                </figure>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── CTA band ── */}
-        <section className="ctaband">
+        {/* ── 07 Platform ── */}
+        <section className="sec alt" id="platform">
           <div className="wrap">
-            <h2>See the truth about your marketing.</h2>
-            <p>Connect your ad accounts and get your first answer in minutes. Free to start, no credit card required.</p>
-            <div className="ctarow" style={{display:'flex',gap:12,justifyContent:'center'}}>
-              <a className="btn btn-white" href="https://app.verabix.com">Sign up free →</a>
-              <a className="btn btn-onnavy" href="mailto:admin@verabix.com?subject=Book%20a%20demo">Book a demo ↗</a>
+            <div className="shead row">
+              <div>
+                <span className="mono ink">The platform</span>
+                <h2>Everything a performance team needs.<br/>One login.</h2>
+              </div>
+              <p>Data, analysis and execution in one product. No exports. No tab-switching. No arguing about whose number is right.</p>
+            </div>
+            <div className="grid3">
+              <a className="mod" href="/product/cross-channel-dashboard"><span className="mono">01</span><h3>Cross-channel Dashboard</h3><p>Meta Ads, Google Ads and GA4 in one view. Same date range. Same metrics.</p><span className="arr">→</span></a>
+              <a className="mod" href="/product/vera-ai"><span className="mono">02</span><h3>Vera AI</h3><p>Your AI marketing analyst. Ask anything — she answers with the exact numbers.</p><span className="arr">→</span></a>
+              <a className="mod" href="/product/instant-campaigns"><span className="mono">03</span><h3>Instant Campaigns</h3><p>Paste a landing page URL. Get a launch-ready campaign for Meta and Google.</p><span className="arr">→</span></a>
+              <a className="mod" href="/product/advanced-wizard"><span className="mono">04</span><h3>Advanced Campaign Wizard</h3><p>Six guided steps. Full manual control over audience, budget and creative.</p><span className="arr">→</span></a>
+              <a className="mod" href="/product/automations"><span className="mono">05</span><h3>Automations</h3><p>Rules that pause, scale and alert — across Meta and Google at once.</p><span className="arr">→</span></a>
+              <a className="mod" href="/product/multi-workspace"><span className="mono">06</span><h3>Multi-workspace &amp; Slack</h3><p>One workspace per client or market. Vera on call in Slack.</p><span className="arr">→</span></a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 08 How it works ── */}
+        <section className="sec" id="how-it-works">
+          <div className="wrap">
+            <div className="shead">
+              <span className="mono ink">How it works</span>
+              <h2>Connected in five minutes.<br/>Answers on day one.</h2>
+            </div>
+            <div className="how">
+              <div className="hw">
+                <span className="hn">01</span>
+                <h3>Connect</h3>
+                <p>Link Meta Ads, Google Ads and GA4 with OAuth. Add Slack if you want Vera there too.</p>
+              </div>
+              <div className="hw">
+                <span className="hn">02</span>
+                <h3>Vera reads</h3>
+                <p>She maps every account, campaign and conversion — and flags what&apos;s off on day one.</p>
+              </div>
+              <div className="hw">
+                <span className="hn">03</span>
+                <h3>Decide and act</h3>
+                <p>Approve Vera&apos;s suggestions, launch campaigns and set automations. Results feed the next loop.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 09 Solutions ── */}
+        <section className="sec alt" id="solutions">
+          <div className="wrap">
+            <div className="shead">
+              <span className="mono ink">Solutions</span>
+              <h2>Built for the way you work.</h2>
+            </div>
+            <div className="grid3">
+              <a className="sol" href="/solutions/agencies">
+                <h3>Ad agencies</h3>
+                <p>One isolated workspace per client. Unified reporting. Client questions answered in Slack before the call ends.</p>
+                <span className="lnk">Learn more →</span>
+              </a>
+              <a className="sol" href="/solutions/marketing-teams">
+                <h3>In-house marketing</h3>
+                <p>Own your data without hiring an analyst. A daily brief from Vera, and attribution you can defend.</p>
+                <span className="lnk">Learn more →</span>
+              </a>
+              <a className="sol" href="/solutions/ecommerce">
+                <h3>E-commerce brands</h3>
+                <p>ROAS per market, creative fatigue spotted early, and platform numbers checked against GA4.</p>
+                <span className="lnk">Learn more →</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 10 CTA ── */}
+        <section className="cta">
+          <div className="wrap ctaw">
+            <div>
+              <h2>Stop guessing.<br/>Start knowing.</h2>
+              <p>Connect your accounts and get your first answer from Vera in minutes.</p>
+            </div>
+            <div className="ctas">
+              <a className="btn wht" href="mailto:admin@verabix.com?subject=Book%20a%20demo">Book a demo ↗</a>
+              <a className="btn ghw" href="https://app.verabix.com">Sign up free</a>
             </div>
           </div>
         </section>
