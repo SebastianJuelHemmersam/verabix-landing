@@ -5,12 +5,7 @@ function HeroVisual() {
   const FS = "'Mona Sans Variable','Mona Sans',system-ui,sans-serif"
   const FM = "'JetBrains Mono',ui-monospace,monospace"
   return (
-    <svg viewBox="0 0 660 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data flows from Meta Ads, Google Ads, GA4 and Slack into Vera, and actions flow back out">
-
-      {/* Feedback loop — dashed with animated flow */}
-      <path id="vp8" d="M555 363C555 474 70 474 70 358" fill="none" stroke="#1B3A8C" strokeWidth="1.5" strokeDasharray="3 6">
-        <animate attributeName="stroke-dashoffset" from="0" to="90" dur="3s" repeatCount="indefinite"/>
-      </path>
+    <svg viewBox="0 0 660 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data flows from Meta Ads, Google Ads, GA4 and Slack into Vera, and actions flow back out">
 
       {/* Input paths */}
       <path id="vp0" d="M142 58C179.98 58 179.98 196 219.96 196" fill="none" stroke="#E2E2E2" strokeWidth="1.5"/>
@@ -35,9 +30,6 @@ function HeroVisual() {
       <circle r="3.2" fill="#1B3A8C"><animateMotion dur="2.85s" begin="-1.425s" repeatCount="indefinite"><mpath href="#vp3"/></animateMotion></circle>
       <circle r="3.2" fill="#1B3A8C"><animateMotion dur="3.1s" begin="-1.55s" repeatCount="indefinite"><mpath href="#vp5"/></animateMotion></circle>
       <circle r="3.2" fill="#1B3A8C"><animateMotion dur="3.35s" begin="-1.675s" repeatCount="indefinite"><mpath href="#vp7"/></animateMotion></circle>
-
-      {/* Feedback loop traveling dot */}
-      <circle r="3.5" fill="#1B3A8C"><animateMotion dur="3.4s" repeatCount="indefinite"><mpath href="#vp8"/></animateMotion></circle>
 
       {/* Input pills */}
       <rect x="0" y="38" width="140" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
@@ -105,9 +97,6 @@ function HeroVisual() {
       <text x="0" y="14" fontFamily={FM} fontSize="11" letterSpacing="1" fill="#666666">SIGNALS IN</text>
       <text x="660" y="14" textAnchor="end" fontFamily={FM} fontSize="11" letterSpacing="1" fill="#1B3A8C">ACTIONS OUT</text>
 
-      {/* Feedback loop label */}
-      <rect x="171" y="436" width="248" height="26" rx="13" fill="#fff" stroke="#C9D3F2" strokeWidth="1"/>
-      <text x="295" y="453" textAnchor="middle" fontFamily={FM} fontSize="10.5" letterSpacing=".5" fill="#1B3A8C">RESULTS FEED BACK · VERA LEARNS</text>
     </svg>
   )
 }
