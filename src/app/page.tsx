@@ -11,65 +11,112 @@ function CheckIcon() {
 }
 
 function HeroVisual() {
+  const FS = "'Mona Sans Variable','Mona Sans',system-ui,sans-serif"
+  const FM = "'JetBrains Mono',ui-monospace,monospace"
   return (
-    <svg viewBox="0 0 580 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vera connecting Meta Ads, Google Ads, GA4 and Slack">
-      {/* Connection paths */}
-      <path id="vp0" d="M151 72C310 72 310 220 404 220" fill="none" stroke="#EBEBEB" strokeWidth="1.5"/>
-      <path id="vp1" d="M151 171C310 171 310 220 404 220" fill="none" stroke="#EBEBEB" strokeWidth="1.5"/>
-      <path id="vp2" d="M151 270C310 270 310 220 404 220" fill="none" stroke="#EBEBEB" strokeWidth="1.5"/>
-      <path id="vp3" d="M151 368C310 368 310 220 404 220" fill="none" stroke="#EBEBEB" strokeWidth="1.5"/>
+    <svg viewBox="0 0 660 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data flows from Meta Ads, Google Ads, GA4 and Slack into Vera, and actions flow back out">
 
-      {/* Traveling dots — data flowing toward Vera */}
-      <circle r="3.5" fill="#000">
-        <animateMotion dur="3s" begin="0s" repeatCount="indefinite">
-          <mpath href="#vp0"/>
-        </animateMotion>
+      {/* Feedback loop — dashed with animated flow */}
+      <path id="vp8" d="M555 363C555 474 70 474 70 358" fill="none" stroke="#1B3A8C" strokeWidth="1.5" strokeDasharray="3 6">
+        <animate attributeName="stroke-dashoffset" from="0" to="90" dur="3s" repeatCount="indefinite"/>
+      </path>
+
+      {/* Input paths */}
+      <path id="vp0" d="M142 58C179.98 58 179.98 196 219.96 196" fill="none" stroke="#E2E2E2" strokeWidth="1.5"/>
+      <path id="vp2" d="M142 150C179.98 150 179.98 196 219.96 196" fill="none" stroke="#E2E2E2" strokeWidth="1.5"/>
+      <path id="vp4" d="M142 242C179.98 242 179.98 196 219.96 196" fill="none" stroke="#E2E2E2" strokeWidth="1.5"/>
+      <path id="vp6" d="M142 334C179.98 334 179.98 196 219.96 196" fill="none" stroke="#E2E2E2" strokeWidth="1.5"/>
+
+      {/* Output paths */}
+      <path id="vp1" d="M370.04 196C410.02 196 410.02 58 448 58" fill="none" stroke="#C9D3F2" strokeWidth="1.5"/>
+      <path id="vp3" d="M370.04 196C410.02 196 410.02 150 448 150" fill="none" stroke="#C9D3F2" strokeWidth="1.5"/>
+      <path id="vp5" d="M370.04 196C410.02 196 410.02 242 448 242" fill="none" stroke="#C9D3F2" strokeWidth="1.5"/>
+      <path id="vp7" d="M370.04 196C410.02 196 410.02 334 448 334" fill="none" stroke="#C9D3F2" strokeWidth="1.5"/>
+
+      {/* Traveling dots — input side (black) */}
+      <circle r="3.2" fill="#000"><animateMotion dur="2.6s" begin="0s" repeatCount="indefinite"><mpath href="#vp0"/></animateMotion></circle>
+      <circle r="3.2" fill="#000"><animateMotion dur="2.85s" begin="-0.5s" repeatCount="indefinite"><mpath href="#vp2"/></animateMotion></circle>
+      <circle r="3.2" fill="#000"><animateMotion dur="3.1s" begin="-1.0s" repeatCount="indefinite"><mpath href="#vp4"/></animateMotion></circle>
+      <circle r="3.2" fill="#000"><animateMotion dur="3.35s" begin="-1.5s" repeatCount="indefinite"><mpath href="#vp6"/></animateMotion></circle>
+
+      {/* Traveling dots — output side (Ink Blue) */}
+      <circle r="3.2" fill="#1B3A8C"><animateMotion dur="2.6s" begin="-1.3s" repeatCount="indefinite"><mpath href="#vp1"/></animateMotion></circle>
+      <circle r="3.2" fill="#1B3A8C"><animateMotion dur="2.85s" begin="-1.425s" repeatCount="indefinite"><mpath href="#vp3"/></animateMotion></circle>
+      <circle r="3.2" fill="#1B3A8C"><animateMotion dur="3.1s" begin="-1.55s" repeatCount="indefinite"><mpath href="#vp5"/></animateMotion></circle>
+      <circle r="3.2" fill="#1B3A8C"><animateMotion dur="3.35s" begin="-1.675s" repeatCount="indefinite"><mpath href="#vp7"/></animateMotion></circle>
+
+      {/* Feedback loop traveling dot */}
+      <circle r="3.5" fill="#1B3A8C"><animateMotion dur="3.4s" repeatCount="indefinite"><mpath href="#vp8"/></animateMotion></circle>
+
+      {/* Input pills */}
+      <rect x="0" y="38" width="140" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
+      <circle cx="20" cy="58" r="4.5" fill="#D6D6D6"/>
+      <text x="32" y="58" fontFamily={FS} fontSize="14.5" fontWeight="500" fill="#000" dominantBaseline="central">Meta Ads</text>
+
+      <rect x="0" y="130" width="140" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
+      <circle cx="20" cy="150" r="4.5" fill="#D6D6D6"/>
+      <text x="32" y="150" fontFamily={FS} fontSize="14.5" fontWeight="500" fill="#000" dominantBaseline="central">Google Ads</text>
+
+      <rect x="0" y="222" width="140" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
+      <circle cx="20" cy="242" r="4.5" fill="#D6D6D6"/>
+      <text x="32" y="242" fontFamily={FS} fontSize="14.5" fontWeight="500" fill="#000" dominantBaseline="central">GA4</text>
+
+      <rect x="0" y="314" width="140" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
+      <circle cx="20" cy="334" r="4.5" fill="#D6D6D6"/>
+      <text x="32" y="334" fontFamily={FS} fontSize="14.5" fontWeight="500" fill="#000" dominantBaseline="central">Slack</text>
+
+      {/* Output action cards */}
+      <rect x="450" y="33" width="210" height="50" rx="25" fill="#fff" stroke="#C9D3F2" strokeWidth="1"/>
+      <circle cx="475" cy="58" r="4.5" fill="#1B3A8C">
+        <animate attributeName="opacity" values="1;.35;1" dur="2.6s" begin="0s" repeatCount="indefinite"/>
       </circle>
-      <circle r="3.5" fill="#000">
-        <animateMotion dur="3.35s" begin="-0.6s" repeatCount="indefinite">
-          <mpath href="#vp1"/>
-        </animateMotion>
+      <text x="488" y="54" fontFamily={FM} fontSize="10" letterSpacing=".6" fill="#666666">META ADS</text>
+      <text x="488" y="71" fontFamily={FS} fontSize="14" fontWeight="600" fill="#1B3A8C">Budget +18%</text>
+
+      <rect x="450" y="125" width="210" height="50" rx="25" fill="#fff" stroke="#C9D3F2" strokeWidth="1"/>
+      <circle cx="475" cy="150" r="4.5" fill="#1B3A8C">
+        <animate attributeName="opacity" values="1;.35;1" dur="2.85s" begin="-0.5s" repeatCount="indefinite"/>
       </circle>
-      <circle r="3.5" fill="#1B3A8C">
-        <animateMotion dur="3.7s" begin="-1.2s" repeatCount="indefinite">
-          <mpath href="#vp2"/>
-        </animateMotion>
+      <text x="488" y="146" fontFamily={FM} fontSize="10" letterSpacing=".6" fill="#666666">GOOGLE ADS</text>
+      <text x="488" y="163" fontFamily={FS} fontSize="13" fontWeight="600" fill="#1B3A8C">Bids −6% · 4 campaigns</text>
+
+      <rect x="450" y="217" width="210" height="50" rx="25" fill="#fff" stroke="#C9D3F2" strokeWidth="1"/>
+      <circle cx="475" cy="242" r="4.5" fill="#1B3A8C">
+        <animate attributeName="opacity" values="1;.35;1" dur="3.1s" begin="-1.0s" repeatCount="indefinite"/>
       </circle>
-      <circle r="3.5" fill="#000">
-        <animateMotion dur="4.05s" begin="-1.8s" repeatCount="indefinite">
-          <mpath href="#vp3"/>
-        </animateMotion>
+      <text x="488" y="238" fontFamily={FM} fontSize="10" letterSpacing=".6" fill="#666666">GA4</text>
+      <text x="488" y="255" fontFamily={FS} fontSize="14" fontWeight="600" fill="#1B3A8C">Conversions synced</text>
+
+      <rect x="450" y="309" width="210" height="50" rx="25" fill="#fff" stroke="#C9D3F2" strokeWidth="1"/>
+      <circle cx="475" cy="334" r="4.5" fill="#1B3A8C">
+        <animate attributeName="opacity" values="1;.35;1" dur="3.35s" begin="-1.5s" repeatCount="indefinite"/>
       </circle>
+      <text x="488" y="330" fontFamily={FM} fontSize="10" letterSpacing=".6" fill="#666666">SLACK</text>
+      <text x="488" y="347" fontFamily={FS} fontSize="14" fontWeight="600" fill="#1B3A8C">Task done · reply sent</text>
 
-      {/* Channel pills */}
-      <rect x="1" y="52" width="150" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
-      <circle cx="21" cy="72" r="5" fill="#D6D6D6"/>
-      <text x="34" y="72" fontFamily="'Mona Sans Variable','Mona Sans',system-ui,sans-serif" fontSize="14" fontWeight="500" fill="#000" dominantBaseline="central">Meta Ads</text>
+      {/* Vera center node */}
+      <circle cx="295" cy="196" r="86.4" fill="none" stroke="#F0F0F0" strokeWidth="1"/>
+      <circle cx="295" cy="196" r="86.4" fill="none" stroke="#1B3A8C" strokeWidth="1.6" strokeDasharray="97.7 999" strokeLinecap="round">
+        <animateTransform attributeName="transform" type="rotate" from="0 295 196" to="360 295 196" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="295" cy="196" r="71.04" fill="#FAFAFA" stroke="#EBEBEB" strokeWidth="1"/>
 
-      <rect x="1" y="151" width="150" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
-      <circle cx="21" cy="171" r="5" fill="#D6D6D6"/>
-      <text x="34" y="171" fontFamily="'Mona Sans Variable','Mona Sans',system-ui,sans-serif" fontSize="14" fontWeight="500" fill="#000" dominantBaseline="central">Google Ads</text>
-
-      <rect x="1" y="250" width="150" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
-      <circle cx="21" cy="270" r="5" fill="#D6D6D6"/>
-      <text x="34" y="270" fontFamily="'Mona Sans Variable','Mona Sans',system-ui,sans-serif" fontSize="14" fontWeight="500" fill="#000" dominantBaseline="central">GA4</text>
-
-      <rect x="1" y="348" width="150" height="40" rx="20" fill="#fff" stroke="#EBEBEB" strokeWidth="1"/>
-      <circle cx="21" cy="368" r="5" fill="#D6D6D6"/>
-      <text x="34" y="368" fontFamily="'Mona Sans Variable','Mona Sans',system-ui,sans-serif" fontSize="14" fontWeight="500" fill="#000" dominantBaseline="central">Slack</text>
-
-      {/* Vera node — two concentric circles */}
-      <circle cx="480" cy="220" r="94" fill="none" stroke="#F0F0F0" strokeWidth="1"/>
-      <circle cx="480" cy="220" r="78" fill="#FAFAFA" stroke="#EBEBEB" strokeWidth="1"/>
-
-      {/* Logo mark centered at (480, 220) — 44px rendered size */}
-      <g transform="translate(458,198) scale(0.6875)">
+      {/* Logo mark — 48px rendered, centered at (295, 196) */}
+      <g transform="translate(271,172) scale(0.75)">
         <rect x="3" y="3" width="58" height="58" rx="16" fill="#000"/>
         <path d="M19 23L32 45L45 23" fill="none" stroke="#fff" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round"/>
         <circle cx="49" cy="15" r="4.5" fill="#1B3A8C"/>
       </g>
 
-      <text x="480" y="258" textAnchor="middle" dominantBaseline="central" fontFamily="'JetBrains Mono',ui-monospace,monospace" fontSize="11" letterSpacing="1" fill="#666666">VERA</text>
+      <text x="295" y="304" textAnchor="middle" fontFamily={FM} fontSize="11" letterSpacing="1" fill="#666666">VERA</text>
+
+      {/* Top labels */}
+      <text x="0" y="14" fontFamily={FM} fontSize="11" letterSpacing="1" fill="#666666">SIGNALS IN</text>
+      <text x="660" y="14" textAnchor="end" fontFamily={FM} fontSize="11" letterSpacing="1" fill="#1B3A8C">ACTIONS OUT</text>
+
+      {/* Feedback loop label */}
+      <rect x="171" y="436" width="248" height="26" rx="13" fill="#fff" stroke="#C9D3F2" strokeWidth="1"/>
+      <text x="295" y="453" textAnchor="middle" fontFamily={FM} fontSize="10.5" letterSpacing=".5" fill="#1B3A8C">RESULTS FEED BACK · VERA LEARNS</text>
     </svg>
   )
 }
@@ -84,24 +131,27 @@ export default function LandingPage() {
         <section className="hero-v2">
           <div className="hero-v2-inner">
             <div className="hero-v2-copy">
-              <h1 className="hero-h1">All your marketing tools. One intelligent core.</h1>
-              <p className="hero-body">Ads, email, SMS and analytics in one place — with Vera, the AI that finds the next optimization and asks before anything goes live.</p>
+              <h1 className="hero-h1">Gut feeling is not a strategy.</h1>
+              <p className="hero-body">Verabix pulls data from Meta, Google and GA4. Vera, your AI marketing analyst, decides what to change and pushes it back. Need something? Ask her in Slack — she gets it done in Verabix.</p>
               <div className="hero-ctas">
                 <a className="btn btn-primary" href="mailto:admin@verabix.com?subject=Book%20a%20demo">Book a demo ↗</a>
-                <a className="btn btn-ghost" href="#how-it-works">See how it works</a>
+                <a className="btn btn-ghost" href="#how-it-works">See the loop</a>
               </div>
-              <div className="hero-stats">
-                <div className="hero-stat">
-                  <div className="hero-stat-num">4+</div>
-                  <div className="hero-stat-lbl">channels in one login</div>
+              <div className="hero-steps">
+                <div className="hero-step">
+                  <div className="hero-step-lbl">01 · IN</div>
+                  <div className="hero-step-title">Signals</div>
+                  <div className="hero-step-desc">Spend, clicks and conversions from every channel.</div>
                 </div>
-                <div className="hero-stat">
-                  <div className="hero-stat-num">24/7</div>
-                  <div className="hero-stat-lbl">optimization by Vera</div>
+                <div className="hero-step">
+                  <div className="hero-step-lbl">02 · VERA</div>
+                  <div className="hero-step-title">Decisions</div>
+                  <div className="hero-step-desc">What to scale, cut or fix — with the numbers.</div>
                 </div>
-                <div className="hero-stat">
-                  <div className="hero-stat-num">100%</div>
-                  <div className="hero-stat-lbl">approved by you</div>
+                <div className="hero-step">
+                  <div className="hero-step-lbl">03 · OUT</div>
+                  <div className="hero-step-title">Actions</div>
+                  <div className="hero-step-desc">Pushed back to the channels. Results feed the next loop.</div>
                 </div>
               </div>
             </div>
