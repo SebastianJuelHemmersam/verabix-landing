@@ -569,3 +569,77 @@ a.mod:hover .arr{color:#000}
 @media(max-width:760px){.shead.row{grid-template-columns:1fr}.tvk{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.btop{flex-direction:column;align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){.w{animation-duration:.01ms!important}}
+/* ---- Automations product page ---- */
+/* Dark hero */
+.ah{background:#000;color:#fff;padding:clamp(48px,8vw,104px) 0 clamp(56px,8vw,96px)}
+.ah .dht{align-items:end}
+.ah h1{font-size:clamp(48px,7vw,96px)}
+.ah .lead{color:#B5B5B5;margin:0 0 28px}
+/* Pill dark variant */
+.pill.dk{background:#111;border-color:#262626;color:#fff}
+.pill.sm{font-size:11.5px;padding:4px 10px}
+/* Green pulsing dot for Active indicator */
+.vd.g{background:#1F9D55;animation:vpzdark 1.6s ease-in-out infinite}
+@keyframes vpzdark{0%,100%{box-shadow:0 0 0 0 rgba(31,157,85,.5)}50%{box-shadow:0 0 0 6px rgba(31,157,85,0)}}
+/* Rule panel layout */
+.rp{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px}
+.rpl,.ract{background:#111;border:1px solid #262626;border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:22px}
+.rph{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.rph .mono{display:flex;align-items:center;gap:8px;color:#fff}
+/* Rule tab strip */
+.rtabs{display:flex;gap:4px;flex-wrap:wrap;background:#1A1A1A;border:1px solid #262626;border-radius:999px;padding:3px}
+.rtabs button{font:inherit;font-size:13px;font-weight:500;padding:7px 13px;border:0;border-radius:999px;background:transparent;color:#999;cursor:pointer;transition:color .15s}
+.rtabs button:hover{color:#fff}
+.rtabs button.on{background:#fff;color:#000}
+/* Rule sentence */
+.rs{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;font-size:clamp(22px,2.6vw,34px);font-weight:500;letter-spacing:-.03em;line-height:1.35;min-height:3.2em}
+.rw{color:#777}
+.rt{padding:2px 14px 4px;border-radius:999px;border:1.5px solid #8FA6F0;color:#fff;white-space:nowrap;opacity:0;transform:translateY(6px);animation:tin .4s cubic-bezier(.2,.7,.2,1) forwards}
+.rt.t3,.rt.t4{background:#1B3A8C;border-color:#1B3A8C}
+@keyframes tin{to{opacity:1;transform:none}}
+/* Rule meta row */
+.rmeta{display:flex;gap:20px;flex-wrap:wrap;padding-top:18px;border-top:1px solid #262626}
+.rmeta .mono{font-size:11px;color:#999}
+/* Activity aggregate stats */
+.ract-stats{display:flex;flex-direction:column;gap:16px;min-height:120px;justify-content:center}
+.ract-stats>div{display:flex;flex-direction:column;gap:4px}
+.ract-stats .mono{font-size:11px;color:#999}
+.ract-stats b{font-weight:500;font-size:clamp(32px,4vw,44px);letter-spacing:-.04em;line-height:1;color:#fff}
+.ract-note{font-size:12.5px;color:#777;padding-top:16px;border-top:1px solid #262626;margin:0}
+/* Anatomy of a rule */
+.anat{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:#EBEBEB;border-top:1px solid #000;border-bottom:1px solid #EBEBEB;margin-top:40px}
+.an{background:#fff;padding:26px 24px 30px;display:flex;flex-direction:column;gap:10px}
+.an .at{align-self:flex-start;font-weight:500;font-size:15px;padding:3px 12px 4px;border-radius:999px;border:1.5px solid var(--ink);color:var(--ink)}
+.an:nth-child(4) .at{background:var(--ink);color:#fff}
+.an h3{font-size:16px;font-weight:600;letter-spacing:-.02em}
+.an p{font-size:14.5px;line-height:1.55;color:#555}
+/* Recipe cards */
+.rcg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-top:40px}
+.rc{background:#fff;border:1px solid #EBEBEB;border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:12px}
+.rch{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:4px}
+.rch h3{font-size:18px;font-weight:600;letter-spacing:-.025em;margin:0}
+.rcf{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;align-items:baseline;padding-top:12px;border-top:1px solid #F0F0F0}
+.rcf b{font-weight:500;font-size:16px;letter-spacing:-.01em}
+.rcf b.ink{color:var(--ink)}
+/* Google Sheets visual */
+.sh{border:1px solid #EBEBEB;border-radius:14px;overflow:hidden;background:#fff}
+.shh{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid #EBEBEB}
+.shh b{font-size:14.5px}
+.shh .mono{margin-left:auto;font-size:10.5px}
+.shi{width:18px;height:22px;border-radius:3px;background:#1F9D55;position:relative;flex-shrink:0}
+.shi::after{content:"";position:absolute;inset:6px 4px;border:1.5px solid #fff;border-radius:1px}
+.shr{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 80px 104px}
+.shr span{padding:11px 12px;border-right:1px solid #F0F0F0;border-bottom:1px solid #F0F0F0;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#000}
+.shr span:last-child{border-right:0}
+.shr.h span{background:#FAFAFA;font-family:var(--font-mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:#666}
+.shr .u{color:#666!important;font-family:var(--font-mono);font-size:11.5px!important}
+.st{font-weight:500}
+.st.ok{color:#1F9D55}
+.st.go{color:var(--ink)}
+.st.q{color:#999}
+/* Responsive */
+@media(max-width:1000px){.anat{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.rp{grid-template-columns:1fr}}
+@media(max-width:600px){.shr{grid-template-columns:minmax(0,1fr) 90px}.shr span:nth-child(2),.shr span:nth-child(3){display:none}}
+@media(max-width:560px){.anat{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.rt{animation-duration:.01ms!important;animation-delay:0ms!important}}
