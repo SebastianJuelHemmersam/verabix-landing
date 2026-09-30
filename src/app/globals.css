@@ -376,3 +376,75 @@ a.mod:hover .arr{color:#000}
 .fgrid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){.truth{grid-template-columns:1fr}}
+/* ---- Vera AI product page ---- */
+/* Typography utilities */
+.mono{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.ink{color:var(--ink)}
+.glow{color:var(--glow)}
+/* Button ghost (light bg) */
+.btn.gh{background:transparent;color:#000;border-color:var(--grey-200)}
+.btn.gh:hover{background:var(--grey-50);color:#000}
+/* Block kicker helper */
+.kk{display:block;margin-bottom:20px}
+/* Stats band */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--grey-200);padding:0!important;max-width:none}
+.stats div{background:#fff;padding:30px clamp(20px,3vw,40px);display:flex;flex-direction:column;gap:6px}
+.stats b{font-weight:500;font-size:clamp(34px,4vw,48px);letter-spacing:-.045em;line-height:1}
+.stats span{font-size:14px;color:var(--grey-600)}
+/* Q&A section */
+.qa{border-top:1px solid #000}
+.qr{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px);padding:32px 0;border-bottom:1px solid var(--grey-200)}
+.q{display:flex;flex-direction:column;gap:12px}
+.q h3{font-weight:500;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.03em;line-height:1.15}
+.a{background:var(--blue-50);border-radius:4px 14px 14px 14px;padding:20px 24px;display:flex;flex-direction:column;gap:10px}
+.a p{font-size:16.5px;line-height:1.55;color:#000;text-wrap:pretty}
+.a .mono{display:flex;align-items:center;gap:8px}
+.vd{width:7px;height:7px;border-radius:50%;background:var(--ink);display:inline-block;flex-shrink:0}
+.src{font-family:var(--font-mono);font-size:11px;color:var(--ink);letter-spacing:.04em;padding-top:10px;border-top:1px solid #D5DDF3}
+/* How she works loop */
+.loop{list-style:none;border-top:1px solid #000}
+.loop li{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--grey-200)}
+.loop .hn{flex-shrink:0;margin:0}
+.loop h3{font-size:17px;font-weight:600;letter-spacing:-.02em}
+.loop p{font-size:15.5px;line-height:1.55;color:#555;margin-top:4px}
+/* Split top-aligned */
+.split.top{align-items:start}
+/* FAQ accordion */
+.faq{border-top:1px solid #000}
+.faq details{border-bottom:1px solid var(--grey-200)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:600;font-size:18px;letter-spacing:-.02em;position:relative;display:block}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:16px;font-weight:400;font-size:24px;color:var(--ink)}
+.faq details[open] summary::after{content:"−"}
+.faq p{padding:0 40px 22px 0;font-size:16px;line-height:1.6;color:#555;margin:0}
+/* Hero: Ask Vera widget */
+.vh{padding:clamp(56px,9vw,120px) 0 clamp(40px,6vw,72px);background:radial-gradient(ellipse 60% 50% at 50% 0,var(--blue-50),transparent 70%)}
+.vhw{display:flex;flex-direction:column;align-items:center;text-align:center;gap:0}
+.vhw>.mono{margin-bottom:22px;display:block}
+.vh h1{font-size:clamp(44px,6.4vw,84px);font-weight:500;letter-spacing:-.045em;line-height:1.02;text-wrap:balance}
+.vh .lead{margin:22px auto 40px;max-width:560px}
+.ask{width:100%;max-width:760px;text-align:left;display:flex;flex-direction:column;gap:12px}
+.askin{display:flex;align-items:center;gap:14px;background:#fff;border:1.5px solid #000;border-radius:999px;padding:10px 10px 10px 12px;box-shadow:0 1px 0 #000}
+.askav{width:36px;height:36px;flex-shrink:0}
+.askq{font-size:18px;font-weight:500;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;flex:1;min-width:0}
+.caret{width:2px;height:22px;background:var(--ink);animation:cb 1s steps(1) infinite;flex-shrink:0}
+@keyframes cb{50%{opacity:0}}
+.asksend{margin-left:auto;width:40px;height:40px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;font-size:17px;flex-shrink:0}
+.ans{background:#fff;border:1px solid var(--grey-200);border-radius:14px;padding:22px 26px;min-height:156px;display:flex;flex-direction:column;gap:12px;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s}
+.ans.show{opacity:1;transform:none}
+.ansh{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.ansh .mono{display:flex;align-items:center;gap:8px}
+.ansh .src{border:0;padding:0}
+.ans p{font-size:17.5px;line-height:1.55;text-wrap:pretty}
+.ans p b{font-weight:600;color:var(--ink)}
+.ans.think .vd{animation:vpz 1s ease-in-out infinite}
+@keyframes vpz{0%,100%{box-shadow:0 0 0 0 rgba(27,58,140,.4)}50%{box-shadow:0 0 0 6px rgba(27,58,140,0)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:6px}
+.chip{font:inherit;font-size:13.5px;padding:8px 14px;border-radius:999px;border:1px solid var(--grey-200);background:#fff;color:#555;cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+.chip:hover{border-color:#000;color:#000}
+.chip.on{background:#000;border-color:#000;color:#fff}
+.ctas.cen{justify-content:center;margin-top:36px}
+/* Product shot */
+.vshot{padding-bottom:clamp(56px,8vw,96px)}
+.vshot .shot{max-width:1100px;margin:0 auto}
+@media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.qr{grid-template-columns:1fr}}
