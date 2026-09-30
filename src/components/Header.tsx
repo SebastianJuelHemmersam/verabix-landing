@@ -18,7 +18,7 @@ const SOLUTIONS = [
 
 const PLATFORM = [
   { href: '/product/vera-ai',                 label: 'Vera AI',                   desc: 'Ask questions in plain English. Get answers with receipts.' },
-  { href: '/product/cross-channel-dashboard', label: 'Cross-channel Dashboard',   desc: 'Meta, Google Ads, Google Analytics in one view.' },
+  { href: '/product/cross-channel-dashboard', label: 'Dashboards',               desc: 'Build any dashboard from your live Meta, Google and GA4 data.' },
   { href: '/product/instant-campaigns',       label: 'Instant Campaign Creation', desc: 'From URL to live campaign in minutes, with AI.' },
   { href: '/product/advanced-wizard',         label: 'Advanced Campaign Wizard',  desc: 'Full manual control over Meta + Google Ads.' },
   { href: '/product/automations',             label: 'Automations',               desc: 'Rule-based actions across all your ad accounts.' },
