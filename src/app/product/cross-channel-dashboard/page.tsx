@@ -70,52 +70,54 @@ export default function DashboardsPage() {
           <div className="wrap">
             <div className="shead">
               <span className="mono ink">The old way</span>
-              <h2>Four tools. Four logins.<br />Still no single source of truth.</h2>
+              <h2>Five tools and a week.<br />For one dashboard.</h2>
             </div>
             <div className="ovn">
               <div className="ovo">
-                <div className="ovh">Before</div>
+                <div className="ovh">
+                  <span>Before &middot; Connectors + BI tool</span>
+                  <span className="ovlbl">Days</span>
+                </div>
                 <div className="ovt">
                   <span className="on">01</span>
-                  <span>Export data from Meta Ads Manager, Google Ads and GA4 separately.</span>
+                  <span><b>Export</b><br />Pull data out of Meta Ads and Google Ads</span>
                 </div>
                 <div className="ovt">
                   <span className="on">02</span>
-                  <span>Paste into a spreadsheet. Manually align date ranges and currency.</span>
+                  <span><b>Connect</b><br />Pay for a third-party connector to sync it</span>
                 </div>
                 <div className="ovt">
                   <span className="on">03</span>
-                  <span>Build charts. Realise the numbers don&apos;t match. Debug for an hour.</span>
+                  <span><b>Model</b><br />Map fields and fix mismatched metrics</span>
                 </div>
                 <div className="ovt">
                   <span className="on">04</span>
-                  <span>Email the dashboard as a PDF. It&apos;s out of date by Monday.</span>
+                  <span><b>Build</b><br />Drag charts around in Power BI, Looker Studio or Tableau</span>
                 </div>
+                <div className="ovt">
+                  <span className="on">05</span>
+                  <span><b>Maintain</b><br />Fix it every time an API or a campaign name changes</span>
+                </div>
+                <div className="ovf">3 subscriptions &middot; 1 analyst &middot; breaks when anything changes</div>
               </div>
               <div className="ovv">
-                <div className="ovh"><i className="vd" />Verabix</div>
+                <div className="ovh">
+                  <span>With Verabix</span>
+                  <span className="ovlbl">Seconds</span>
+                </div>
                 <div className="ovt">
                   <span className="on">01</span>
-                  <span>
-                    Type what you want: <em>&ldquo;Weekly performance for Meta and Google
-                    &mdash; spend, ROAS, CPA.&rdquo;</em>
-                  </span>
+                  <span><b>Connect</b><br />Meta Ads and Google Ads, once. Five minutes.</span>
                 </div>
                 <div className="ovt">
                   <span className="on">02</span>
-                  <span>Vera builds the dashboard from your live connected data.</span>
+                  <span><b>Ask</b><br />&ldquo;Weekly ROAS, spend and CPA for Meta and Google.&rdquo;</span>
                 </div>
                 <div className="ovt">
                   <span className="on">03</span>
-                  <span>
-                    Refine it in plain English: <em>&ldquo;Only show Spring Sale. Switch
-                    ROAS to Google only.&rdquo;</em>
-                  </span>
+                  <span><b>Done</b><br />Vera builds it on live data. Change it by asking.</span>
                 </div>
-                <div className="ovt">
-                  <span className="on">04</span>
-                  <span>Share the link. It updates itself.</span>
-                </div>
+                <div className="ovf">Included in Verabix &middot; no analyst &middot; always up to date</div>
               </div>
             </div>
           </div>
