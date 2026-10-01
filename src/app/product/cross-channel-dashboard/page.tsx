@@ -387,8 +387,8 @@ export default function DashboardsPage() {
                 <p>Turn a dashboard finding into a rule that acts on its own.</p>
                 <span className="arr">&rarr;</span>
               </a>
-              <a className="mod" href="/product/instant-campaigns">
-                <h3>Instant Campaign Creation</h3>
+              <a className="mod" href="/product/campaigns">
+                <h3>Campaigns</h3>
                 <p>From dashboard insight to live campaign in minutes.</p>
                 <span className="arr">&rarr;</span>
               </a>

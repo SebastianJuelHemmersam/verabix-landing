@@ -26,8 +26,7 @@ export default function Footer() {
             <span className="mono">Platform</span>
             <Link href="/product/vera-ai">Vera AI</Link>
             <Link href="/product/cross-channel-dashboard">Dashboards</Link>
-            <Link href="/product/instant-campaigns">Instant Campaigns</Link>
-            <Link href="/product/advanced-wizard">Advanced Wizard</Link>
+            <Link href="/product/campaigns">Campaigns</Link>
             <Link href="/product/automations">Automations</Link>
             <Link href="/product/multi-workspace">Multi-workspace &amp; Slack</Link>
           </div>
