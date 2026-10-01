@@ -42,13 +42,17 @@ function ChevronDown() {
   )
 }
 
-function DropdownPanel({ items }: { items: typeof SOLUTIONS }) {
+function DropdownPanel({ items, onMouseEnter, onMouseLeave }: { items: typeof SOLUTIONS; onMouseEnter?: () => void; onMouseLeave?: () => void }) {
   return (
-    <div style={{
-      position: 'absolute', top: 'calc(100% + 8px)', left: '50%', transform: 'translateX(-50%)',
-      background: '#fff', border: `1px solid ${GREY200}`, borderRadius: 14,
-      padding: '8px', minWidth: 280, zIndex: 200,
-    }}>
+    <div
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      style={{
+        position: 'absolute', top: 'calc(100% + 8px)', left: '50%', transform: 'translateX(-50%)',
+        background: '#fff', border: `1px solid ${GREY200}`, borderRadius: 14,
+        padding: '8px', minWidth: 280, zIndex: 200,
+      }}
+    >
       {items.map(item => (
         <Link key={item.href} href={item.href} style={{
           display: 'block', padding: '10px 14px', borderRadius: 8,
@@ -69,6 +73,19 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  function cancelClose() {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current)
+      closeTimer.current = null
+    }
+  }
+
+  function scheduleClose() {
+    cancelClose()
+    closeTimer.current = setTimeout(() => setOpenMenu(null), 150)
+  }
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -78,7 +95,11 @@ export default function Header() {
       }
     }
     document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
+    return () => {
+      document.removeEventListener('mousedown', handleClick)
+      cancelClose()
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function NavItem({ id, label, items }: { id: string; label: string; items: typeof SOLUTIONS }) {
@@ -86,8 +107,8 @@ export default function Header() {
     return (
       <div
         style={{ position: 'relative' }}
-        onMouseEnter={() => setOpenMenu(id)}
-        onMouseLeave={() => setOpenMenu(null)}
+        onMouseEnter={() => { cancelClose(); setOpenMenu(id) }}
+        onMouseLeave={scheduleClose}
       >
         <button
           onClick={() => setOpenMenu(open ? null : id)}
@@ -100,7 +121,7 @@ export default function Header() {
         >
           {label} <ChevronDown />
         </button>
-        {open && <DropdownPanel items={items} />}
+        {open && <DropdownPanel items={items} onMouseEnter={cancelClose} onMouseLeave={scheduleClose} />}
       </div>
     )
   }
