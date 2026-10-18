@@ -1,119 +1,342 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import AskPlatformsMock from './AskPlatformsMock'
+import AskVeraPanel from './AskVeraPanel'
 
 export const metadata: Metadata = {
-  title: 'Verabix for In-house Marketing Teams — Own your data without hiring an analyst',
-  description: 'Unified dashboard for Meta Ads, Google Ads and Google Analytics. Vera AI answers performance questions instantly. Automated Slack briefs keep the whole team aligned.',
-}
-
-const PURPLE    = '#534AB7'
-const PURPLE_BG = '#EEEDFE'
-const TEXT      = '#1A1F36'
-const MUTED     = '#697386'
-const BORDER    = '#E3E8EF'
-const SURF      = '#F0F2F7'
-const TINT      = '#F6F9FC'
-const FONT      = 'var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)'
-
-const BULLETS = [
-  'Unified dashboard: Meta Ads, Google Ads, GA4 — one source of truth',
-  'Vera AI explains anomalies in plain English, no SQL required',
-  'Daily 9am Slack brief, configurable by channel and platform',
-  'Attribution comparison: platform-reported vs GA4-observed conversions',
-  'Set automation rules once — Vera pauses low-ROAS campaigns automatically',
-  'Share live dashboards with stakeholders via Slack or a direct link',
-]
-
-function SlackPreview() {
-  return (
-    <div style={{ background: '#fff', borderRadius: 14, overflow: 'hidden', boxShadow: '0 10px 32px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.06)', fontFamily: FONT }}>
-      <div style={{ background: '#F8F8F8', padding: '10px 16px', borderBottom: `1px solid ${BORDER}`, fontSize: 13, color: '#1D1C1D', fontWeight: 500, display: 'flex', alignItems: 'center', gap: 6 }}>
-        <span style={{ color: '#616061' }}>#</span> marketing-weekly
-      </div>
-      <div style={{ display: 'flex', gap: 10, padding: '14px 16px', alignItems: 'flex-start' }}>
-        <div style={{ width: 32, height: 32, borderRadius: 6, flexShrink: 0, background: 'linear-gradient(135deg,#534AB7,#7C3AED)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 12 }}>V</div>
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
-            <span style={{ fontWeight: 700, fontSize: 13, color: '#1D1C1D' }}>Vera</span>
-            <span style={{ fontSize: 9, fontWeight: 700, background: '#E8E8E8', color: '#616061', padding: '1px 4px', borderRadius: 3 }}>APP</span>
-            <span style={{ fontSize: 11, color: '#9CA3AF' }}>9:00 AM</span>
-          </div>
-          <div style={{ fontSize: 13, color: '#1D1C1D', lineHeight: 1.5 }}>
-            <div style={{ fontWeight: 600, marginBottom: 6 }}>📊 Weekly performance brief — Monday, 9am</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-              <div>Meta Ads: <b>€22.4k</b> spend · ROAS <b style={{ color: '#0A8550' }}>3.8× (+0.4)</b></div>
-              <div>Google Ads: <b>€14.1k</b> spend · ROAS <b style={{ color: '#0A8550' }}>5.2× (+0.1)</b></div>
-              <div>GA4: <b>1,840 conversions</b> · <b style={{ color: '#C0123C' }}>-11% vs platform</b></div>
-            </div>
-            <div style={{ marginTop: 8, fontSize: 12, color: '#616061' }}>
-              ⚠️ Attribution gap: Meta reports 39% more conversions than GA4. Likely view-through windows.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+  title: 'In-house Marketing — One set of numbers. The whole team.',
+  description:
+    'Meta, Google and GA4 each tell a different story. Verabix puts them side by side, shows where they overlap, and lets Vera explain the gap — so the Monday meeting starts with answers, not an argument.',
 }
 
 export default function MarketingTeamsPage() {
   return (
-    <div style={{ background: '#fff', fontFamily: FONT, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <>
       <Header />
+      <main>
 
-      <section style={{ maxWidth: 1040, margin: '0 auto', padding: '72px 40px 64px', width: '100%' }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 600, color: PURPLE, background: PURPLE_BG, borderRadius: 999, padding: '4px 12px', letterSpacing: '0.4px', textTransform: 'uppercase', marginBottom: 20 }}>
-          Solutions · In-house Marketing
-        </div>
-        <div className="vbx-subhero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
-          <div>
-            <h1 style={{ fontSize: 40, fontWeight: 700, letterSpacing: '-0.8px', lineHeight: 1.15, margin: '0 0 20px', color: TEXT }}>
-              Own your marketing data without hiring an analyst.
-            </h1>
-            <p style={{ fontSize: 17, color: MUTED, lineHeight: 1.7, margin: '0 0 32px' }}>
-              Marketing teams spend half their time pulling numbers from different tools and the other half arguing about which number is right. Verabix unifies Meta, Google Ads and GA4 in one place — so Vera can answer &ldquo;why is CPA up?&rdquo; before your Monday meeting.
-            </p>
-            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-              <a href="https://app.verabix.com" style={{ display: 'inline-block', fontSize: 14, fontWeight: 600, padding: '12px 28px', borderRadius: 10, background: PURPLE, color: '#fff', textDecoration: 'none' }}>
-                Start free
+        {/* 01 Hero */}
+        <section className="mth">
+          <div className="wrap">
+            <div className="dht">
+              <div>
+                <span className="mono ink kk">Solutions &middot; In-house marketing</span>
+                <h1>One set of numbers.<br />The whole team.</h1>
+              </div>
+              <div>
+                <p className="lead">
+                  Meta, Google and GA4 each tell a different story. Verabix puts
+                  them side by side, shows where they overlap, and lets Vera
+                  explain the gap &mdash; so the Monday meeting starts with
+                  answers, not an argument.
+                </p>
+                <div className="ctas">
+                  <a className="btn" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+                    Book a demo &#8599;
+                  </a>
+                  <a className="btn gh" href="https://app.verabix.com">
+                    Start free
+                  </a>
+                </div>
+              </div>
+            </div>
+            <AskPlatformsMock />
+          </div>
+        </section>
+
+        {/* 02 Stats */}
+        <section className="works">
+          <div className="wrap stats">
+            <div><b>3 &rarr; 1</b><span>tools your team has to open</span></div>
+            <div><b>1</b><span>set of numbers everyone reads</span></div>
+            <div><b>0</b><span>analysts you need to hire</span></div>
+            <div><b>2 min</b><span>between budget-rule checks</span></div>
+          </div>
+        </section>
+
+        {/* 03 Ask Vera */}
+        <section className="sec">
+          <div className="wrap">
+            <div className="shead row">
+              <div>
+                <span className="mono ink">Vera AI</span>
+                <h2>The analyst your team<br />didn&apos;t have to hire.</h2>
+              </div>
+              <p>
+                Anyone on the team can ask. Vera has already read every number
+                in Meta Ads, Google Ads and GA4 &mdash; and answers in plain
+                words, with the figures behind it.
+              </p>
+            </div>
+            <AskVeraPanel />
+            <Link className="lnk" href="/product/vera-ai" style={{ marginTop: 20, display: 'inline-flex' }}>
+              Meet Vera &rarr;
+            </Link>
+          </div>
+        </section>
+
+        {/* 04 Attribution */}
+        <section className="sec alt">
+          <div className="wrap split">
+            <div className="copy">
+              <span className="mono ink">Attribution</span>
+              <h2>See where the numbers disagree.<br />And why.</h2>
+              <p>
+                Every platform takes credit for the same customer. Verabix lines
+                up what Meta and Google claim against what GA4 recorded, channel
+                by channel &mdash; and flags the overlap.
+              </p>
+              <ul className="chk">
+                <li>Platform-reported vs. GA4 last-click, side by side</li>
+                <li>Overlap and attribution gap, calculated for you</li>
+                <li>Organic and Direct shown next to paid</li>
+                <li>Vera&apos;s read on what the gap means</li>
+              </ul>
+            </div>
+            <div className="mtat">
+              <div className="mtath">
+                <b>Channel overlap</b>
+                <span className="mono">Last 30 days</span>
+              </div>
+              <div className="mttb">
+                <div className="mttr h">
+                  <span>Channel</span><span>Meta Ads</span><span>Google Ads</span><span>GA4</span>
+                </div>
+                <div className="mttr">
+                  <span>Meta Ads</span><span>412</span><span className="nil">&mdash;</span><span className="ga">251</span>
+                </div>
+                <div className="mttr">
+                  <span>Google Paid Search</span><span className="nil">&mdash;</span><span>288</span><span className="ga">224</span>
+                </div>
+                <div className="mttr">
+                  <span>Google Organic</span><span className="nil">&mdash;</span><span className="nil">&mdash;</span><span className="ga">38</span>
+                </div>
+                <div className="mttr">
+                  <span>Direct</span><span className="nil">&mdash;</span><span className="nil">&mdash;</span><span className="ga">21</span>
+                </div>
+                <div className="mttr">
+                  <span>Other</span><span className="nil">&mdash;</span><span className="nil">&mdash;</span><span className="ga">6</span>
+                </div>
+                <div className="mttr t">
+                  <span>Total</span><span>412</span><span>288</span><span className="ga">540</span>
+                </div>
+              </div>
+              <div className="mtatn">
+                <b>~23% overlap detected.</b> Roughly 160 of the 700 conversions
+                claimed by Meta and Google appear to be the same customers
+                counted twice.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 05 Automations */}
+        <section className="sec">
+          <div className="wrap split rev">
+            <div className="copy">
+              <span className="mono ink">Automations</span>
+              <h2>Guardrails between<br />weekly reviews.</h2>
+              <p>
+                Your team meets once a week. Budgets don&apos;t wait that long.
+                Set the rule once and Verabix checks every two minutes &mdash;
+                pausing, scaling or alerting the moment it&apos;s hit.
+              </p>
+              <ul className="chk">
+                <li>Pause, scale budget, email or Slack</li>
+                <li>Meta Ads and Google Ads</li>
+                <li>Every trigger logged</li>
+              </ul>
+              <Link className="lnk" href="/product/automations">See Automations &rarr;</Link>
+            </div>
+            <div className="mtrl">
+              <div className="mtrr">
+                <span className="mono">Rule &middot; Active</span>
+                <p>
+                  <em>When</em> <span className="tk">spend</span> <em>on</em>{' '}
+                  <span className="tk">Meta &middot; all campaigns</span> <em>goes</em>{' '}
+                  <span className="tk">above DKK 50,000 / month</span> <em>then</em>{' '}
+                  <span className="tk f">pause campaign</span> <em>and</em>{' '}
+                  <span className="tk f">email the CMO</span>
+                </p>
+              </div>
+              <div className="mtrr">
+                <span className="mono">Rule &middot; Active</span>
+                <p>
+                  <em>When</em> <span className="tk">ROAS</span> <em>on</em>{' '}
+                  <span className="tk">Google &middot; Shopping</span> <em>goes</em>{' '}
+                  <span className="tk">above 5.0&times;</span> <em>then</em>{' '}
+                  <span className="tk f">increase budget 10%</span> <em>and</em>{' '}
+                  <span className="tk f">post in #marketing</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 06 Dashboards (black) */}
+        <section className="sec dark">
+          <div className="wrap split">
+            <div className="copy">
+              <span className="mono glow">Dashboards</span>
+              <h2>The numbers on the wall. Not in someone&apos;s inbox.</h2>
+              <p>
+                Ask Vera for the dashboard the team needs, then publish it. Put
+                the link on the office screen, in the board deck, or in Slack
+                &mdash; everyone sees the same live numbers, without a login.
+              </p>
+              <ul className="chk">
+                <li>Built from a prompt, edited by asking</li>
+                <li>Publish to a link &mdash; no login needed</li>
+                <li>Unpublish any time</li>
+              </ul>
+              <Link className="lnk" href="/product/cross-channel-dashboard">See Dashboards &rarr;</Link>
+            </div>
+            <div className="mttv">
+              <div className="mttvs">
+                <div className="mttvh">
+                  <b>Marketing &mdash; This month</b>
+                  <span><i />Live</span>
+                </div>
+                <div className="mttvk">
+                  <div><span>Spend</span><b>DKK 186k</b></div>
+                  <div><span>Revenue</span><b>DKK 1.02m</b></div>
+                  <div><span>Blended ROAS</span><b>5.5&times;</b></div>
+                  <div><span>Conversions</span><b>540</b></div>
+                </div>
+                <div className="mttvc">
+                  {[38, 42, 40, 48, 46, 52, 50, 57, 55, 61, 58, 66, 64, 70, 68, 74].map((h, i) => (
+                    <i key={i} style={{ height: `${h}%` }} />
+                  ))}
+                </div>
+              </div>
+              <div className="mttvst" />
+            </div>
+          </div>
+        </section>
+
+        {/* 07 For the whole team */}
+        <section className="sec">
+          <div className="wrap">
+            <div className="shead">
+              <span className="mono ink">For the whole team</span>
+              <h2>Same numbers.<br />Different questions.</h2>
+            </div>
+            <div className="how">
+              <div className="hw">
+                <span className="hn">01</span>
+                <h3>Head of marketing</h3>
+                <p>
+                  &ldquo;Are we on track this month?&rdquo; Open the shared
+                  dashboard, or ask Vera for a three-line summary before the
+                  leadership meeting.
+                </p>
+              </div>
+              <div className="hw">
+                <span className="hn">02</span>
+                <h3>Performance marketer</h3>
+                <p>
+                  &ldquo;What should I change today?&rdquo; Vera&apos;s
+                  recommendations, ranked by impact &mdash; turn the good ones
+                  into rules.
+                </p>
+              </div>
+              <div className="hw">
+                <span className="hn">03</span>
+                <h3>Content &amp; brand</h3>
+                <p>
+                  &ldquo;Which creative is working?&rdquo; Ask Vera. No Ads
+                  Manager login, no export, no waiting for someone else.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 08 FAQ */}
+        <section className="sec alt">
+          <div className="wrap split top">
+            <div className="copy">
+              <span className="mono ink">FAQ</span>
+              <h2>Straight answers.</h2>
+            </div>
+            <div className="faq">
+              <details open>
+                <summary>Which number is right &mdash; Meta, Google or GA4?</summary>
+                <p>None of them is wrong; they count differently. Meta and Google each claim conversions in their own ecosystem, so they overlap. GA4 records each converting session once. Verabix shows all three side by side and calculates the overlap.</p>
+              </details>
+              <details>
+                <summary>Do we need GA4 connected?</summary>
+                <p>No, but it unlocks the attribution comparison. Without it you still get Meta and Google side by side, Vera, dashboards and automations.</p>
+              </details>
+              <details>
+                <summary>Can the whole team use it?</summary>
+                <p>Yes. Anyone on the team can ask Vera questions, and published dashboards can be opened by anyone with the link &mdash; no login.</p>
+              </details>
+              <details>
+                <summary>Does Vera change anything on her own?</summary>
+                <p>No. Vera recommends; you decide. Only automations you set up yourself act on campaigns.</p>
+              </details>
+              <details>
+                <summary>How long does setup take?</summary>
+                <p>Connect Meta Ads, Google Ads and GA4 and you see your numbers straight away.</p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        {/* 09 Keep exploring */}
+        <section className="sec">
+          <div className="wrap">
+            <div className="shead">
+              <span className="mono ink">Keep exploring</span>
+            </div>
+            <div className="grid4">
+              <Link className="mod" href="/product/vera-ai">
+                <h3>Vera AI</h3>
+                <p>The analyst who has already read every number.</p>
+                <span className="arr">&rarr;</span>
+              </Link>
+              <Link className="mod" href="/product/cross-channel-dashboard">
+                <h3>Dashboards</h3>
+                <p>One view your whole team reads the same way.</p>
+                <span className="arr">&rarr;</span>
+              </Link>
+              <Link className="mod" href="/product/automations">
+                <h3>Automations</h3>
+                <p>Rules that protect your budget between reviews.</p>
+                <span className="arr">&rarr;</span>
+              </Link>
+              <Link className="mod" href="/product/campaigns">
+                <h3>Campaigns</h3>
+                <p>Launch from a URL, a wizard or a sheet.</p>
+                <span className="arr">&rarr;</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="cta">
+          <div className="wrap ctaw">
+            <div>
+              <h2>Gut feeling is not a strategy.<br />Neither is three spreadsheets.</h2>
+              <p>Connect Meta Ads, Google Ads and GA4. Your team has one set of numbers by lunch.</p>
+            </div>
+            <div className="ctas">
+              <a className="btn wht" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+                Book a demo &#8599;
               </a>
-              <a href="mailto:admin@verabix.com?subject=Demo+request" style={{ display: 'inline-block', fontSize: 14, fontWeight: 500, padding: '12px 20px', borderRadius: 10, border: `1.5px solid ${BORDER}`, color: MUTED, textDecoration: 'none' }}>
-                Book a demo →
+              <a className="btn ghw" href="https://app.verabix.com">
+                Sign up free
               </a>
             </div>
           </div>
-          <SlackPreview />
-        </div>
-      </section>
+        </section>
 
-      <section style={{ background: TINT, borderTop: `0.5px solid ${BORDER}`, borderBottom: `0.5px solid ${BORDER}`, padding: '64px 40px' }}>
-        <div style={{ maxWidth: 720, margin: '0 auto' }}>
-          <h2 style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.5px', color: TEXT, margin: '0 0 32px' }}>
-            Stop exporting spreadsheets. Start getting answers.
-          </h2>
-          <div className="vbx-feature-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-            {BULLETS.map(b => (
-              <div key={b} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '16px 18px', background: '#fff', borderRadius: 10, border: `0.5px solid ${BORDER}` }}>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, marginTop: 2 }}><circle cx="8" cy="8" r="8" fill={PURPLE_BG}/><path d="M4.5 8L7 10.5L11.5 5.5" stroke={PURPLE} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                <span style={{ fontSize: 13, color: TEXT, lineHeight: 1.55 }}>{b}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={{ padding: '64px 40px', textAlign: 'center' }}>
-        <div style={{ maxWidth: 520, margin: '0 auto' }}>
-          <h2 style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.5px', color: TEXT, margin: '0 0 14px' }}>Ready to stop fighting your data?</h2>
-          <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.7, margin: '0 0 28px' }}>Free to start. No credit card required.</p>
-          <a href="https://app.verabix.com" style={{ display: 'inline-block', fontSize: 15, fontWeight: 600, padding: '13px 32px', borderRadius: 10, background: PURPLE, color: '#fff', textDecoration: 'none' }}>
-            Start with Verabix →
-          </a>
-        </div>
-      </section>
-
-      <div style={{ flex: 1 }} />
+      </main>
       <Footer />
-    </div>
+    </>
   )
 }
