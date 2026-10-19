@@ -20,7 +20,7 @@ export default function Footer() {
               <LogoMark />
               <span style={{ fontSize: 20, fontWeight: 600, letterSpacing: '-0.045em', color: '#000' }}>verabix</span>
             </Link>
-            <p>The operating system for performance marketers. Meta Ads, Google Ads and GA4 â€” unified, analysed and acted on in one place.</p>
+            <p>The operating system for performance marketers. Meta Ads, Google Ads and GA4 — unified, analysed and acted on in one place.</p>
           </div>
           <div>
             <span className="mono">Platform</span>
@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="fbot">
-          <span>Â© 2026 Verabix ApS Â· CVR: 46483839 Â· Odense, Denmark</span>
+          <span>© 2026 Verabix ApS · CVR: 46483839 · Odense, Denmark</span>
           <div style={{ display: 'flex', gap: 24 }}>
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>

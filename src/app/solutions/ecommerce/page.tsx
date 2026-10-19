@@ -5,9 +5,9 @@ import Footer from '@/components/Footer'
 import MarketLeaderboardMock from './MarketLeaderboardMock'
 
 export const metadata: Metadata = {
-  title: 'E-commerce Brands â€” Every market. One read.',
+  title: 'E-commerce Brands — Every market. One read.',
   description:
-    "Selling in Denmark, Sweden and Germany means three currencies, three sets of ad accounts and creative that works differently in each. Verabix gives every market its own workspace â€” and Vera tells you whatâ€™s working where.",
+    "Selling in Denmark, Sweden and Germany means three currencies, three sets of ad accounts and creative that works differently in each. Verabix gives every market its own workspace — and Vera tells you what’s working where.",
 }
 
 function VeraIconGlow() {

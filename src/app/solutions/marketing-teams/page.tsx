@@ -6,9 +6,9 @@ import AskPlatformsMock from './AskPlatformsMock'
 import AskVeraPanel from './AskVeraPanel'
 
 export const metadata: Metadata = {
-  title: 'In-house Marketing â€” One set of numbers. The whole team.',
+  title: 'In-house Marketing — One set of numbers. The whole team.',
   description:
-    'Meta, Google and GA4 each tell a different story. Verabix puts them side by side, shows where they overlap, and lets Vera explain the gap â€” so the Monday meeting starts with answers, not an argument.',
+    'Meta, Google and GA4 each tell a different story. Verabix puts them side by side, shows where they overlap, and lets Vera explain the gap — so the Monday meeting starts with answers, not an argument.',
 }
 
 export default function MarketingTeamsPage() {

@@ -4,9 +4,9 @@ import Footer from '@/components/Footer'
 import RuleBuilder from './RuleBuilder'
 
 export const metadata: Metadata = {
-  title: 'Automations â€” Rules that never sleep',
+  title: 'Automations — Rules that never sleep',
   description:
-    'Set rules that pause campaigns, adjust budgets, or send Slack alerts when ROAS or CPA hits a threshold â€” across Meta Ads and Google Ads, checked every two minutes.',
+    'Set rules that pause campaigns, adjust budgets, or send Slack alerts when ROAS or CPA hits a threshold — across Meta Ads and Google Ads, checked every two minutes.',
 }
 
 function VeraIcon() {
@@ -25,22 +25,22 @@ export default function AutomationsPage() {
       <Header />
       <main>
 
-        {/* â”€â”€ 01 Hero â”€â”€ */}
+        {/* ── 01 Hero ── */}
         <section className="ah">
           <div className="wrap">
             <div className="dht">
               <div>
-                <span className="mono glow kk">Product Â· Automations</span>
+                <span className="mono glow kk">Product · Automations</span>
                 <h1>Rules that<br />never sleep.</h1>
               </div>
               <div className="dhr">
                 <p className="lead">
                   Tell Verabix what good and bad look like. It checks Meta Ads and
-                  Google Ads every two minutes â€” and pauses, scales or alerts the
+                  Google Ads every two minutes — and pauses, scales or alerts the
                   moment a rule is hit. Day and night.
                 </p>
                 <div className="ctas">
-                  <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">Book a demo â†—</a>
+                  <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">Book a demo ↗</a>
                   <a className="btn ghw" href="https://app.verabix.com">Create an automation</a>
                 </div>
               </div>
@@ -49,7 +49,7 @@ export default function AutomationsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 02 Stats â”€â”€ */}
+        {/* ── 02 Stats ── */}
         <section className="works">
           <div className="wrap stats">
             <div><b>2 min</b><span>between checks, 24/7</span></div>
@@ -59,7 +59,7 @@ export default function AutomationsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 03 Anatomy of a rule â”€â”€ */}
+        {/* ── 03 Anatomy of a rule ── */}
         <section className="sec">
           <div className="wrap">
             <div className="shead row">
@@ -73,7 +73,7 @@ export default function AutomationsPage() {
               <div className="an">
                 <span className="at">When</span>
                 <h3>The metric</h3>
-                <p>ROAS, CPA, CPC, CTR, spend, conversions, cost per result â€” or frequency on Meta.</p>
+                <p>ROAS, CPA, CPC, CTR, spend, conversions, cost per result — or frequency on Meta.</p>
               </div>
               <div className="an">
                 <span className="at">Where</span>
@@ -83,7 +83,7 @@ export default function AutomationsPage() {
               <div className="an">
                 <span className="at">If</span>
                 <h3>The condition</h3>
-                <p>Above or below a fixed value â€” or a % change against a locked or rolling baseline.</p>
+                <p>Above or below a fixed value — or a % change against a locked or rolling baseline.</p>
               </div>
               <div className="an">
                 <span className="at">Then</span>
@@ -99,7 +99,7 @@ export default function AutomationsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 04 Recipes â”€â”€ */}
+        {/* ── 04 Recipes ── */}
         <section className="sec alt">
           <div className="wrap">
             <div className="shead">
@@ -141,14 +141,14 @@ export default function AutomationsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 05 Alerts â”€â”€ */}
+        {/* ── 05 Alerts ── */}
         <section className="sec">
           <div className="wrap split">
             <div className="copy">
               <span className="mono ink kk">Alerts</span>
               <h2>Know the moment it happens.</h2>
               <p>
-                Every automation can post to Slack or send an email â€” with the number
+                Every automation can post to Slack or send an email — with the number
                 that triggered it and what Verabix did about it. No more finding out
                 on Monday.
               </p>
@@ -194,7 +194,7 @@ export default function AutomationsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 06 Sheet automations â”€â”€ */}
+        {/* ── 06 Sheet automations ── */}
         <section className="sec alt">
           <div className="wrap split rev">
             <div className="copy">
@@ -202,7 +202,7 @@ export default function AutomationsPage() {
               <h2>Add a row.<br />Launch a campaign.</h2>
               <p>
                 Plan campaigns in Google Sheets like you always have. Connect the sheet,
-                map the columns â€” and every new row becomes a live campaign. No
+                map the columns — and every new row becomes a live campaign. No
                 copy-pasting into Ads Manager.
               </p>
               <ul className="chk">
@@ -214,7 +214,7 @@ export default function AutomationsPage() {
             <div className="sh">
               <div className="shh">
                 <span className="shi" />
-                <b>Campaign plan â€” Q4</b>
+                <b>Campaign plan — Q4</b>
                 <span className="mono">Google Sheets</span>
               </div>
               <div>
@@ -225,25 +225,25 @@ export default function AutomationsPage() {
                   <span>Status</span>
                 </div>
                 <div className="shr">
-                  <span>Autumn Sale â€” DK</span>
+                  <span>Autumn Sale — DK</span>
                   <span className="u">autumn-sale.dk/dk</span>
                   <span>DKK 500</span>
                   <span className="st ok">Launched</span>
                 </div>
                 <div className="shr">
-                  <span>Autumn Sale â€” SE</span>
+                  <span>Autumn Sale — SE</span>
                   <span className="u">autumn-sale.dk/se</span>
                   <span>SEK 600</span>
                   <span className="st ok">Launched</span>
                 </div>
                 <div className="shr">
-                  <span>New Arrivals â€” Reels</span>
+                  <span>New Arrivals — Reels</span>
                   <span className="u">shop.dk/new</span>
                   <span>DKK 350</span>
                   <span className="st go">Launching&hellip;</span>
                 </div>
                 <div className="shr">
-                  <span>Black Friday â€” Teaser</span>
+                  <span>Black Friday — Teaser</span>
                   <span className="u">shop.dk/bf</span>
                   <span>DKK 800</span>
                   <span className="st q">Queued</span>
@@ -253,7 +253,7 @@ export default function AutomationsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 07 Control â”€â”€ */}
+        {/* ── 07 Control ── */}
         <section className="sec">
           <div className="wrap">
             <div className="shead">
@@ -264,7 +264,7 @@ export default function AutomationsPage() {
               <div className="hw">
                 <span className="hn">01</span>
                 <h3>Preview before you save</h3>
-                <p>See the campaign&apos;s current value for the metric before the rule goes live â€” so you set thresholds on real numbers.</p>
+                <p>See the campaign&apos;s current value for the metric before the rule goes live — so you set thresholds on real numbers.</p>
               </div>
               <div className="hw">
                 <span className="hn">02</span>
@@ -274,13 +274,13 @@ export default function AutomationsPage() {
               <div className="hw">
                 <span className="hn">03</span>
                 <h3>Stay in control</h3>
-                <p>See how many times a rule has fired today and this week â€” and switch any automation off in one click.</p>
+                <p>See how many times a rule has fired today and this week — and switch any automation off in one click.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* â”€â”€ 08 FAQ â”€â”€ */}
+        {/* ── 08 FAQ ── */}
         <section className="sec alt">
           <div className="wrap split top">
             <div className="copy">
@@ -298,7 +298,7 @@ export default function AutomationsPage() {
               </details>
               <details>
                 <summary>What&apos;s the difference between locked and rolling baselines?</summary>
-                <p>A locked baseline compares against the value when you created the rule. A rolling baseline moves with recent performance â€” so &ldquo;CTR drops 30%&rdquo; always means 30% below normal.</p>
+                <p>A locked baseline compares against the value when you created the rule. A rolling baseline moves with recent performance — so &ldquo;CTR drops 30%&rdquo; always means 30% below normal.</p>
               </details>
               <details>
                 <summary>Can a rule fire more than once?</summary>
@@ -312,7 +312,7 @@ export default function AutomationsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 09 Keep exploring â”€â”€ */}
+        {/* ── 09 Keep exploring ── */}
         <section className="sec">
           <div className="wrap">
             <div className="shead">
@@ -338,7 +338,7 @@ export default function AutomationsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ CTA â”€â”€ */}
+        {/* ── CTA ── */}
         <section className="cta">
           <div className="wrap ctaw">
             <div>
@@ -346,7 +346,7 @@ export default function AutomationsPage() {
               <p>Connect Meta Ads and Google Ads. Your first automation takes two minutes.</p>
             </div>
             <div className="ctas">
-              <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">Book a demo â†—</a>
+              <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">Book a demo ↗</a>
               <a className="btn ghw" href="https://app.verabix.com">Sign up free</a>
             </div>
           </div>

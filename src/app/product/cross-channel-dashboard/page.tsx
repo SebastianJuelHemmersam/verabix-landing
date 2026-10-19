@@ -4,9 +4,9 @@ import Footer from '@/components/Footer'
 import DashBuilder from './DashBuilder'
 
 export const metadata: Metadata = {
-  title: 'Dashboards â€” Build any marketing dashboard from one prompt',
+  title: 'Dashboards — Build any marketing dashboard from one prompt',
   description:
-    'Describe what you want to see. Vera builds the dashboard from your live Meta Ads, Google Ads and GA4 data â€” in seconds. Edit in plain English. Share with one link.',
+    'Describe what you want to see. Vera builds the dashboard from your live Meta Ads, Google Ads and GA4 data — in seconds. Edit in plain English. Share with one link.',
 }
 
 export default function DashboardsPage() {
@@ -15,12 +15,12 @@ export default function DashboardsPage() {
       <Header />
       <main>
 
-        {/* â”€â”€ 01 Hero â”€â”€ */}
+        {/* ── 01 Hero ── */}
         <section className="dh">
           <div className="wrap">
             <div className="dht">
               <div>
-                <span className="mono ink kk">Product Â· Dashboards</span>
+                <span className="mono ink kk">Product · Dashboards</span>
                 <h1>Any dashboard.<br />One prompt away.</h1>
               </div>
               <div className="dhr">
@@ -43,7 +43,7 @@ export default function DashboardsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 02 Stats â”€â”€ */}
+        {/* ── 02 Stats ── */}
         <section className="works">
           <div className="wrap stats">
             <div>
@@ -65,7 +65,7 @@ export default function DashboardsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 03 Old way vs Verabix â”€â”€ */}
+        {/* ── 03 Old way vs Verabix ── */}
         <section className="sec">
           <div className="wrap">
             <div className="shead">
@@ -123,7 +123,7 @@ export default function DashboardsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 04 Edit with Vera â”€â”€ */}
+        {/* ── 04 Edit with Vera ── */}
         <section className="sec alt">
           <div className="wrap split">
             <div className="copy">
@@ -160,7 +160,7 @@ export default function DashboardsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 05 Publish & share â”€â”€ */}
+        {/* ── 05 Publish & share ── */}
         <section className="sec dark">
           <div className="wrap split rev">
             <div className="copy">
@@ -227,7 +227,7 @@ export default function DashboardsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 06 Building blocks â”€â”€ */}
+        {/* ── 06 Building blocks ── */}
         <section className="sec">
           <div className="wrap">
             <div className="shead row">
@@ -292,7 +292,7 @@ export default function DashboardsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 07 Overview screenshot â”€â”€ */}
+        {/* ── 07 Overview screenshot ── */}
         <section className="sec alt">
           <div className="wrap split">
             <div className="copy">
@@ -316,7 +316,7 @@ export default function DashboardsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 08 FAQ â”€â”€ */}
+        {/* ── 08 FAQ ── */}
         <section className="sec">
           <div className="wrap split top">
             <div className="copy">
@@ -370,7 +370,7 @@ export default function DashboardsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 09 Keep exploring â”€â”€ */}
+        {/* ── 09 Keep exploring ── */}
         <section className="sec alt">
           <div className="wrap">
             <div className="shead">
@@ -396,7 +396,7 @@ export default function DashboardsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ CTA â”€â”€ */}
+        {/* ── CTA ── */}
         <section className="cta">
           <div className="wrap ctaw">
             <div>

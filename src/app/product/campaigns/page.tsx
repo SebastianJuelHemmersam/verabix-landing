@@ -5,7 +5,7 @@ import WizardStepper from './WizardStepper'
 import SheetSimulator from './SheetSimulator'
 
 export const metadata: Metadata = {
-  title: 'Campaigns â€” Three ways to build, in one place',
+  title: 'Campaigns — Three ways to build, in one place',
   description:
     'Paste a URL for an instant campaign, step through the full wizard for manual control, or link a Google Sheet to launch in bulk. All three in Verabix.',
 }
@@ -26,7 +26,7 @@ export default function CampaignsPage() {
       <Header />
       <main>
 
-        {/* â”€â”€ 01 Hero â”€â”€ */}
+        {/* ── 01 Hero ── */}
         <section className="cphero">
           <div className="wrap">
             <div className="shead">
@@ -72,7 +72,7 @@ export default function CampaignsPage() {
                 <h3>Advanced</h3>
                 <span className="wtg">Six steps. Full control.</span>
                 <p className="wd">
-                  Set platform, goal, audience, budget, creative and review â€” step by
+                  Set platform, goal, audience, budget, creative and review — step by
                   step. Every option exposed, every field yours to set.
                 </p>
                 <div className="wm">
@@ -96,7 +96,7 @@ export default function CampaignsPage() {
                 <h3>Bulk from sheet</h3>
                 <span className="wtg">Link a Google Sheet. Launch at scale.</span>
                 <p className="wd">
-                  Plan campaigns in Google Sheets â€” one row per campaign. Vera reads
+                  Plan campaigns in Google Sheets — one row per campaign. Vera reads
                   the sheet and creates every campaign automatically.
                 </p>
                 <div className="wm">
@@ -105,7 +105,7 @@ export default function CampaignsPage() {
                   <div><span>Best for</span><b>Agencies &amp; scale</b></div>
                 </div>
                 <div className="wb">
-                  <p>Upload once, schedule it, or watch a column â€” your choice.</p>
+                  <p>Upload once, schedule it, or watch a column — your choice.</p>
                 </div>
                 <span className="lnk">See how it works &rarr;</span>
               </a>
@@ -113,7 +113,7 @@ export default function CampaignsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 02 Stats â”€â”€ */}
+        {/* ── 02 Stats ── */}
         <section className="works">
           <div className="wrap stats">
             <div><b>3</b><span>ways to build a campaign</span></div>
@@ -123,15 +123,15 @@ export default function CampaignsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 03 Instant campaigns â”€â”€ */}
+        {/* ── 03 Instant campaigns ── */}
         <section className="sec" id="instant">
           <div className="wrap split">
             <div className="copy">
               <span className="mono ink kk">01 &middot; Instant</span>
               <h2>From URL to campaign<br />in two minutes.</h2>
               <p>
-                Paste the landing page URL. Vera reads the page â€” headline, copy,
-                product images, goal â€” and builds the campaign for you. Review,
+                Paste the landing page URL. Vera reads the page — headline, copy,
+                product images, goal — and builds the campaign for you. Review,
                 adjust if needed, and launch.
               </p>
               <ul className="chk">
@@ -209,7 +209,7 @@ export default function CampaignsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 04 Advanced wizard â”€â”€ */}
+        {/* ── 04 Advanced wizard ── */}
         <section className="sec alt" id="wizard">
           <div className="wrap">
             <div className="shead row">
@@ -219,14 +219,14 @@ export default function CampaignsPage() {
               </div>
               <p>
                 When you need full control over platform, bidding, audience and
-                creative â€” the wizard walks you through every decision, step by step.
+                creative — the wizard walks you through every decision, step by step.
               </p>
             </div>
             <WizardStepper />
           </div>
         </section>
 
-        {/* â”€â”€ 05 Bulk from sheet â”€â”€ */}
+        {/* ── 05 Bulk from sheet ── */}
         <section className="sec dark" id="sheet">
           <div className="wrap">
             <div className="shead row">
@@ -235,8 +235,8 @@ export default function CampaignsPage() {
                 <h2>Plan in a sheet.<br />Launch at scale.</h2>
               </div>
               <p style={{ color: '#B5B5B5' }}>
-                One row per campaign. Vera reads the sheet â€” once, on a schedule,
-                or when a column value changes â€” and creates every campaign.
+                One row per campaign. Vera reads the sheet — once, on a schedule,
+                or when a column value changes — and creates every campaign.
                 No copy-pasting.
               </p>
             </div>
@@ -244,7 +244,7 @@ export default function CampaignsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 06 Every campaign â”€â”€ */}
+        {/* ── 06 Every campaign ── */}
         <section className="sec">
           <div className="wrap split">
             <div className="copy">
@@ -274,7 +274,7 @@ export default function CampaignsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 07 FAQ â”€â”€ */}
+        {/* ── 07 FAQ ── */}
         <section className="sec alt">
           <div className="wrap split top">
             <div className="copy">
@@ -285,8 +285,8 @@ export default function CampaignsPage() {
               <details open>
                 <summary>How does Vera generate the campaign from a URL?</summary>
                 <p>
-                  Vera reads your landing page â€” headline, body copy, images and page
-                  structure â€” and uses that to pre-fill the campaign name, headline,
+                  Vera reads your landing page — headline, body copy, images and page
+                  structure — and uses that to pre-fill the campaign name, headline,
                   primary text, goal and creatives. You review everything before it goes
                   live.
                 </p>
@@ -295,7 +295,7 @@ export default function CampaignsPage() {
                 <summary>Can I edit the campaign after Vera builds it?</summary>
                 <p>
                   Yes. The instant campaign creates a draft you review before launching.
-                  Change any field â€” headline, budget, audience, platforms â€” before you
+                  Change any field — headline, budget, audience, platforms — before you
                   hit launch.
                 </p>
               </details>
@@ -311,8 +311,8 @@ export default function CampaignsPage() {
                 <summary>How does the Google Sheet trigger work?</summary>
                 <p>
                   You choose from three trigger types: upload once (runs immediately),
-                  scheduled check (every 15â€“60 minutes), or variable trigger (watches a
-                  column â€” when the value matches, the campaign launches). All three are
+                  scheduled check (every 15–60 minutes), or variable trigger (watches a
+                  column — when the value matches, the campaign launches). All three are
                   configurable from the same interface.
                 </p>
               </details>
@@ -327,7 +327,7 @@ export default function CampaignsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 08 Keep exploring â”€â”€ */}
+        {/* ── 08 Keep exploring ── */}
         <section className="sec">
           <div className="wrap">
             <div className="shead">
@@ -336,7 +336,7 @@ export default function CampaignsPage() {
             <div className="grid4">
               <a className="mod" href="/product/automations">
                 <h3>Automations</h3>
-                <p>Set rules that pause, scale or alert â€” checked every two minutes.</p>
+                <p>Set rules that pause, scale or alert — checked every two minutes.</p>
                 <span className="arr">&rarr;</span>
               </a>
               <a className="mod" href="/product/cross-channel-dashboard">
@@ -358,7 +358,7 @@ export default function CampaignsPage() {
           </div>
         </section>
 
-        {/* â”€â”€ CTA â”€â”€ */}
+        {/* ── CTA ── */}
         <section className="cta">
           <div className="wrap ctaw">
             <div>

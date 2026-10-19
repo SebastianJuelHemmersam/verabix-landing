@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import TabCollapseMock from './TabCollapseMock'
 
 export const metadata: Metadata = {
-  title: 'Ad Agencies â€” More clients. Not more tabs.',
+  title: 'Ad Agencies — More clients. Not more tabs.',
   description:
     'Every client gets their own workspace with Meta Ads, Google Ads and GA4 connected. Vera watches all of them, rules guard their budgets, and each client gets a live dashboard link instead of a PDF.',
 }

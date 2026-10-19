@@ -19,13 +19,13 @@ function HeroVisual() {
       <path id="vp5" d="M370.04 196C410.02 196 410.02 242 448 242" fill="none" stroke="#C9D3F2" strokeWidth="1.5"/>
       <path id="vp7" d="M370.04 196C410.02 196 410.02 334 448 334" fill="none" stroke="#C9D3F2" strokeWidth="1.5"/>
 
-      {/* Traveling dots â€” input side (black) */}
+      {/* Traveling dots — input side (black) */}
       <circle r="3.2" fill="#000"><animateMotion dur="2.6s" begin="0s" repeatCount="indefinite"><mpath href="#vp0"/></animateMotion></circle>
       <circle r="3.2" fill="#000"><animateMotion dur="2.85s" begin="-0.5s" repeatCount="indefinite"><mpath href="#vp2"/></animateMotion></circle>
       <circle r="3.2" fill="#000"><animateMotion dur="3.1s" begin="-1.0s" repeatCount="indefinite"><mpath href="#vp4"/></animateMotion></circle>
       <circle r="3.2" fill="#000"><animateMotion dur="3.35s" begin="-1.5s" repeatCount="indefinite"><mpath href="#vp6"/></animateMotion></circle>
 
-      {/* Traveling dots â€” output side (Ink Blue) */}
+      {/* Traveling dots — output side (Ink Blue) */}
       <circle r="3.2" fill="#1B3A8C"><animateMotion dur="2.6s" begin="-1.3s" repeatCount="indefinite"><mpath href="#vp1"/></animateMotion></circle>
       <circle r="3.2" fill="#1B3A8C"><animateMotion dur="2.85s" begin="-1.425s" repeatCount="indefinite"><mpath href="#vp3"/></animateMotion></circle>
       <circle r="3.2" fill="#1B3A8C"><animateMotion dur="3.1s" begin="-1.55s" repeatCount="indefinite"><mpath href="#vp5"/></animateMotion></circle>
@@ -61,7 +61,7 @@ function HeroVisual() {
         <animate attributeName="opacity" values="1;.35;1" dur="2.85s" begin="-0.5s" repeatCount="indefinite"/>
       </circle>
       <text x="488" y="146" fontFamily={FM} fontSize="10" letterSpacing=".6" fill="#666666">GOOGLE ADS</text>
-      <text x="488" y="163" fontFamily={FS} fontSize="13" fontWeight="600" fill="#1B3A8C">Bids âˆ’6% Â· 4 campaigns</text>
+      <text x="488" y="163" fontFamily={FS} fontSize="13" fontWeight="600" fill="#1B3A8C">Bids −6% · 4 campaigns</text>
 
       <rect x="450" y="217" width="210" height="50" rx="25" fill="#fff" stroke="#C9D3F2" strokeWidth="1"/>
       <circle cx="475" cy="242" r="4.5" fill="#1B3A8C">
@@ -75,7 +75,7 @@ function HeroVisual() {
         <animate attributeName="opacity" values="1;.35;1" dur="3.35s" begin="-1.5s" repeatCount="indefinite"/>
       </circle>
       <text x="488" y="330" fontFamily={FM} fontSize="10" letterSpacing=".6" fill="#666666">SLACK</text>
-      <text x="488" y="347" fontFamily={FS} fontSize="14" fontWeight="600" fill="#1B3A8C">Task done Â· reply sent</text>
+      <text x="488" y="347" fontFamily={FS} fontSize="14" fontWeight="600" fill="#1B3A8C">Task done · reply sent</text>
 
       {/* Vera center node */}
       <circle cx="295" cy="196" r="86.4" fill="none" stroke="#F0F0F0" strokeWidth="1"/>
@@ -84,7 +84,7 @@ function HeroVisual() {
       </circle>
       <circle cx="295" cy="196" r="71.04" fill="#FAFAFA" stroke="#EBEBEB" strokeWidth="1"/>
 
-      {/* Logo mark â€” 48px rendered, centered at (295, 196) */}
+      {/* Logo mark — 48px rendered, centered at (295, 196) */}
       <g transform="translate(271,172) scale(0.75)">
         <rect x="3" y="3" width="58" height="58" rx="16" fill="#000"/>
         <path d="M19 23L32 45L45 23" fill="none" stroke="#fff" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round"/>
@@ -107,29 +107,29 @@ export default function LandingPage() {
       <Header />
       <main>
 
-        {/* â”€â”€ Hero v2 â”€â”€ */}
+        {/* ── Hero v2 ── */}
         <section className="hero-v2">
           <div className="hero-v2-inner">
             <div className="hero-v2-copy">
               <h1 className="hero-h1">Gut feeling is not a strategy.</h1>
-              <p className="hero-body">Verabix pulls data from Meta, Google and GA4. Vera, your AI marketing analyst, decides what to change and pushes it back. Need something? Ask her in Slack â€” she gets it done in Verabix.</p>
+              <p className="hero-body">Verabix pulls data from Meta, Google and GA4. Vera, your AI marketing analyst, decides what to change and pushes it back. Need something? Ask her in Slack — she gets it done in Verabix.</p>
               <div className="hero-ctas">
-                <a className="btn btn-primary" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">Book a demo â†—</a>
+                <a className="btn btn-primary" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">Book a demo ↗</a>
                 <a className="btn btn-ghost" href="#how-it-works">See the loop</a>
               </div>
               <div className="hero-steps">
                 <div className="hero-step">
-                  <div className="hero-step-lbl">01 Â· IN</div>
+                  <div className="hero-step-lbl">01 · IN</div>
                   <div className="hero-step-title">Signals</div>
                   <div className="hero-step-desc">Spend, clicks and conversions from every channel.</div>
                 </div>
                 <div className="hero-step">
-                  <div className="hero-step-lbl">02 Â· VERA</div>
+                  <div className="hero-step-lbl">02 · VERA</div>
                   <div className="hero-step-title">Decisions</div>
-                  <div className="hero-step-desc">What to scale, cut or fix â€” with the numbers.</div>
+                  <div className="hero-step-desc">What to scale, cut or fix — with the numbers.</div>
                 </div>
                 <div className="hero-step">
-                  <div className="hero-step-lbl">03 Â· OUT</div>
+                  <div className="hero-step-lbl">03 · OUT</div>
                   <div className="hero-step-title">Actions</div>
                   <div className="hero-step-desc">Pushed back to the channels. Results feed the next loop.</div>
                 </div>
@@ -141,7 +141,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 02 Works with â”€â”€ */}
+        {/* ── 02 Works with ── */}
         <section className="works">
           <div className="wrap wrow">
             <span className="mono">Works with</span>
@@ -154,7 +154,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 03 Problem â”€â”€ */}
+        {/* ── 03 Problem ── */}
         <section className="sec" id="loop">
           <div className="wrap">
             <div className="shead">
@@ -180,14 +180,14 @@ export default function LandingPage() {
               <div className="tc v">
                 <span className="mono">Verabix shows</span>
                 <b>Why.</b>
-                <small>Same date range, same definitions, side by side â€” so you can see where they disagree and decide what to trust.</small>
+                <small>Same date range, same definitions, side by side — so you can see where they disagree and decide what to trust.</small>
               </div>
             </div>
             <p className="note">Each platform grades its own homework. Verabix puts them on the same page.</p>
           </div>
         </section>
 
-        {/* â”€â”€ 04 Dashboard â”€â”€ */}
+        {/* ── 04 Dashboard ── */}
         <section className="sec alt">
           <div className="wrap split">
             <div className="copy">
@@ -199,7 +199,7 @@ export default function LandingPage() {
                 <li>Platform numbers next to GA4, on the same date range</li>
                 <li>Top campaigns ranked by what they actually return</li>
               </ul>
-              <a className="lnk" href="/product/cross-channel-dashboard">Explore the dashboard â†’</a>
+              <a className="lnk" href="/product/cross-channel-dashboard">Explore the dashboard →</a>
             </div>
             <figure className="shot">
               <div className="bar"><i/><i/><i/><span>app.verabix.com</span></div>
@@ -208,19 +208,19 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 05 Vera â”€â”€ */}
+        {/* ── 05 Vera ── */}
         <section className="sec dark">
           <div className="wrap split rev">
             <div className="copy">
               <span className="mono glow">Vera AI</span>
               <h2>Meet Vera.<br/>She already read your data.</h2>
-              <p>Vera is your AI marketing analyst. Ask her anything in plain English â€” she reasons across every channel and answers with the exact numbers, so you can check every claim.</p>
+              <p>Vera is your AI marketing analyst. Ask her anything in plain English — she reasons across every channel and answers with the exact numbers, so you can check every claim.</p>
               <ul className="chk">
-                <li>Answers with numbers and sources â€” never vibes</li>
+                <li>Answers with numbers and sources — never vibes</li>
                 <li>Spots what changed and tells you why</li>
                 <li>Does the work: reports, campaigns, budget changes</li>
               </ul>
-              <a className="lnk" href="/product/vera-ai">Meet Vera â†’</a>
+              <a className="lnk" href="/product/vera-ai">Meet Vera →</a>
             </div>
             <figure className="shot">
               <div className="bar"><i/><i/><i/><span>app.verabix.com</span></div>
@@ -231,7 +231,7 @@ export default function LandingPage() {
             <div className="scopy">
               <span className="mono glow">Vera in Slack</span>
               <h3>Ask her in Slack.<br/>She gets it done in Verabix.</h3>
-              <p>No new tab. Mention @Vera in any channel and she pulls the numbers, builds the report or drafts the campaign â€” inside Verabix.</p>
+              <p>No new tab. Mention @Vera in any channel and she pulls the numbers, builds the report or drafts the campaign — inside Verabix.</p>
             </div>
             <div className="sm">
               <div className="smh"><span># marketing</span></div>
@@ -252,11 +252,11 @@ export default function LandingPage() {
                 </span>
                 <div>
                   <b>Vera</b> <span className="app">APP</span> <em>09:12</em>
-                  <p>Google won the week: <strong>4.1Ã— ROAS</strong> vs. Meta&apos;s <strong>2.8Ã—</strong>. Meta&apos;s CPA rose 22% after Tuesday&apos;s creative change.</p>
+                  <p>Google won the week: <strong>4.1× ROAS</strong> vs. Meta&apos;s <strong>2.8×</strong>. Meta&apos;s CPA rose 22% after Tuesday&apos;s creative change.</p>
                   <div className="att">
-                    <span className="mono">Report Â· Week 38</span>
-                    <b>Meta vs. Google â€” weekly performance</b>
-                    <span>Created in Verabix Â· 3 charts Â· shared with #marketing</span>
+                    <span className="mono">Report · Week 38</span>
+                    <b>Meta vs. Google — weekly performance</b>
+                    <span>Created in Verabix · 3 charts · shared with #marketing</span>
                   </div>
                 </div>
               </div>
@@ -264,7 +264,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 06 Actions â”€â”€ */}
+        {/* ── 06 Actions ── */}
         <section className="sec">
           <div className="wrap">
             <div className="shead">
@@ -276,8 +276,8 @@ export default function LandingPage() {
                 <div>
                   <span className="mono">Instant campaigns</span>
                   <h3>Paste a URL. Get a campaign.</h3>
-                  <p>Pick a goal and Vera writes the headlines, ad copy and targeting â€” ready to push to Meta and Google without leaving Verabix.</p>
-                  <a className="lnk" href="/product/instant-campaigns">See how â†’</a>
+                  <p>Pick a goal and Vera writes the headlines, ad copy and targeting — ready to push to Meta and Google without leaving Verabix.</p>
+                  <a className="lnk" href="/product/instant-campaigns">See how →</a>
                 </div>
                 <figure className="shot">
                   <img src="/shots/campaigns.png" alt="Campaign list in Verabix"/>
@@ -287,8 +287,8 @@ export default function LandingPage() {
                 <div>
                   <span className="mono">Automations</span>
                   <h3>Rules that never sleep.</h3>
-                  <p>Pause what&apos;s bleeding, scale what&apos;s working and get an alert in Slack â€” across Meta and Google at once.</p>
-                  <a className="lnk" href="/product/automations">See automations â†’</a>
+                  <p>Pause what&apos;s bleeding, scale what&apos;s working and get an alert in Slack — across Meta and Google at once.</p>
+                  <a className="lnk" href="/product/automations">See automations →</a>
                 </div>
                 <figure className="shot">
                   <img src="/shots/automations-active.jpg" alt="Active automations in Verabix"/>
@@ -298,7 +298,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 07 Platform â”€â”€ */}
+        {/* ── 07 Platform ── */}
         <section className="sec alt" id="platform">
           <div className="wrap">
             <div className="shead row">
@@ -309,17 +309,17 @@ export default function LandingPage() {
               <p>Data, analysis and execution in one product. No exports. No tab-switching. No arguing about whose number is right.</p>
             </div>
             <div className="grid3">
-              <a className="mod" href="/product/cross-channel-dashboard"><span className="mono">01</span><h3>Cross-channel Dashboard</h3><p>Meta Ads, Google Ads and GA4 in one view. Same date range. Same metrics.</p><span className="arr">â†’</span></a>
-              <a className="mod" href="/product/vera-ai"><span className="mono">02</span><h3>Vera AI</h3><p>Your AI marketing analyst. Ask anything â€” she answers with the exact numbers.</p><span className="arr">â†’</span></a>
-              <a className="mod" href="/product/instant-campaigns"><span className="mono">03</span><h3>Instant Campaigns</h3><p>Paste a landing page URL. Get a launch-ready campaign for Meta and Google.</p><span className="arr">â†’</span></a>
-              <a className="mod" href="/product/advanced-wizard"><span className="mono">04</span><h3>Advanced Campaign Wizard</h3><p>Six guided steps. Full manual control over audience, budget and creative.</p><span className="arr">â†’</span></a>
-              <a className="mod" href="/product/automations"><span className="mono">05</span><h3>Automations</h3><p>Rules that pause, scale and alert â€” across Meta and Google at once.</p><span className="arr">â†’</span></a>
-              <a className="mod" href="/product/multi-workspace"><span className="mono">06</span><h3>Multi-workspace &amp; Slack</h3><p>One workspace per client or market. Vera on call in Slack.</p><span className="arr">â†’</span></a>
+              <a className="mod" href="/product/cross-channel-dashboard"><span className="mono">01</span><h3>Cross-channel Dashboard</h3><p>Meta Ads, Google Ads and GA4 in one view. Same date range. Same metrics.</p><span className="arr">→</span></a>
+              <a className="mod" href="/product/vera-ai"><span className="mono">02</span><h3>Vera AI</h3><p>Your AI marketing analyst. Ask anything — she answers with the exact numbers.</p><span className="arr">→</span></a>
+              <a className="mod" href="/product/instant-campaigns"><span className="mono">03</span><h3>Instant Campaigns</h3><p>Paste a landing page URL. Get a launch-ready campaign for Meta and Google.</p><span className="arr">→</span></a>
+              <a className="mod" href="/product/advanced-wizard"><span className="mono">04</span><h3>Advanced Campaign Wizard</h3><p>Six guided steps. Full manual control over audience, budget and creative.</p><span className="arr">→</span></a>
+              <a className="mod" href="/product/automations"><span className="mono">05</span><h3>Automations</h3><p>Rules that pause, scale and alert — across Meta and Google at once.</p><span className="arr">→</span></a>
+              <a className="mod" href="/product/multi-workspace"><span className="mono">06</span><h3>Multi-workspace &amp; Slack</h3><p>One workspace per client or market. Vera on call in Slack.</p><span className="arr">→</span></a>
             </div>
           </div>
         </section>
 
-        {/* â”€â”€ 08 How it works â”€â”€ */}
+        {/* ── 08 How it works ── */}
         <section className="sec" id="how-it-works">
           <div className="wrap">
             <div className="shead">
@@ -335,7 +335,7 @@ export default function LandingPage() {
               <div className="hw">
                 <span className="hn">02</span>
                 <h3>Vera reads</h3>
-                <p>She maps every account, campaign and conversion â€” and flags what&apos;s off on day one.</p>
+                <p>She maps every account, campaign and conversion — and flags what&apos;s off on day one.</p>
               </div>
               <div className="hw">
                 <span className="hn">03</span>
@@ -346,7 +346,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* â”€â”€ 09 Solutions â”€â”€ */}
+        {/* ── 09 Solutions ── */}
         <section className="sec alt" id="solutions">
           <div className="wrap">
             <div className="shead">
@@ -357,23 +357,23 @@ export default function LandingPage() {
               <a className="sol" href="/solutions/agencies">
                 <h3>Ad agencies</h3>
                 <p>One isolated workspace per client. Unified reporting. Client questions answered in Slack before the call ends.</p>
-                <span className="lnk">Learn more â†’</span>
+                <span className="lnk">Learn more →</span>
               </a>
               <a className="sol" href="/solutions/marketing-teams">
                 <h3>In-house marketing</h3>
                 <p>Own your data without hiring an analyst. A daily brief from Vera, and attribution you can defend.</p>
-                <span className="lnk">Learn more â†’</span>
+                <span className="lnk">Learn more →</span>
               </a>
               <a className="sol" href="/solutions/ecommerce">
                 <h3>E-commerce brands</h3>
                 <p>ROAS per market, creative fatigue spotted early, and platform numbers checked against GA4.</p>
-                <span className="lnk">Learn more â†’</span>
+                <span className="lnk">Learn more →</span>
               </a>
             </div>
           </div>
         </section>
 
-        {/* â”€â”€ 10 CTA â”€â”€ */}
+        {/* ── 10 CTA ── */}
         <section className="cta">
           <div className="wrap ctaw">
             <div>
@@ -381,7 +381,7 @@ export default function LandingPage() {
               <p>Connect your accounts and get your first answer from Vera in minutes.</p>
             </div>
             <div className="ctas">
-              <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">Book a demo â†—</a>
+              <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">Book a demo ↗</a>
               <a className="btn ghw" href="https://app.verabix.com">Sign up free</a>
             </div>
           </div>
