@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 
 function LogoMark() {
   return (
@@ -20,7 +20,7 @@ export default function Footer() {
               <LogoMark />
               <span style={{ fontSize: 20, fontWeight: 600, letterSpacing: '-0.045em', color: '#000' }}>verabix</span>
             </Link>
-            <p>The operating system for performance marketers. Meta Ads, Google Ads and GA4 — unified, analysed and acted on in one place.</p>
+            <p>The operating system for performance marketers. Meta Ads, Google Ads and GA4 â€” unified, analysed and acted on in one place.</p>
           </div>
           <div>
             <span className="mono">Platform</span>
@@ -40,12 +40,12 @@ export default function Footer() {
             <span className="mono">Company</span>
             <Link href="/pricing">Pricing</Link>
             <a href="mailto:admin@verabix.com">Contact</a>
-            <a href="https://app.verabix.com">Log in</a>
-            <a href="mailto:admin@verabix.com?subject=Book%20a%20demo">Book a demo</a>
+            <a href="https://app.verabix.com/login">Log in</a>
+            <a href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">Book a demo</a>
           </div>
         </div>
         <div className="fbot">
-          <span>© 2026 Verabix ApS · CVR: 46483839 · Odense, Denmark</span>
+          <span>Â© 2026 Verabix ApS Â· CVR: 46483839 Â· Odense, Denmark</span>
           <div style={{ display: 'flex', gap: 24 }}>
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>

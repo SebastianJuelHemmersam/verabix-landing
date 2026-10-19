@@ -1,11 +1,11 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import TabCollapseMock from './TabCollapseMock'
 
 export const metadata: Metadata = {
-  title: 'Ad Agencies — More clients. Not more tabs.',
+  title: 'Ad Agencies â€” More clients. Not more tabs.',
   description:
     'Every client gets their own workspace with Meta Ads, Google Ads and GA4 connected. Vera watches all of them, rules guard their budgets, and each client gets a live dashboard link instead of a PDF.',
 }
@@ -41,7 +41,7 @@ export default function AgenciesPage() {
                   and each client gets a live dashboard link instead of a PDF.
                 </p>
                 <div className="ctas">
-                  <a className="btn" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+                  <a className="btn" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
                     Book a demo &#8599;
                   </a>
                   <a className="btn gh" href="https://app.verabix.com">
@@ -273,7 +273,7 @@ export default function AgenciesPage() {
               </ul>
               <div className="ctas">
                 <a className="btn" href="https://app.verabix.com">Start free trial</a>
-                <a className="btn gh" href="mailto:admin@verabix.com?subject=Book%20a%20demo">Book a demo</a>
+                <a className="btn gh" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">Book a demo</a>
               </div>
             </div>
           </div>
@@ -354,7 +354,7 @@ export default function AgenciesPage() {
               <p>Unlimited client workspaces on the Agency plan. Try it free for 7 days.</p>
             </div>
             <div className="ctas">
-              <a className="btn wht" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+              <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
                 Book a demo &#8599;
               </a>
               <a className="btn ghw" href="https://app.verabix.com">

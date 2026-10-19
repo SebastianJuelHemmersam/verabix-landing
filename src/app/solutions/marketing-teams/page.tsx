@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -6,9 +6,9 @@ import AskPlatformsMock from './AskPlatformsMock'
 import AskVeraPanel from './AskVeraPanel'
 
 export const metadata: Metadata = {
-  title: 'In-house Marketing — One set of numbers. The whole team.',
+  title: 'In-house Marketing â€” One set of numbers. The whole team.',
   description:
-    'Meta, Google and GA4 each tell a different story. Verabix puts them side by side, shows where they overlap, and lets Vera explain the gap — so the Monday meeting starts with answers, not an argument.',
+    'Meta, Google and GA4 each tell a different story. Verabix puts them side by side, shows where they overlap, and lets Vera explain the gap â€” so the Monday meeting starts with answers, not an argument.',
 }
 
 export default function MarketingTeamsPage() {
@@ -33,7 +33,7 @@ export default function MarketingTeamsPage() {
                   answers, not an argument.
                 </p>
                 <div className="ctas">
-                  <a className="btn" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+                  <a className="btn" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
                     Book a demo &#8599;
                   </a>
                   <a className="btn gh" href="https://app.verabix.com">
@@ -325,7 +325,7 @@ export default function MarketingTeamsPage() {
               <p>Connect Meta Ads, Google Ads and GA4. Your team has one set of numbers by lunch.</p>
             </div>
             <div className="ctas">
-              <a className="btn wht" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+              <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
                 Book a demo &#8599;
               </a>
               <a className="btn ghw" href="https://app.verabix.com">

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -7,9 +7,9 @@ import PlanFinderCards from './PlanFinderCards'
 import ComparePlansTable from './ComparePlansTable'
 
 export const metadata: Metadata = {
-  title: 'Pricing — The whole platform on every plan',
+  title: 'Pricing â€” The whole platform on every plan',
   description:
-    'Every plan gets Vera, dashboards, automations, campaigns and attribution. You only choose how many workspaces you need — and whether Vera joins you in Slack.',
+    'Every plan gets Vera, dashboards, automations, campaigns and attribution. You only choose how many workspaces you need â€” and whether Vera joins you in Slack.',
 }
 
 function VeraIconGlow() {
@@ -25,7 +25,7 @@ function VeraIconGlow() {
 const INCLUDED = [
   { title: 'Vera AI', body: 'Your marketing analyst. Recommendations, answers and drafts from every connected number.', href: '/product/vera-ai' },
   { title: 'Dashboards', body: 'Ask for a dashboard, edit it by asking, publish it to a link.', href: '/product/cross-channel-dashboard' },
-  { title: 'Automations', body: 'Rules checked every two minutes — scale, pause, email or Slack.', href: '/product/automations' },
+  { title: 'Automations', body: 'Rules checked every two minutes â€” scale, pause, email or Slack.', href: '/product/automations' },
   { title: 'Campaigns', body: 'Instant from a URL, the 6-step wizard, or bulk from a Google Sheet.', href: '/product/campaigns' },
   { title: 'Attribution', body: 'Meta, Google and GA4 side by side, with the overlap calculated.', href: '/solutions/marketing-teams' },
   { title: 'Unlimited data sources', body: 'Connect every Meta Ads, Google Ads and GA4 account you have.', href: '/' },
@@ -131,7 +131,7 @@ export default function PricingPage() {
               <span className="mono ink">Not sure yet?</span>
               <h2>See it on your own numbers.</h2>
               <p>Book 30 minutes. We connect your accounts and show you what Vera finds &mdash; before you pick a plan.</p>
-              <a className="btn" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+              <a className="btn" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
                 Book a demo &#8599;
               </a>
             </div>
@@ -157,7 +157,7 @@ export default function PricingPage() {
               <p>Start a 7-day free trial on any plan. Connect Meta Ads, Google Ads and GA4 in minutes.</p>
             </div>
             <div className="ctas">
-              <a className="btn wht" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+              <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
                 Book a demo &#8599;
               </a>
               <a className="btn ghw" href="https://app.verabix.com">

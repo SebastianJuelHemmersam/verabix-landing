@@ -1,13 +1,13 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WorkspaceSwitcher from './WorkspaceSwitcher'
 import CampaignFilterDiagram from './CampaignFilterDiagram'
 
 export const metadata: Metadata = {
-  title: 'Multi-workspace & Slack — Every client, their own Verabix',
+  title: 'Multi-workspace & Slack â€” Every client, their own Verabix',
   description:
-    'One login, a separate workspace for every client, brand or market — each with its own ad accounts, dashboards, automations and Vera. Switch in one click. Nothing leaks between them.',
+    'One login, a separate workspace for every client, brand or market â€” each with its own ad accounts, dashboards, automations and Vera. Switch in one click. Nothing leaks between them.',
 }
 
 function VeraSymbol() {
@@ -36,7 +36,7 @@ export default function MultiWorkspacePage() {
       <Header />
       <main>
 
-        {/* ── 01 Hero ── */}
+        {/* â”€â”€ 01 Hero â”€â”€ */}
         <section className="mwh">
           <div className="wrap">
             <div className="dht">
@@ -51,7 +51,7 @@ export default function MultiWorkspacePage() {
                   in one click. Nothing leaks between them.
                 </p>
                 <div className="ctas">
-                  <a className="btn btn-primary" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+                  <a className="btn btn-primary" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
                     Book a demo &#8599;
                   </a>
                   <a className="btn gh" href="https://app.verabix.com">
@@ -64,7 +64,7 @@ export default function MultiWorkspacePage() {
           </div>
         </section>
 
-        {/* ── 02 Stats ── */}
+        {/* â”€â”€ 02 Stats â”€â”€ */}
         <section className="works">
           <div className="wrap stats">
             <div><b>1 login</b><span>for every client, brand and market</span></div>
@@ -74,7 +74,7 @@ export default function MultiWorkspacePage() {
           </div>
         </section>
 
-        {/* ── 03 Walls between clients ── */}
+        {/* â”€â”€ 03 Walls between clients â”€â”€ */}
         <section className="sec">
           <div className="wrap">
             <div className="shead row">
@@ -117,7 +117,7 @@ export default function MultiWorkspacePage() {
           </div>
         </section>
 
-        {/* ── 04 Campaign filter ── */}
+        {/* â”€â”€ 04 Campaign filter â”€â”€ */}
         <section className="sec alt">
           <div className="wrap split">
             <div className="copy">
@@ -139,7 +139,7 @@ export default function MultiWorkspacePage() {
           </div>
         </section>
 
-        {/* ── 05 Vera in Slack ── */}
+        {/* â”€â”€ 05 Vera in Slack â”€â”€ */}
         <section className="sec dark">
           <div className="wrap split rev">
             <div className="copy">
@@ -221,7 +221,7 @@ export default function MultiWorkspacePage() {
           </div>
         </section>
 
-        {/* ── 06 Built for ── */}
+        {/* â”€â”€ 06 Built for â”€â”€ */}
         <section className="sec">
           <div className="wrap">
             <div className="shead">
@@ -260,7 +260,7 @@ export default function MultiWorkspacePage() {
           </div>
         </section>
 
-        {/* ── 07 Plans ── */}
+        {/* â”€â”€ 07 Plans â”€â”€ */}
         <section className="sec alt">
           <div className="wrap">
             <div className="shead row">
@@ -317,7 +317,7 @@ export default function MultiWorkspacePage() {
           </div>
         </section>
 
-        {/* ── 08 FAQ ── */}
+        {/* â”€â”€ 08 FAQ â”€â”€ */}
         <section className="sec">
           <div className="wrap split top">
             <div className="copy">
@@ -370,7 +370,7 @@ export default function MultiWorkspacePage() {
           </div>
         </section>
 
-        {/* ── 09 Keep exploring ── */}
+        {/* â”€â”€ 09 Keep exploring â”€â”€ */}
         <section className="sec alt">
           <div className="wrap">
             <div className="shead">
@@ -401,7 +401,7 @@ export default function MultiWorkspacePage() {
           </div>
         </section>
 
-        {/* ── CTA ── */}
+        {/* â”€â”€ CTA â”€â”€ */}
         <section className="cta">
           <div className="wrap ctaw">
             <div>
@@ -409,7 +409,7 @@ export default function MultiWorkspacePage() {
               <p>Start with one workspace. Add the next client in a minute.</p>
             </div>
             <div className="ctas">
-              <a className="btn wht" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+              <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
                 Book a demo &#8599;
               </a>
               <a className="btn ghw" href="https://app.verabix.com">

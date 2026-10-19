@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AskVera from './AskVera'
 
 export const metadata: Metadata = {
-  title: 'Vera AI — Ask anything about your Meta Ads, Google Ads and GA4',
+  title: 'Vera AI â€” Ask anything about your Meta Ads, Google Ads and GA4',
   description:
-    'Vera is your AI marketing analyst. Ask questions in plain English — she answers with the numbers behind them, in Verabix or in Slack.',
+    'Vera is your AI marketing analyst. Ask questions in plain English â€” she answers with the numbers behind them, in Verabix or in Slack.',
 }
 
 export default function VeraAIPage() {
@@ -15,19 +15,19 @@ export default function VeraAIPage() {
       <Header />
       <main>
 
-        {/* ── 01 Hero ── */}
+        {/* â”€â”€ 01 Hero â”€â”€ */}
         <section className="vh">
           <div className="wrap vhw">
-            <span className="mono ink">Product · Vera AI</span>
+            <span className="mono ink">Product Â· Vera AI</span>
             <h1>Your analyst doesn&apos;t guess.<br />Neither does Vera.</h1>
             <p className="lead">
               Ask anything about your Meta Ads, Google Ads and GA4. Vera answers with the
-              numbers — in Verabix or in Slack.
+              numbers â€” in Verabix or in Slack.
             </p>
             <AskVera />
             <div className="ctas cen">
-              <a className="btn btn-primary" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
-                Book a demo ↗
+              <a className="btn btn-primary" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
+                Book a demo â†—
               </a>
               <a className="btn btn-outline" href="https://app.verabix.com">
                 Try Vera free
@@ -36,7 +36,7 @@ export default function VeraAIPage() {
           </div>
         </section>
 
-        {/* ── 01b Product shot ── */}
+        {/* â”€â”€ 01b Product shot â”€â”€ */}
         <section className="vshot">
           <div className="wrap">
             <figure className="shot">
@@ -49,7 +49,7 @@ export default function VeraAIPage() {
           </div>
         </section>
 
-        {/* ── 02 Stats ── */}
+        {/* â”€â”€ 02 Stats â”€â”€ */}
         <section className="works">
           <div className="wrap stats">
             <div>
@@ -71,7 +71,7 @@ export default function VeraAIPage() {
           </div>
         </section>
 
-        {/* ── 03 What people ask her ── */}
+        {/* â”€â”€ 03 What people ask her â”€â”€ */}
         <section className="sec">
           <div className="wrap">
             <div className="shead row">
@@ -90,8 +90,8 @@ export default function VeraAIPage() {
                 </div>
                 <div className="a">
                   <span className="mono ink"><i className="vd" />Vera answers</span>
-                  <p>CPA rose 22% — all of it from Meta Prospecting. CPM is flat, CTR dropped from 1.4% to 0.9% after Tuesday&apos;s creative swap. The old creative is still the better performer.</p>
-                  <span className="src">Meta Ads · 7 days</span>
+                  <p>CPA rose 22% â€” all of it from Meta Prospecting. CPM is flat, CTR dropped from 1.4% to 0.9% after Tuesday&apos;s creative swap. The old creative is still the better performer.</p>
+                  <span className="src">Meta Ads Â· 7 days</span>
                 </div>
               </div>
 
@@ -102,8 +102,8 @@ export default function VeraAIPage() {
                 </div>
                 <div className="a">
                   <span className="mono ink"><i className="vd" />Vera answers</span>
-                  <p>Google PMax has the most headroom: 4.1× ROAS and only 62% impression share. Move DKK 25,000 there, DKK 15,000 to Meta Retargeting. Expected blended ROAS: 3.4× → 3.9×.</p>
-                  <span className="src">Meta + Google · 30 days</span>
+                  <p>Google PMax has the most headroom: 4.1Ã— ROAS and only 62% impression share. Move DKK 25,000 there, DKK 15,000 to Meta Retargeting. Expected blended ROAS: 3.4Ã— â†’ 3.9Ã—.</p>
+                  <span className="src">Meta + Google Â· 30 days</span>
                 </div>
               </div>
 
@@ -115,7 +115,7 @@ export default function VeraAIPage() {
                 <div className="a">
                   <span className="mono ink"><i className="vd" />Vera answers</span>
                   <p>Yes. Meta reports 1,284 purchases. GA4 observed 1,041 from Meta traffic. The gap is mostly 1-day view-through. Use GA4 for budget decisions.</p>
-                  <span className="src">Meta vs. GA4 · September</span>
+                  <span className="src">Meta vs. GA4 Â· September</span>
                 </div>
               </div>
 
@@ -123,7 +123,7 @@ export default function VeraAIPage() {
           </div>
         </section>
 
-        {/* ── 04 Capabilities ── */}
+        {/* â”€â”€ 04 Capabilities â”€â”€ */}
         <section className="sec alt">
           <div className="wrap">
             <div className="shead">
@@ -165,7 +165,7 @@ export default function VeraAIPage() {
           </div>
         </section>
 
-        {/* ── 05 How she works ── */}
+        {/* â”€â”€ 05 How she works â”€â”€ */}
         <section className="sec">
           <div className="wrap split">
             <div className="copy">
@@ -173,7 +173,7 @@ export default function VeraAIPage() {
               <h2>Reads. Reasons.<br />Acts. Learns.</h2>
               <p>
                 Vera runs the same loop every day: pull fresh data, find what changed, propose
-                what to do — and learn from what happened next.
+                what to do â€” and learn from what happened next.
               </p>
             </div>
             <ol className="loop">
@@ -181,7 +181,7 @@ export default function VeraAIPage() {
                 <span className="hn">01</span>
                 <div>
                   <h3>Reads</h3>
-                  <p>Fresh data from Meta Ads, Google Ads and GA4 — every campaign, ad set and conversion.</p>
+                  <p>Fresh data from Meta Ads, Google Ads and GA4 â€” every campaign, ad set and conversion.</p>
                 </div>
               </li>
               <li>
@@ -209,7 +209,7 @@ export default function VeraAIPage() {
           </div>
         </section>
 
-        {/* ── 06 Vera in Slack ── */}
+        {/* â”€â”€ 06 Vera in Slack â”€â”€ */}
         <section className="sec dark">
           <div
             className="wrap slack"
@@ -220,7 +220,7 @@ export default function VeraAIPage() {
               <h3>Ask her in Slack.<br />She gets it done in Verabix.</h3>
               <p>
                 No new tab. Mention @Vera in any channel and she pulls the numbers, builds
-                the report or drafts the campaign — inside Verabix.
+                the report or drafts the campaign â€” inside Verabix.
               </p>
               <ul className="chk">
                 <li>Questions answered in the thread</li>
@@ -258,14 +258,14 @@ export default function VeraAIPage() {
                 <div>
                   <b>Vera</b> <span className="app">APP</span> <em>09:12</em>
                   <p>
-                    Google won the week: <strong>4.1× ROAS</strong> vs. Meta&apos;s{' '}
-                    <strong>2.8×</strong>. Meta&apos;s CPA rose 22% after Tuesday&apos;s
+                    Google won the week: <strong>4.1Ã— ROAS</strong> vs. Meta&apos;s{' '}
+                    <strong>2.8Ã—</strong>. Meta&apos;s CPA rose 22% after Tuesday&apos;s
                     creative change.
                   </p>
                   <div className="att">
-                    <span className="mono">Report · Week 38</span>
-                    <b>Meta vs. Google — weekly performance</b>
-                    <span>Created in Verabix · 3 charts · shared with #marketing</span>
+                    <span className="mono">Report Â· Week 38</span>
+                    <b>Meta vs. Google â€” weekly performance</b>
+                    <span>Created in Verabix Â· 3 charts Â· shared with #marketing</span>
                   </div>
                 </div>
               </div>
@@ -273,7 +273,7 @@ export default function VeraAIPage() {
           </div>
         </section>
 
-        {/* ── 07 Trust ── */}
+        {/* â”€â”€ 07 Trust â”€â”€ */}
         <section className="sec">
           <div className="wrap">
             <div className="shead">
@@ -285,7 +285,7 @@ export default function VeraAIPage() {
                 <span className="hn">01</span>
                 <h3>Numbers, not opinions</h3>
                 <p>
-                  Vera cites the exact metric, date range and source — so you can check
+                  Vera cites the exact metric, date range and source â€” so you can check
                   every claim in seconds.
                 </p>
               </div>
@@ -294,7 +294,7 @@ export default function VeraAIPage() {
                 <h3>You stay in control</h3>
                 <p>
                   She recommends and drafts. Nothing goes live until you decide it
-                  should — except automations you&apos;ve explicitly set up yourself,
+                  should â€” except automations you&apos;ve explicitly set up yourself,
                   which run on the rules you define.
                 </p>
               </div>
@@ -307,7 +307,7 @@ export default function VeraAIPage() {
           </div>
         </section>
 
-        {/* ── 08 FAQ ── */}
+        {/* â”€â”€ 08 FAQ â”€â”€ */}
         <section className="sec alt">
           <div className="wrap split top">
             <div className="copy">
@@ -319,14 +319,14 @@ export default function VeraAIPage() {
                 <summary>Which data can Vera see?</summary>
                 <p>
                   Everything you&apos;ve connected in Verabix: Meta Ads, Google Ads and
-                  Google Analytics 4. Each workspace is isolated — Vera never mixes data
+                  Google Analytics 4. Each workspace is isolated â€” Vera never mixes data
                   between clients.
                 </p>
               </details>
               <details>
                 <summary>Does Vera change my campaigns on her own?</summary>
                 <p>
-                  Not on her own, no. She recommends, drafts and builds — you decide what
+                  Not on her own, no. She recommends, drafts and builds â€” you decide what
                   goes live. The one exception is automations: once you set up a rule
                   (e.g. pause underperforming ads), it runs on its own until you turn it
                   off.
@@ -336,7 +336,7 @@ export default function VeraAIPage() {
                 <summary>How do I use Vera in Slack?</summary>
                 <p>
                   Connect Slack in Verabix, then mention @Vera in any channel. Ask a
-                  question or give her a task — she does the work in Verabix and replies
+                  question or give her a task â€” she does the work in Verabix and replies
                   in the thread.
                 </p>
               </details>
@@ -351,7 +351,7 @@ export default function VeraAIPage() {
           </div>
         </section>
 
-        {/* ── 09 Keep exploring ── */}
+        {/* â”€â”€ 09 Keep exploring â”€â”€ */}
         <section className="sec">
           <div className="wrap">
             <div className="shead">
@@ -361,23 +361,23 @@ export default function VeraAIPage() {
               <a className="mod" href="/product/cross-channel-dashboard">
                 <h3>Cross-channel Dashboard</h3>
                 <p>The unified data Vera reasons across.</p>
-                <span className="arr">→</span>
+                <span className="arr">â†’</span>
               </a>
               <a className="mod" href="/product/automations">
                 <h3>Automations</h3>
                 <p>Turn a Vera recommendation into a rule that runs on its own.</p>
-                <span className="arr">→</span>
+                <span className="arr">â†’</span>
               </a>
               <a className="mod" href="/product/multi-workspace">
                 <h3>Multi-workspace &amp; Slack</h3>
                 <p>One workspace per client. Vera on call in Slack.</p>
-                <span className="arr">→</span>
+                <span className="arr">â†’</span>
               </a>
             </div>
           </div>
         </section>
 
-        {/* ── CTA ── */}
+        {/* â”€â”€ CTA â”€â”€ */}
         <section className="cta">
           <div className="wrap ctaw">
             <div>
@@ -388,8 +388,8 @@ export default function VeraAIPage() {
               </p>
             </div>
             <div className="ctas">
-              <a className="btn wht" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
-                Book a demo ↗
+              <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
+                Book a demo â†—
               </a>
               <a className="btn ghw" href="https://app.verabix.com">
                 Sign up free

@@ -1,13 +1,13 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MarketLeaderboardMock from './MarketLeaderboardMock'
 
 export const metadata: Metadata = {
-  title: 'E-commerce Brands — Every market. One read.',
+  title: 'E-commerce Brands â€” Every market. One read.',
   description:
-    "Selling in Denmark, Sweden and Germany means three currencies, three sets of ad accounts and creative that works differently in each. Verabix gives every market its own workspace — and Vera tells you what’s working where.",
+    "Selling in Denmark, Sweden and Germany means three currencies, three sets of ad accounts and creative that works differently in each. Verabix gives every market its own workspace â€” and Vera tells you whatâ€™s working where.",
 }
 
 function VeraIconGlow() {
@@ -42,7 +42,7 @@ export default function EcommercePage() {
                   Vera tells you what&apos;s working where.
                 </p>
                 <div className="ctas">
-                  <a className="btn" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+                  <a className="btn" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
                     Book a demo &#8599;
                   </a>
                   <a className="btn gh" href="https://app.verabix.com">
@@ -301,7 +301,7 @@ export default function EcommercePage() {
               <p>Connect Meta Ads, Google Ads and GA4. Add your next market in a minute.</p>
             </div>
             <div className="ctas">
-              <a className="btn wht" href="mailto:admin@verabix.com?subject=Book%20a%20demo">
+              <a className="btn wht" href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer">
                 Book a demo &#8599;
               </a>
               <a className="btn ghw" href="https://app.verabix.com">

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
@@ -19,7 +19,7 @@ const SOLUTIONS = [
 const PLATFORM = [
   { href: '/product/vera-ai',                 label: 'Vera AI',                   desc: 'Ask questions in plain English. Get answers with receipts.' },
   { href: '/product/cross-channel-dashboard', label: 'Dashboards',               desc: 'Build any dashboard from your live Meta, Google and GA4 data.' },
-  { href: '/product/campaigns',               label: 'Campaigns',                 desc: 'Three ways to build a campaign — instant, manual or bulk from a sheet.' },
+  { href: '/product/campaigns',               label: 'Campaigns',                 desc: 'Three ways to build a campaign â€” instant, manual or bulk from a sheet.' },
   { href: '/product/automations',             label: 'Automations',               desc: 'Rule-based actions across all your ad accounts.' },
   { href: '/product/multi-workspace',         label: 'Multi-workspace & Slack',   desc: 'Separate data per client or market, Vera in Slack.' },
 ]
@@ -143,7 +143,7 @@ export default function Header() {
           <span style={{ fontSize: 22, fontWeight: 600, letterSpacing: '-0.045em', color: BLACK }}>verabix</span>
         </Link>
 
-        {/* Center nav — desktop */}
+        {/* Center nav â€” desktop */}
         <div className="vbx-desktop-nav" style={{ flex: 1, justifyContent: 'center', gap: 32, alignItems: 'center' }}>
           <NavItem id="platform"  label="Platform"  items={PLATFORM}  />
           <NavItem id="solutions" label="Solutions" items={SOLUTIONS} />
@@ -153,9 +153,9 @@ export default function Header() {
           >Pricing</Link>
         </div>
 
-        {/* Right CTAs — desktop */}
+        {/* Right CTAs â€” desktop */}
         <div className="vbx-desktop-nav" style={{ gap: 8, alignItems: 'center', flexShrink: 0 }}>
-          <a href="https://app.verabix.com" style={{
+          <a href="https://app.verabix.com/login" style={{
             fontSize: 14, color: GREY600, padding: '8px 14px', textDecoration: 'none',
             borderRadius: 999, border: `1.5px solid ${GREY200}`, transition: 'background 0.15s',
           }}
@@ -164,17 +164,17 @@ export default function Header() {
           >
             Log in
           </a>
-          <a href="mailto:admin@verabix.com?subject=Book%20a%20demo" style={{
+          <a href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer" style={{
             fontSize: 14, fontWeight: 500, color: '#fff',
             padding: '9px 18px', borderRadius: 999,
             background: BLACK, textDecoration: 'none',
             display: 'flex', alignItems: 'center', gap: 4,
           }}>
-            Book a demo ↗
+            Book a demo â†—
           </a>
         </div>
 
-        {/* Hamburger — mobile */}
+        {/* Hamburger â€” mobile */}
         <button
           className="vbx-hamburger"
           onClick={() => setMobileOpen(o => !o)}
@@ -213,11 +213,11 @@ export default function Header() {
           Pricing
         </Link>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 20, paddingTop: 20, borderTop: `1px solid ${GREY200}` }}>
-          <a href="https://app.verabix.com" style={{ fontSize: 14, color: GREY600, padding: '10px 0', textDecoration: 'none' }}>Log in</a>
-          <a href="mailto:admin@verabix.com?subject=Book%20a%20demo" style={{
+          <a href="https://app.verabix.com/login" style={{ fontSize: 14, color: GREY600, padding: '10px 0', textDecoration: 'none' }}>Log in</a>
+          <a href="https://meetings-eu1.hubspot.com/sebastian-juel-hemmersam" target="_blank" rel="noopener noreferrer" style={{
             fontSize: 14, fontWeight: 500, color: '#fff', padding: '11px 16px', borderRadius: 999,
             background: BLACK, textAlign: 'center', textDecoration: 'none',
-          }}>Book a demo ↗</a>
+          }}>Book a demo â†—</a>
         </div>
       </div>
     </nav>
