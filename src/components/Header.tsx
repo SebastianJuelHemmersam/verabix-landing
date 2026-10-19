@@ -147,6 +147,10 @@ export default function Header() {
         <div className="vbx-desktop-nav" style={{ flex: 1, justifyContent: 'center', gap: 32, alignItems: 'center' }}>
           <NavItem id="platform"  label="Platform"  items={PLATFORM}  />
           <NavItem id="solutions" label="Solutions" items={SOLUTIONS} />
+          <Link href="/pricing" style={{ fontSize: 15, fontWeight: 400, color: GREY600, textDecoration: 'none', transition: 'color 0.15s' }}
+            onMouseEnter={e => (e.currentTarget.style.color = BLACK)}
+            onMouseLeave={e => (e.currentTarget.style.color = GREY600)}
+          >Pricing</Link>
         </div>
 
         {/* Right CTAs — desktop */}
@@ -205,6 +209,9 @@ export default function Header() {
             {item.label}
           </Link>
         ))}
+        <Link href="/pricing" onClick={() => setMobileOpen(false)} style={{ display: 'block', padding: '12px 0 8px', fontSize: 14, color: BLACK, textDecoration: 'none' }}>
+          Pricing
+        </Link>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 20, paddingTop: 20, borderTop: `1px solid ${GREY200}` }}>
           <a href="https://app.verabix.com" style={{ fontSize: 14, color: GREY600, padding: '10px 0', textDecoration: 'none' }}>Log in</a>
           <a href="mailto:admin@verabix.com?subject=Book%20a%20demo" style={{
