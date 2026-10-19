@@ -147,14 +147,6 @@ export default function Header() {
         <div className="vbx-desktop-nav" style={{ flex: 1, justifyContent: 'center', gap: 32, alignItems: 'center' }}>
           <NavItem id="platform"  label="Platform"  items={PLATFORM}  />
           <NavItem id="solutions" label="Solutions" items={SOLUTIONS} />
-          <a href="/company" style={{ fontSize: 15, fontWeight: 400, color: GREY600, textDecoration: 'none', transition: 'color 0.15s' }}
-            onMouseEnter={e => (e.currentTarget.style.color = BLACK)}
-            onMouseLeave={e => (e.currentTarget.style.color = GREY600)}
-          >Customers</a>
-          <a href="/company" style={{ fontSize: 15, fontWeight: 400, color: GREY600, textDecoration: 'none', transition: 'color 0.15s' }}
-            onMouseEnter={e => (e.currentTarget.style.color = BLACK)}
-            onMouseLeave={e => (e.currentTarget.style.color = GREY600)}
-          >Pricing</a>
         </div>
 
         {/* Right CTAs — desktop */}

@@ -38,7 +38,6 @@ export default function Footer() {
           </div>
           <div>
             <span className="mono">Company</span>
-            <Link href="/company">About</Link>
             <a href="mailto:admin@verabix.com">Contact</a>
             <a href="https://app.verabix.com">Log in</a>
             <a href="mailto:admin@verabix.com?subject=Book%20a%20demo">Book a demo</a>
